@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLDocumentController">
+   <children>
+      <TextField fx:id="password_box" layoutX="71.0" layoutY="420.0" prefHeight="27.0" prefWidth="219.0" promptText="password" />
+      <TextField fx:id="username_box" layoutX="71.0" layoutY="360.0" prefHeight="27.0" prefWidth="219.0" promptText="username" />
+      <ImageView fx:id="login_button" fitHeight="49.0" fitWidth="43.0" layoutX="95.0" layoutY="479.0" onDragDetected="#loginClicked" onMousePressed="#loginClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/login.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="registration_button" fitHeight="43.0" fitWidth="43.0" layoutX="215.0" layoutY="479.0" onMousePressed="#registrationClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/register.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="81.0" fitWidth="84.0" layoutX="140.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="59.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login with your Tutor or Student Account">
+         <fill>
+            <LinearGradient endX="0.004807692307692291" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="TRANSPARENT" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Avenir Roman" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="100.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+         <fill>
+            <LinearGradient endX="0.004807692307692291" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="TRANSPARENT" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Avenir Roman" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="207.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrate">
+         <fill>
+            <LinearGradient endX="0.004807692307692291" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="TRANSPARENT" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Avenir Roman" size="13.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

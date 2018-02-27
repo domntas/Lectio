@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.lynden.gmapsfx.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lynden.gmapsexampleapp.FXML_HomepageController">
+   <children>
+      <GoogleMapView layoutX="-6.0" layoutY="-3.0" onMousePressed="#loginClicked" prefHeight="732.0" prefWidth="369.0">
+         <children>
+            <ImageView onMousePressed="#loginClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-menu.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GoogleMapView>
+   </children>
+</AnchorPane>
