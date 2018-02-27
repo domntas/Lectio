@@ -69,5 +69,6 @@
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Text>
+      <Label fx:id="invalid_label" layoutX="87.0" layoutY="607.0" textFill="#ffc152" />
    </children>
 </AnchorPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFX_UI.jnlp">
+  <information>
+    <title>JavaFX_UI</title>
+    <vendor>filippopiggici</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFX_UI.jar" size="17730" download="eager" />
+    <jar href="lib/GMapsFX-2.10.0.jar" size="154471" download="eager" />
+    <jar href="lib/GMapsFX-2.12.0.jar" size="207618" download="eager" />
+    <jar href="lib/sqlite-jdbc-3.16.1.jar" size="6161579" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JavaFX_UI" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="javafx_ui.JavaFX_UI"  name="JavaFX_UI" />
+  <update check="always"/>
+</jnlp>

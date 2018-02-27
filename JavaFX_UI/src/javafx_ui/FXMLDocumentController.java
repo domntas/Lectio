@@ -39,6 +39,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField password_box;
     @FXML
+    private Label invalid_label;
+    
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
@@ -72,7 +74,7 @@ public class FXMLDocumentController implements Initializable {
         {
              username_box.clear();
              password_box.clear();
-             
+             invalid_label.setText("Wrong Username or Password");
         }
     }
     

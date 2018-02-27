@@ -44,7 +44,11 @@
       </Text>
       <TextField fx:id="email_box" layoutX="70.0" layoutY="457.0" prefHeight="27.0" prefWidth="219.0" promptText="email" />
      
-      <RadioButton fx:id="student_radio" layoutX="70.0" layoutY="520.0" mnemonicParsing="false" text="Student" textFill="WHITE" toggleGroup="$toggleGroup" />
+      <RadioButton fx:id="student_radio" layoutX="70.0" layoutY="520.0" mnemonicParsing="false" text="Student" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleGroup" />
+         </toggleGroup></RadioButton>
       <RadioButton fx:id="tutor_radio" layoutX="231.0" layoutY="520.0" mnemonicParsing="false" text="Tutor" textFill="WHITE" toggleGroup="$toggleGroup" />
+      <Label fx:id="invalid2_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
    </children>
 </AnchorPane>

@@ -48,6 +48,8 @@ public class FXML_RegistrationController implements Initializable {
     private TextField email_box;
     @FXML
     private RadioButton student_radio;
+     @FXML
+    private Label invalid2_label;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,6 +71,7 @@ public class FXML_RegistrationController implements Initializable {
              username2_box.clear();
              password2_box.clear();
              email_box.clear();
+             invalid2_label.setText("Username already taken");
              
         }
     }
