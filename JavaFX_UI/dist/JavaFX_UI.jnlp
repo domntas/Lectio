@@ -8,23 +8,10 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <jar href="JavaFX_UI.jar" size="18936" download="eager" />
-    <jar href="lib/GMapsFX-2.10.0.jar" size="154471" download="eager" />
-    <jar href="lib/GMapsFX-2.12.0.jar" size="207618" download="eager" />
-    <jar href="lib/sqlite-jdbc-3.16.1.jar" size="6161579" download="eager" />
-=======
-=======
->>>>>>> 9770dfe63df18d2c392322549571e57e8ba508ba
-    <jar href="JavaFX_UI.jar" size="17897" download="eager" />
+    <jar href="JavaFX_UI.jar" size="18945" download="eager" />
     <jar href="lib\GMapsFX-2.10.0.jar" size="154471" download="eager" />
     <jar href="lib\GMapsFX-2.12.0.jar" size="207618" download="eager" />
     <jar href="lib\sqlite-jdbc-3.16.1.jar" size="6161579" download="eager" />
-<<<<<<< HEAD
->>>>>>> 9770dfe63df18d2c392322549571e57e8ba508ba
-=======
->>>>>>> 9770dfe63df18d2c392322549571e57e8ba508ba
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JavaFX_UI" >
     <param name="requiredFXVersion" value="8.0+"/>
