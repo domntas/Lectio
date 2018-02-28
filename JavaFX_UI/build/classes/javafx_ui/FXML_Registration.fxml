@@ -50,5 +50,10 @@
          </toggleGroup></RadioButton>
       <RadioButton fx:id="tutor_radio" layoutX="231.0" layoutY="520.0" mnemonicParsing="false" text="Tutor" textFill="WHITE" toggleGroup="$toggleGroup" />
       <Label fx:id="invalid2_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
+      <ImageView fitHeight="67.0" fitWidth="43.0" onMousePressed="#backClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/back.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

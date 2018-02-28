@@ -48,6 +48,8 @@ public class FXML_RegistrationController implements Initializable {
     private TextField email_box;
     @FXML
     private RadioButton student_radio;
+    @FXML
+    private RadioButton tutor_radio;
      @FXML
     private Label invalid2_label;
     
@@ -55,6 +57,14 @@ public class FXML_RegistrationController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     } 
+    
+    public void backClicked(MouseEvent event)  throws IOException {
+        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Scene homepage_scene = new Scene(homepage_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(homepage_scene);
+        app_stage.show();
+    }
     
     public void registratationClicked(MouseEvent event)  throws IOException {
         Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_Homepage.fxml"));
@@ -83,7 +93,7 @@ public class FXML_RegistrationController implements Initializable {
         
         Connection c = null;
         java.sql.Statement stmt= null;
-        String type;
+        String type="";
         
         try{
             c = DriverManager.getConnection("jdbc:sqlite:users.db");
@@ -99,7 +109,7 @@ public class FXML_RegistrationController implements Initializable {
             if(let_in){
                 if(student_radio.isSelected())
                     type="Student";
-                else
+                if(tutor_radio.isSelected())
                     type="Tutor";
                 
                 String sql = "INSERT INTO Users (USERNAME, PASSWORD , EMAIL, USERTYPE) VALUES (?,?,?,?)";
