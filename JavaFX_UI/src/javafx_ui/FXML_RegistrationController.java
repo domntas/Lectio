@@ -67,7 +67,7 @@ public class FXML_RegistrationController implements Initializable {
     }
     
     public void registratationClicked(MouseEvent event)  throws IOException {
-        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_Homepage.fxml"));
+        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_Homepage2.fxml"));
         Scene homepage_scene = new Scene(homepage_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         if(isValidCredentials())

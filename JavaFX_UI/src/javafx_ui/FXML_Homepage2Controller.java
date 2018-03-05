@@ -1,4 +1,4 @@
-package com.lynden.gmapsexampleapp;
+package com.lynden.gmapsfx;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,7 +23,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class FXML_HomepageController extends Application implements MapComponentInitializedListener, Initializable {
+public class FXML_Homepage2Controller extends Application implements MapComponentInitializedListener, Initializable {
 
 GoogleMapView mapView;
 GoogleMap map;
