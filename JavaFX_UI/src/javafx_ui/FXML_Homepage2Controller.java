@@ -1,81 +1,67 @@
-package com.lynden.gmapsfx;
+package javafx_ui;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
+import com.teamdev.jxmaps.GeocoderCallback;
+import com.teamdev.jxmaps.GeocoderRequest;
+import com.teamdev.jxmaps.GeocoderResult;
+import com.teamdev.jxmaps.GeocoderStatus;
+import com.teamdev.jxmaps.InfoWindow;
+import com.teamdev.jxmaps.Map;
+import com.teamdev.jxmaps.MapReadyHandler;
+import com.teamdev.jxmaps.MapStatus;
+import com.teamdev.jxmaps.Marker;
+import com.teamdev.jxmaps.javafx.MapView;
 
-import com.lynden.gmapsfx.javascript.object.GoogleMap;
-import com.lynden.gmapsfx.javascript.object.LatLong;
-import com.lynden.gmapsfx.javascript.object.MapOptions;
-import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
-import com.lynden.gmapsfx.javascript.object.Marker;
-import com.lynden.gmapsfx.javascript.object.MarkerOptions;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
-public class FXML_Homepage2Controller extends Application implements MapComponentInitializedListener, Initializable {
-
-GoogleMapView mapView;
-GoogleMap map;
-
- @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-    }  
-    
+public class FXML_Homepage2Controller extends Application  {
 @Override
-public void start(Stage stage) throws Exception {
-
-    //Create the JavaFX component and set this as a listener so we know when 
-    //the map has been initialized, at which point we can then begin manipulating it.
-    mapView = new GoogleMapView();
-    mapView.addMapInializedListener(this);
-
-    Scene scene = new Scene(mapView);
-
-    stage.setTitle("JavaFX and Google Maps");
-    stage.setScene(scene);
-    stage.show();
-}
-
-public void loginClicked(MouseEvent event) {
-    System.out.println("hi");
-      
-        
+    public void init() throws Exception {
+        MapView.InitJavaFX();
     }
 
-@Override
-public void mapInitialized() {
-    //Set the initial properties of the map.
-    MapOptions mapOptions = new MapOptions();
+    @Override
+    public void start(final Stage primaryStage) {
+        final MapView mapView = new MapView();
 
-    mapOptions.center(new LatLong(47.6097, -122.3331))
-            .mapType(MapTypeIdEnum.ROADMAP)
-            .overviewMapControl(false)
-            .panControl(false)
-            .rotateControl(false)
-            .scaleControl(false)
-            .streetViewControl(false)
-            .zoomControl(false)
-            .zoom(12);
+        mapView.setOnMapReadyHandler(new MapReadyHandler() {
+            @Override
+            public void onMapReady(MapStatus status) {
+                if (status == MapStatus.MAP_STATUS_OK) {
+                    final Map map = mapView.getMap();
+                    map.setZoom(5.0);
+                    GeocoderRequest request = new GeocoderRequest();
+                    request.setAddress("Kharkiv, UA");
 
-    map = mapView.createMap(mapOptions);
+                    mapView.getServices().getGeocoder().geocode(request, new GeocoderCallback(map) {
+                        @Override
+                        public void onComplete(GeocoderResult[] result, GeocoderStatus status) {
+                            if (status == GeocoderStatus.OK) {
+                                map.setCenter(result[0].getGeometry().getLocation());
+                                Marker marker = new Marker(map);
+                                marker.setPosition(result[0].getGeometry().getLocation());
 
-    //Add a marker to the map
-    MarkerOptions markerOptions = new MarkerOptions();
+                                final InfoWindow window = new InfoWindow(map);
+                                window.setContent("I did it!");
+                                window.open(map, marker);
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
-    markerOptions.position( new LatLong(47.6, -122.3) )
-                .visible(Boolean.TRUE)
-                .title("My Marker");
+        Scene scene = new Scene(new BorderPane(mapView), 700, 500);
+        primaryStage.setTitle("JxMaps - Hello, World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
-    Marker marker = new Marker( markerOptions );
-
-    map.addMarker(marker);
-
-}
-
+    public static void main(String[] args) {
+        launch(args);
+    }
 
 }
