@@ -10,21 +10,32 @@ import com.teamdev.jxmaps.MapReadyHandler;
 import com.teamdev.jxmaps.MapStatus;
 import com.teamdev.jxmaps.Marker;
 import com.teamdev.jxmaps.javafx.MapView;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
-public class FXML_Homepage2Controller extends Application  {
-@Override
-    public void init() throws Exception {
+public class FXML_Homepage2Controller extends Application implements Initializable  {
+
+    @FXML
+    private  MapView mapView;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
         MapView.InitJavaFX();
+        mapView = new MapView();
     }
 
     @Override
     public void start(final Stage primaryStage) {
-        final MapView mapView = new MapView();
+        mapView = new MapView();
 
         mapView.setOnMapReadyHandler(new MapReadyHandler() {
             @Override
