@@ -50,8 +50,11 @@ public class FXML_RegistrationController implements Initializable {
     private RadioButton student_radio;
     @FXML
     private RadioButton tutor_radio;
-     @FXML
+    @FXML
     private Label invalid2_label;
+    
+    //Global variable
+    private String type="";
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,12 +73,32 @@ public class FXML_RegistrationController implements Initializable {
         Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_Homepage2.fxml"));
         Scene homepage_scene = new Scene(homepage_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        if(isValidCredentials())
+        if(isValidCredentials() )
         {
-            app_stage.hide();
-            app_stage.setScene(homepage_scene);
-            app_stage.show();
+            if(!username2_box.getText().isEmpty() && !password2_box.getText().isEmpty() && !email_box.getText().isEmpty()){
+                if(type=="Student"){
+                    app_stage.hide();
+                    app_stage.setScene(homepage_scene);
+                    app_stage.show();
+                }
+                else{
+                    homepage_parent = FXMLLoader.load(getClass().getResource("FXML_TutorDetails.fxml"));
+                    homepage_scene = new Scene(homepage_parent);
+                    app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    app_stage.hide();
+                    app_stage.setScene(homepage_scene);
+                    app_stage.show();
+                }
+            }
+            else{
+             username2_box.clear();
+             password2_box.clear();
+             email_box.clear();
+             invalid2_label.setText("Fill in all missing fields ...");
+                
+            }
         }
+        
         else
         {
              username2_box.clear();
@@ -93,7 +116,7 @@ public class FXML_RegistrationController implements Initializable {
         
         Connection c = null;
         java.sql.Statement stmt= null;
-        String type="";
+        
         
         try{
             c = DriverManager.getConnection("jdbc:sqlite:users.db");
