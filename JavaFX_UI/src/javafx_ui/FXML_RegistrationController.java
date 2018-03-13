@@ -45,6 +45,8 @@ public class FXML_RegistrationController implements Initializable {
     @FXML
     private TextField password2_box;
     @FXML
+    private TextField password3_box;
+    @FXML
     private TextField email_box;
     @FXML
     private RadioButton student_radio;
@@ -52,6 +54,8 @@ public class FXML_RegistrationController implements Initializable {
     private RadioButton tutor_radio;
     @FXML
     private Label invalid2_label;
+    
+    private String message="";
     
     //Global variable
     private String type="";
@@ -70,7 +74,7 @@ public class FXML_RegistrationController implements Initializable {
     }
     
     public void registratationClicked(MouseEvent event)  throws IOException {
-        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_Homepage2.fxml"));
+        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene homepage_scene = new Scene(homepage_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         if(isValidCredentials() )
@@ -82,19 +86,21 @@ public class FXML_RegistrationController implements Initializable {
                     app_stage.show();
                 }
                 else{
-                    homepage_parent = FXMLLoader.load(getClass().getResource("FXML_TutorDetails.fxml"));
-                    homepage_scene = new Scene(homepage_parent);
-                    app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    app_stage.hide();
-                    app_stage.setScene(homepage_scene);
-                    app_stage.show();
+//                    homepage_parent = FXMLLoader.load(getClass().getResource("FXML_TutorDetails.fxml"));
+//                    homepage_scene = new Scene(homepage_parent);
+//                    app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//                    app_stage.hide();
+//                    app_stage.setScene(homepage_scene);
+//                    app_stage.show();
                 }
             }
             else{
              username2_box.clear();
              password2_box.clear();
              email_box.clear();
-             invalid2_label.setText("Fill in all missing fields ...");
+             invalid2_label.setText("");
+             if(password2_box.getText()!=password3_box.getText())
+                 invalid2_label.setText(message);
                 
             }
         }
@@ -103,8 +109,9 @@ public class FXML_RegistrationController implements Initializable {
         {
              username2_box.clear();
              password2_box.clear();
+             password3_box.clear();
              email_box.clear();
-             invalid2_label.setText("Username already taken");
+             invalid2_label.setText(message);
              
         }
     }
@@ -124,7 +131,7 @@ public class FXML_RegistrationController implements Initializable {
             System.out.println("Opened database succesfully");
             stmt =c.createStatement();
             
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Users WHERE USERNAME= " + "'" + username2_box.getText() + "'");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Users WHERE FULLNAME= " + "'" + username2_box.getText() + "'");
            if (rs.next()){             
                     let_in=false;                                   
            }
@@ -134,14 +141,31 @@ public class FXML_RegistrationController implements Initializable {
                     type="Student";
                 if(tutor_radio.isSelected())
                     type="Tutor";
-                
-                String sql = "INSERT INTO Users (USERNAME, PASSWORD , EMAIL, USERTYPE) VALUES (?,?,?,?)";
+                if((!username2_box.getText().isEmpty() && !password2_box.getText().isEmpty()  && !password3_box.getText().isEmpty() && !email_box.getText().isEmpty())){
+                    
+                 
+                          
+                }
+                else{
+                       message = "empty field";
+                    return false;
+                }
+                 if(password2_box.getText()!=password3_box.getText()){
+                     
+                     message = "Passwords do not match ...";
+                     return false;
+                     
+                 }
+                    
+                String sql = "INSERT INTO Users (FULLNAME, EMAIL, PASSWORD,USERTYPE) VALUES (?,?,?,?)";
  
         try (
+             
                 PreparedStatement pstmt = c.prepareStatement(sql)) {
+              System.out.println("inserting");
                 pstmt.setString(1, username2_box.getText());
-                pstmt.setString(2, password2_box.getText());
-                pstmt.setString(3, email_box.getText());
+                pstmt.setString(2, email_box.getText());
+                pstmt.setString(3, password2_box.getText());                
                 pstmt.setString(4, type);
                 pstmt.executeUpdate();
         } catch (SQLException e) {

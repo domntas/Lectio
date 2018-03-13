@@ -12,8 +12,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_RegistrationController">
     
    <children>
-      <TextField fx:id="password2_box" layoutX="70.0" layoutY="398.0" prefHeight="27.0" prefWidth="219.0" promptText="password" />
-      <TextField fx:id="username2_box" layoutX="70.0" layoutY="340.0" prefHeight="27.0" prefWidth="219.0" promptText="username" />
+      <TextField fx:id="password3_box" layoutX="70.0" layoutY="398.0" prefHeight="27.0" prefWidth="219.0" promptText="password confirmation" />
+      <TextField fx:id="username2_box" layoutX="71.0" layoutY="294.0" prefHeight="27.0" prefWidth="219.0" promptText="full name" />
       <ImageView fx:id="registration2_box" fitHeight="43.0" fitWidth="43.0" layoutX="159.0" layoutY="590.0" onMousePressed="#registratationClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/register.png" />
@@ -24,7 +24,7 @@
             <Image url="@images/logo.png" />
          </image>
       </ImageView>
-      <Text layoutX="90.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register as a Tutor or Student ">
+      <Text layoutX="90.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register as a Tutor or Student ">
          <fill>
             <LinearGradient endX="0.004807692307692291" endY="1.0" startY="1.0">
                <stops>
@@ -55,5 +55,6 @@
             <Image url="@images/back.png" />
          </image>
       </ImageView>
+      <TextField fx:id="password2_box" layoutX="70.0" layoutY="347.0" prefHeight="27.0" prefWidth="219.0" promptText="password" />
    </children>
 </AnchorPane>
