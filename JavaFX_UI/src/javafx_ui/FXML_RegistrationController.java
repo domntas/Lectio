@@ -86,12 +86,13 @@ public class FXML_RegistrationController implements Initializable {
                     app_stage.show();
                 }
                 else{
-//                    homepage_parent = FXMLLoader.load(getClass().getResource("FXML_TutorDetails.fxml"));
-//                    homepage_scene = new Scene(homepage_parent);
-//                    app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//                    app_stage.hide();
-//                    app_stage.setScene(homepage_scene);
-//                    app_stage.show();
+                    System.out.println("the end");
+                    homepage_parent = FXMLLoader.load(getClass().getResource("FXML_TutorDetails.fxml"));
+                    homepage_scene = new Scene(homepage_parent);
+                    app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    app_stage.hide();
+                    app_stage.setScene(homepage_scene);
+                    app_stage.show();
                 }
             }
             
@@ -151,8 +152,9 @@ public class FXML_RegistrationController implements Initializable {
                        message = "empty field";
                     return false;
                 }
-                 if(password2_box.getText()!=password3_box.getText()){
-                     
+                 if(!(password2_box.getText().equals(password3_box.getText()))){
+                     System.out.println(password2_box.getText());
+                     System.out.println(password3_box.getText());
                      message = "Passwords do not match ...";
                      return false;
                      
