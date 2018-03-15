@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author domantas
  */
-public class FXMLMapController implements Initializable {
+public class FXMLStudentPageController implements Initializable {
 
     /**
      * Initializes the controller class.

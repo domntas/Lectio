@@ -94,6 +94,7 @@ public class FXML_RegistrationController implements Initializable {
 //                    app_stage.show();
                 }
             }
+            
             else{
              username2_box.clear();
              password2_box.clear();
@@ -119,7 +120,7 @@ public class FXML_RegistrationController implements Initializable {
     private boolean isValidCredentials(){
         
         boolean let_in = true;
-        System.out.println("SELECT * FROM Users WHERE USERNAME= " + "'" + username2_box.getText() + "'" + " AND PASSWORD= " + "'" + password2_box.getText() + "'");
+        System.out.println("SELECT * FROM Users WHERE EMAIL= " + "'" + username2_box.getText() + "'" + " AND PASSWORD= " + "'" + password2_box.getText() + "'");
         
         Connection c = null;
         java.sql.Statement stmt= null;

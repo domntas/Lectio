@@ -14,7 +14,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLDocumentController">
    <children>
       <TextField fx:id="password_box" layoutX="71.0" layoutY="420.0" prefHeight="27.0" prefWidth="219.0" promptText="password" />
-      <TextField fx:id="username_box" layoutX="71.0" layoutY="360.0" prefHeight="27.0" prefWidth="219.0" promptText="username" />
+      <TextField fx:id="username_box" layoutX="71.0" layoutY="360.0" prefHeight="27.0" prefWidth="219.0" promptText="email address" />
       <ImageView fx:id="login_button" fitHeight="49.0" fitWidth="43.0" layoutX="95.0" layoutY="479.0" onDragDetected="#loginClicked" onMousePressed="#loginClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/login.png" />
@@ -56,7 +56,7 @@
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="207.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrate">
+      <Text layoutX="212.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
          <fill>
             <LinearGradient endX="0.004807692307692291" endY="1.0" startY="1.0">
                <stops>

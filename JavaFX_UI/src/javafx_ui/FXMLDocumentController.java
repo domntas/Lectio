@@ -61,7 +61,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     public void loginClicked(MouseEvent event)  throws IOException {
-        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLMap.fxml"));
+        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLStudentPage.fxml"));
         Scene homepage_scene = new Scene(homepage_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         if(isValidCredentials())
@@ -81,7 +81,7 @@ public class FXMLDocumentController implements Initializable {
     private boolean isValidCredentials(){
         
         boolean let_in = false;
-        System.out.println("SELECT * FROM Users WHERE USERNAME= " + "'" + username_box.getText() + "'" + " AND PASSWORD= " + "'" + password_box.getText() + "'");
+        System.out.println("SELECT * FROM Users WHERE EMAIL= " + "'" + username_box.getText() + "'" + " AND PASSWORD= " + "'" + password_box.getText() + "'");
         
         Connection c = null;
         java.sql.Statement stmt= null;
@@ -93,12 +93,12 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("Opened database succesfully");
             stmt =c.createStatement();
             
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Users WHERE USERNAME= " + "'" + username_box.getText() + "'" + " AND PASSWORD= " + "'" + password_box.getText() + "'");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Users WHERE EMAIL= " + "'" + username_box.getText() + "'" + " AND PASSWORD= " + "'" + password_box.getText() + "'");
             
             while(rs.next() ){
-                if(rs.getString("USERNAME") != null && rs.getString("PASSWORD") != null) {
-                    String username = rs.getString("USERNAME");
-                    System.out.println("USERNAME = " +username );
+                if(rs.getString("EMAIL") != null && rs.getString("PASSWORD") != null) {
+                    String username = rs.getString("EMAIL");
+                    System.out.println("EMAIL = " +username );
                     String password = rs.getString("PASSWORD");
                     System.out.println("PASSWORD = " +password);
                     let_in=true;

@@ -33,7 +33,7 @@ public class FXML_TutorDetailsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        comboBox1 =  new ComboBox<String>();
-       comboBox1.getItems().addAll("Hackney","Tower Hamlet");
+       comboBox1.getItems().addAll("Camden", "Greenwich", "Hackney", "Hammersmith", "Islington", "Kensington and Chelsea", "Lambeth", "Lewisham", "Southwark", "Tower Hamlets", "Wandsworth", "Westminster", "Barking", "Barnet", "Bexley", "Brent", "Bromley", "Croydon", "Ealing", "Enfield", "Haringey", "Harrow", "Havering", "Hillingdon", "Hounslow", "Kingston upon Thames", "Merton", "Newham", "Redbridge", "Richmond upon Thames", "Sutton", "Waltham Forest");
        comboBox2 =  new ComboBox<String>();
        comboBox2.getItems().addAll("Math","History");
     }    

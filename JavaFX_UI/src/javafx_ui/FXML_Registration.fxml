@@ -12,7 +12,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_RegistrationController">
     
    <children>
-      <TextField fx:id="password3_box" layoutX="70.0" layoutY="398.0" prefHeight="27.0" prefWidth="219.0" promptText="password confirmation" />
+      <TextField fx:id="password3_box" layoutX="70.0" layoutY="398.0" prefHeight="27.0" prefWidth="219.0" promptText="confirm password" />
       <TextField fx:id="username2_box" layoutX="71.0" layoutY="294.0" prefHeight="27.0" prefWidth="219.0" promptText="full name" />
       <ImageView fx:id="registration2_box" fitHeight="43.0" fitWidth="43.0" layoutX="159.0" layoutY="590.0" onMousePressed="#registratationClicked" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -37,7 +37,7 @@
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="150.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrate">
+      <Text fill="WHITE" layoutX="155.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
