@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_tutorShowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:////Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;)url(&quot;file:////GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_tutorShowController">
    <children>
-      <AnchorPane layoutX="33.0" layoutY="44.0" opacity="0.95" prefHeight="632.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10; -fx-background-radius: 10; -fx-border-color: #ffffff; -fx-border-radius: 10;">
+      <AnchorPane layoutX="33.0" layoutY="37.0" opacity="0.95" prefHeight="649.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10; -fx-background-radius: 10; -fx-border-color: #ffffff; -fx-border-radius: 10;">
          <children>
             <Label fx:id="nametutor" layoutX="105.0" layoutY="15.0" text="Filippo" textFill="WHITE">
                <font>
@@ -37,18 +36,18 @@
                   <Image url="@images/4%20stars.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="30.0" layoutY="472.0" preserveRatio="true">
+            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="30.0" layoutY="472.0" onMouseClicked="#slotClicked9" preserveRatio="true">
                <image>
                   <Image url="@images/button%20(1).png" />
                </image>
             </ImageView>
-            <Label fx:id="slot1" layoutX="50.0" layoutY="476.0" text="09.00" textFill="WHITE" />
-            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="30.0" layoutY="519.0" preserveRatio="true">
+            <Label fx:id="slot1" layoutX="50.0" layoutY="476.0" onMouseClicked="#slotClicked9" text="09.00" textFill="WHITE" />
+            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="31.0" layoutY="519.0" onMouseClicked="#slotClicked11" preserveRatio="true">
                <image>
                   <Image url="@images/button%20(1).png" />
                </image>
             </ImageView>
-            <Label fx:id="slot2" layoutX="51.0" layoutY="523.0" text="11:00" textFill="WHITE" />
+            <Label fx:id="slot2" layoutX="51.0" layoutY="523.0" onMouseClicked="#slotClicked11" text="11:00" textFill="WHITE" />
             <Label layoutX="234.0" layoutY="71.0" prefHeight="19.0" prefWidth="43.0" text="VERIFIED" textFill="WHITE">
                <font>
                   <Font size="9.0" />
@@ -70,35 +69,45 @@
                </font>
             </Label>
             <Label fx:id="description" layoutX="29.0" layoutY="120.0" prefHeight="218.0" prefWidth="237.0" text="Tutors work with individual students one-on-one, though we occasionally organize group activities for students who are studying the same material. Our team offers compassionate, motivating assistance to students, and we expect our new hires to do the same. If you have experience tutoring children, please submit an application. After Everything mlmlm dio santo dio cane" textFill="WHITE" wrapText="true" />
-            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="30.0" layoutY="564.0" preserveRatio="true">
+            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="30.0" layoutY="564.0" onMouseClicked="#slotClicked13" preserveRatio="true">
                <image>
                   <Image url="@images/button%20(1).png" />
                </image>
             </ImageView>
-            <Label layoutX="51.0" layoutY="568.0" text="13:00" textFill="WHITE" />
-            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="191.0" layoutY="565.0" preserveRatio="true">
+            <Label layoutX="51.0" layoutY="568.0" onMouseClicked="#slotClicked13" text="13:00" textFill="WHITE" />
+            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="191.0" layoutY="565.0" onMouseClicked="#slotClicked19" preserveRatio="true">
                <image>
                   <Image url="@images/button%20(1).png" />
                </image>
             </ImageView>
-            <Label layoutX="212.0" layoutY="569.0" text="19:00" textFill="WHITE" />
-            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="191.0" layoutY="520.0" preserveRatio="true">
+            <Label layoutX="212.0" layoutY="569.0" onMouseClicked="#slotClicked19" text="19:00" textFill="WHITE" />
+            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="191.0" layoutY="520.0" onMouseClicked="#slotClicked17" preserveRatio="true">
                <image>
                   <Image url="@images/button%20(1).png" />
                </image>
             </ImageView>
-            <Label fx:id="slot21" layoutX="212.0" layoutY="524.0" text="17:00" textFill="WHITE" />
-            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="191.0" layoutY="473.0" preserveRatio="true">
+            <Label fx:id="slot21" layoutX="212.0" layoutY="524.0" onMouseClicked="#slotClicked17" text="17:00" textFill="WHITE" />
+            <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="191.0" layoutY="473.0" onMouseClicked="#slotClicked15" preserveRatio="true">
                <image>
                   <Image url="@images/button%20(1).png" />
                </image>
             </ImageView>
-            <Label fx:id="slot11" layoutX="211.0" layoutY="477.0" text="15:00" textFill="WHITE" />
-            <ComboBox fx:id="combobox" layoutX="73.0" layoutY="408.0" prefWidth="150.0" promptText="WEEK DAY" style="-fx-fill: #ffffff; -fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 20;" visibleRowCount="7">
+            <Label fx:id="slot11" layoutX="211.0" layoutY="477.0" onMouseClicked="#slotClicked15" text="15:00" textFill="WHITE" />
+            <ComboBox fx:id="combobox" layoutX="30.0" layoutY="409.0" prefHeight="29.0" prefWidth="187.0" promptText="WEEK DAY" style="-fx-fill: #ffffff; -fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 20;" visibleRowCount="7">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </ComboBox>
+            <Label fx:id="invalid3_label" layoutX="35.0" layoutY="610.0" text="This slot has already been booked" textAlignment="CENTER" textFill="#ffadad">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="29.0" fitWidth="34.0" layoutX="233.0" layoutY="409.0" opacity="0.89" preserveRatio="true" rotate="270.0">
+               <image>
+                  <Image url="@../../../../../com.visualpharm.Icons8/android/Arrows/50/fefcff/icons8-left_round.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
