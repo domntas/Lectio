@@ -42,6 +42,8 @@ public class FXML_StudentDetailsController implements Initializable {
     
     @FXML
     private Label invalid_label;
+    
+    private String name;
 
     ObservableList<String> list = FXCollections.observableArrayList("Camden", "Greenwich", "Hackney", "Hammersmith", "Islington", "Kensington and Chelsea", "Lambeth", "Lewisham", "Southwark", "Tower Hamlets", "Wandsworth", "Westminster", "Barking", "Barnet", "Bexley", "Brent", "Bromley", "Croydon", "Ealing", "Enfield", "Haringey", "Harrow", "Havering", "Hillingdon", "Hounslow", "Kingston upon Thames", "Merton", "Newham", "Redbridge", "Richmond upon Thames", "Sutton", "Waltham Forest");
 
@@ -65,12 +67,19 @@ public class FXML_StudentDetailsController implements Initializable {
     public void registrationClicked(MouseEvent event) throws IOException {
        
         if (isValid2()) {
-             Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLStudentPage.fxml"));
-        Scene homepage_scene = new Scene(homepage_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            System.out.println("hoho");
-            app_stage.hide();
-            app_stage.setScene(homepage_scene);
+            FXMLLoader loader;
+                loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+                Parent homepage_parent = (Parent) loader.load();
+                FXMLStudentPageController setController = loader.getController();
+                System.out.println("YOUR NAME IS" + name);
+                setController.myFunction(name);
+                Scene homepage_scene = new Scene(homepage_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                app_stage.hide();
+                app_stage.setScene(homepage_scene);
+                app_stage.show();
+            
             app_stage.show();
         } else {
 
@@ -93,8 +102,9 @@ public class FXML_StudentDetailsController implements Initializable {
 
                 System.out.println("Opened database succesfully");
                 stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT ID FROM Users ORDER BY ID DESC LIMIT 1");
+                ResultSet rs = stmt.executeQuery("SELECT ID,FULLNAME FROM Users ORDER BY ID DESC LIMIT 1");
                 int id = rs.getInt(1);
+                name=rs.getString(2);
                 String sql = "INSERT INTO student (ID, BOROUGH) VALUES (?,?)";
                   // rs.close();
                 

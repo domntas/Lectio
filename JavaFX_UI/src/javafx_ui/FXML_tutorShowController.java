@@ -47,6 +47,23 @@ public class FXML_tutorShowController implements Initializable {
 
     @FXML
     private Label description;
+    
+    @FXML
+    private Label slot5;
+
+    @FXML
+    private Label slot4;
+
+    @FXML
+    private Label slot3;
+
+    @FXML
+    private Label slot2;
+
+    @FXML
+    private Label slot1;
+    
+    
 
     private String[] allinformation = new String[5]; // store all the informations of the tutor
     
@@ -55,12 +72,12 @@ public class FXML_tutorShowController implements Initializable {
         // TODO
     }
 
-    public void myFunction(String username, String subject) {
-        findTutorDetails(username, subject);
+    public void myFunction(String username, String subject, String email) {
+        findTutorDetails(username, subject,email);
         setTutorDetails();
     }
 
-    public String[] findTutorDetails(String username, String subject) {
+    public String[] findTutorDetails(String username, String subject, String email) {
 
         Connection c = null;
         java.sql.Statement stmt = null;
@@ -70,7 +87,7 @@ public class FXML_tutorShowController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT FULLNAME,BOROUGH,PRICE,SUBJECT, DETAILS FROM TUTOR inner join users on users.FULLNAME = '" + username + "' and tutor.subject= '" + subject + "'");
+            ResultSet rs = stmt.executeQuery("SELECT FULLNAME,BOROUGH,PRICE,SUBJECT, DETAILS FROM TUTOR inner join users on users.FULLNAME = '" + username + "' and tutor.subject= '" + subject + "' and users.email= '"+ email + "'");
             rs.next();
 
             for (int x = 0; x < allinformation.length; x++) {     // insert all the information in the array that iwill return at the end of the function
@@ -93,7 +110,7 @@ public class FXML_tutorShowController implements Initializable {
     public void setTutorDetails() {
         nametutor.setText(allinformation[0]);
         borough.setText(allinformation[1]);
-        rate.setText(allinformation[2] +"$/h");
+        rate.setText(allinformation[2] +"£/h");
         subject.setText(allinformation[3]);
         description.setText(allinformation[4]);
     }

@@ -13,8 +13,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_RegistrationController">
     
    <children>
-      <TextField fx:id="password3_box" layoutX="50.0" layoutY="396.0" prefHeight="27.0" prefWidth="258.0" promptText="CONFIRM PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #485C8F;" />
-      <TextField fx:id="username2_box" layoutX="51.0" layoutY="295.0" prefHeight="27.0" prefWidth="260.0" promptText="FULLNAME" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #485C8F;" />
+      <TextField fx:id="password3_box" layoutX="50.0" layoutY="396.0" prefHeight="27.0" prefWidth="258.0" promptText="CONFIRM PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="username2_box" layoutX="51.0" layoutY="295.0" prefHeight="27.0" prefWidth="260.0" promptText="FULLNAME" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
       <Text layoutX="56.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="202.35699462890625">
          <font>
             <Font name="Avenir Roman" size="44.0" />
@@ -29,7 +29,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <TextField fx:id="email_box" layoutX="52.0" layoutY="452.0" prefHeight="27.0" prefWidth="260.0" promptText="EMAIL" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #485C8F;" />
+      <TextField fx:id="email_box" layoutX="52.0" layoutY="452.0" prefHeight="27.0" prefWidth="260.0" promptText="EMAIL" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
      
       <RadioButton fx:id="student_radio" layoutX="60.0" layoutY="503.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="92.0" text="Student" textFill="WHITE">
          <toggleGroup>
@@ -42,7 +42,7 @@
             <Image url="@images/back.png" />
          </image>
       </ImageView>
-      <TextField fx:id="password2_box" layoutX="51.0" layoutY="347.0" prefHeight="27.0" prefWidth="260.0" promptText="PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #485C8F;" />
+      <TextField fx:id="password2_box" layoutX="51.0" layoutY="347.0" prefHeight="27.0" prefWidth="260.0" promptText="PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
       <ImageView fx:id="registration2_box" fitHeight="47.0" fitWidth="129.0" layoutX="185.0" layoutY="608.0" onMouseClicked="#registratationClicked" opacity="0.69" pickOnBounds="true">
          <image>
             <Image url="@images/button.png" />

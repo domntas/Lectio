@@ -81,29 +81,30 @@ public class FXMLStudentPageController implements Initializable {
 
     @FXML
     private Label rate11;
-    
+
     @FXML
     private TextField tutorsearch;
-    
-    
+
     @FXML
     private AnchorPane tutorbox1;
-    
+
     @FXML
     private AnchorPane tutorbox11;
-    
+
     @FXML
     private AnchorPane tutorbox111;
-    
-    
 
     private String studentname;
 
-    private ArrayList<Double> order = new ArrayList<Double>();
+    private ArrayList<Double> order = new ArrayList<Double>();      //distances in miles
 
-    private ArrayList<String> ordername = new ArrayList<String>();
+    private ArrayList<String> ordername = new ArrayList<String>(); //fullnames
 
-    private ArrayList<String> subject = new ArrayList<String>();
+    private ArrayList<String> subject = new ArrayList<String>();    //subjects
+
+    private ArrayList<Integer> rate = new ArrayList<Integer>();    //rate
+
+    private ArrayList<String> email = new ArrayList<String>();    //rate
 
     /**
      * Initializes the controller class.
@@ -131,31 +132,35 @@ public class FXMLStudentPageController implements Initializable {
         nametutor11.setText((String) ordername.get(1));
         nametutor111.setText((String) ordername.get(2));
         distance1.setText(String.valueOf(order.get(0)) + " miles");
-        distance11.setText(String.valueOf(order.get(1))+" miles");
-        distance111.setText(String.valueOf(order.get(2))+" miles");
+        distance11.setText(String.valueOf(order.get(1)) + " miles");
+        distance111.setText(String.valueOf(order.get(2)) + " miles");
         subject1.setText((String) subject.get(0));
         subject11.setText((String) subject.get(1));
         subject111.setText((String) subject.get(2));
-        
+        rate1.setText(String.valueOf(rate.get(0)) +"£/h");
+        rate11.setText(String.valueOf(rate.get(1))+"£/h");
+        rate111.setText(String.valueOf(rate.get(2))+"£/h");
         ///we miis the rate here
     }
 
     public void sortAll() {
-         System.out.println(order);
-         int z=order.size();
-         while(z>1){
-        for (int x = 0; x < z - 2; x++) {
-            for (int y = 1; y < z - 1; y++) {
-                if (order.get(x) > order.get(y)) {
-                    Collections.swap(order, x, y);
-                    Collections.swap(ordername, x, y);
-                    Collections.swap(subject, x, y);
-                }
+        System.out.println(order);
+        int z = order.size();
+        while (z > 1) {
+            for (int x = 0; x < z - 2; x++) {
+                for (int y = 1; y < z - 1; y++) {
+                    if (order.get(x) > order.get(y)) {
+                        Collections.swap(order, x, y);
+                        Collections.swap(ordername, x, y);
+                        Collections.swap(subject, x, y);
+                        Collections.swap(rate, x, y);
+                        Collections.swap(email, x, y);
+                    }
 
+                }
             }
+            z--;
         }
-        z--;
-         }
         System.out.println(order);
     }
 
@@ -178,11 +183,11 @@ public class FXMLStudentPageController implements Initializable {
             System.out.println(name);
             rs.close();
 
-            rs = stmt.executeQuery("SELECT BOROUGH,SUBJECT, fullname FROM TUTOR,users where  users.id=tutor.id");
+            rs = stmt.executeQuery("SELECT BOROUGH,SUBJECT, fullname, price,email FROM TUTOR,users where  users.id=tutor.id");
             String check = "";
 
             System.out.println("ready to go inside");
-            
+
             check = name;
             String compareLongs[] = getLatLongPositions(check);
             System.out.println("Hey Latitude: " + compareLongs[0] + " and Longitude: " + compareLongs[1]);
@@ -192,7 +197,7 @@ public class FXMLStudentPageController implements Initializable {
                 String latLongs[] = getLatLongPositions(check);
                 System.out.println("Latitude: " + latLongs[0] + " and Longitude: " + latLongs[1]);
                 System.out.println(check);
-                
+
                 System.out.println("Hey Latitude: " + compareLongs[0] + " and Longitude: " + compareLongs[1]);
                 double lat1 = Double.parseDouble(latLongs[0]);
                 double lat2 = Double.parseDouble(compareLongs[0]);
@@ -206,9 +211,11 @@ public class FXMLStudentPageController implements Initializable {
                 }
                 metres = (Math.floor((metres) * 100) / 100);
                 System.out.println(metres + " metres");
-                order.add(metres);
-                ordername.add(rs.getString(3));
+                order.add(metres);                  // adding all the values in the arraylist ready to be sorted by the distance
                 subject.add(rs.getString(2));
+                ordername.add(rs.getString(3));
+                rate.add(rs.getInt(4));
+                email.add(rs.getString(5));
 
 //[7.08, 6.87, 3.75, 1000000.0, 6.87]
             }
@@ -270,73 +277,66 @@ public class FXMLStudentPageController implements Initializable {
         }
         return null;
     }
-    
-    
-    
-    
-    
+
     public void box1Clicked(MouseEvent event) throws IOException {
-        
-           try {
-                FXMLLoader loader;
-                loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
-                Parent homepage_parent = (Parent) loader.load();
-                FXML_tutorShowController setController = loader.getController();
-                setController.myFunction(ordername.get(0),subject.get(0));
-                Scene homepage_scene = new Scene(homepage_parent);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                app_stage.hide();
-                app_stage.setScene(homepage_scene);
-                app_stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
+            Parent homepage_parent = (Parent) loader.load();
+            FXML_tutorShowController setController = loader.getController();
+            setController.myFunction(ordername.get(0), subject.get(0), email.get(0));
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            }
-        
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
     }
-    
+
     public void box2Clicked(MouseEvent event) throws IOException {
         try {
-                FXMLLoader loader;
-                loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
-                Parent homepage_parent = (Parent) loader.load();
-                FXML_tutorShowController setController = loader.getController();
-                setController.myFunction(ordername.get(1),subject.get(1));
-                Scene homepage_scene = new Scene(homepage_parent);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
+            Parent homepage_parent = (Parent) loader.load();
+            FXML_tutorShowController setController = loader.getController();
+            setController.myFunction(ordername.get(1), subject.get(1),email.get(1));
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                app_stage.hide();
-                app_stage.setScene(homepage_scene);
-                app_stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
 
-            }
-        
-        
+        }
+
     }
-    
+
     public void box3Clicked(MouseEvent event) throws IOException {
         try {
-                FXMLLoader loader;
-                loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
-                Parent homepage_parent = (Parent) loader.load();
-                FXML_tutorShowController setController = loader.getController();
-                setController.myFunction(ordername.get(2),subject.get(2));
-                Scene homepage_scene = new Scene(homepage_parent);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
+            Parent homepage_parent = (Parent) loader.load();
+            FXML_tutorShowController setController = loader.getController();
+            setController.myFunction(ordername.get(2), subject.get(2),email.get(2));
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                app_stage.hide();
-                app_stage.setScene(homepage_scene);
-                app_stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
 
-            }
-           
-        
-        
+        }
+
     }
 
 }

@@ -41,7 +41,7 @@
             <Image url="@images/icons8-down_filled.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="tutorbox11" layoutX="33.0" layoutY="309.0" onMouseClicked="#box2Clicked" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="tutorbox11" layoutX="33.0" layoutY="309.0" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
          <children>
             <Label fx:id="nametutor11" layoutX="105.0" layoutY="15.0" text="Sofia" textFill="#fffefe">
                <font>
@@ -77,7 +77,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="tutorbox111" layoutX="33.0" layoutY="516.0" onMouseClicked="#box2Clicked" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="tutorbox111" layoutX="33.0" layoutY="516.0" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
          <children>
             <Label fx:id="nametutor111" layoutX="105.0" layoutY="15.0" text="Marco" textFill="#fffefe">
                <font>
