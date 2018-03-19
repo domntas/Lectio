@@ -12,23 +12,25 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_TutorDetailsController">
    <children>
-      <ImageView fx:id="registration2_box" fitHeight="43.0" fitWidth="43.0" layoutX="159.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="registration2_box" fitHeight="43.0" fitWidth="43.0" layoutX="158.0" layoutY="611.0" onMousePressed="#registrationClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/register.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="150.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrate">
+      <Text fill="WHITE" layoutX="114.0" layoutY="667.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complete Registration">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Text>
-      <Label layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
-      <ComboBox fx:id="comboBox1" layoutX="59.0" layoutY="206.0" opacity="0.93" prefWidth="242.0" promptText="Select Borough" visibleRowCount="5" />
-      <ComboBox fx:id="comboBox2" layoutX="59.0" layoutY="404.0" prefWidth="242.0" promptText="Select Subjects" visibleRowCount="5" />
+      <Label fx:id="invalid_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
+      <ComboBox fx:id="comboBox1" layoutX="59.0" layoutY="151.0" opacity="0.93" prefWidth="242.0" promptText="Select Borough" visibleRowCount="5" />
+      <ComboBox fx:id="comboBox2" layoutX="59.0" layoutY="251.0" prefWidth="242.0" promptText="Select Subject" visibleRowCount="5" />
       <Text fill="WHITE" layoutX="111.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TUTOR">
          <font>
             <Font size="40.0" />
          </font>
       </Text>
+      <TextField fx:id="textfield" layoutX="56.0" layoutY="360.0" prefHeight="27.0" prefWidth="248.0" promptText="Price per hour" />
+      <TextArea fx:id="description" layoutX="55.0" layoutY="401.0" prefHeight="200.0" prefWidth="248.0" style="-fx-inner-background-color: transparent;" wrapText="true" />
    </children>
 </AnchorPane>

@@ -11,3 +11,8 @@
     -fx-spacing: 5;
     -fx-padding: 4 4 4 4;        
 }
+
+
+.root {
+    -fx-background-radius: 10;    
+}

@@ -74,9 +74,12 @@ public class FXML_RegistrationController implements Initializable {
     }
     
     public void registratationClicked(MouseEvent event)  throws IOException {
-        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_StudentDetails.fxml"));
         Scene homepage_scene = new Scene(homepage_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+
+        FXML_RegistrationController ctrl1 = (FXML_RegistrationController) fxmlLoader.getController();
         if(isValidCredentials() )
         {
             if(!username2_box.getText().isEmpty() && !password2_box.getText().isEmpty() && !email_box.getText().isEmpty()){

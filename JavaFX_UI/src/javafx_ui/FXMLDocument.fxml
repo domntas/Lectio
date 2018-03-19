@@ -11,26 +11,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLDocumentController">
    <children>
-      <TextField fx:id="password_box" layoutX="71.0" layoutY="420.0" prefHeight="27.0" prefWidth="219.0" promptText="password" />
-      <TextField fx:id="username_box" layoutX="71.0" layoutY="360.0" prefHeight="27.0" prefWidth="219.0" promptText="email address" />
-      <ImageView fx:id="login_button" fitHeight="49.0" fitWidth="43.0" layoutX="95.0" layoutY="479.0" onDragDetected="#loginClicked" onMousePressed="#loginClicked" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="password_box" layoutX="50.0" layoutY="436.0" prefHeight="27.0" prefWidth="245.0" promptText="PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="username_box" layoutX="50.0" layoutY="365.0" prefHeight="27.0" prefWidth="260.0" promptText="EMAIL" style="-fx-text-box-bord: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
+      <ImageView fx:id="login_button" fitHeight="43.0" fitWidth="43.0" layoutX="95.0" layoutY="504.0" onDragDetected="#loginClicked" onMousePressed="#loginClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/login.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="registration_button" fitHeight="43.0" fitWidth="43.0" layoutX="215.0" layoutY="479.0" onMousePressed="#registrationClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="registration_button" fitHeight="49.0" fitWidth="48.0" layoutX="212.0" layoutY="504.0" onMousePressed="#registrationClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/register.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="81.0" fitWidth="84.0" layoutX="140.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/logo.png" />
-         </image>
-      </ImageView>
-      <Text layoutX="59.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login with your Tutor or Student Account">
+      <Text fill="WHITE" layoutX="40.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login with your Tutor or Student Account">
+         <font>
+            <Font name="Avenir Roman" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="100.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
          <fill>
             <LinearGradient endX="0.004807692307692291" endY="1.0" startY="1.0">
                <stops>
@@ -43,32 +43,36 @@
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="100.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
-         <fill>
-            <LinearGradient endX="0.004807692307692291" endY="1.0" startY="1.0">
-               <stops>
-                  <Stop color="TRANSPARENT" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
-         <font>
-            <Font name="Avenir Roman" size="13.0" />
-         </font>
-      </Text>
-      <Text layoutX="212.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
-         <fill>
-            <LinearGradient endX="0.004807692307692291" endY="1.0" startY="1.0">
-               <stops>
-                  <Stop color="TRANSPARENT" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
+      <Text fill="WHITE" layoutX="212.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Text>
       <Label fx:id="invalid_label" layoutX="87.0" layoutY="607.0" textFill="#ffc152" />
+      <Text layoutX="68.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TUTORINN" wrappingWidth="225.0">
+         <fill>
+            <LinearGradient endX="0.6778846153846154" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#6daeff" />
+                  <Stop color="#efbad3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Avenir Roman" size="44.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="27.0" fitWidth="17.0" layoutX="286.0" layoutY="370.0" preserveRatio="true">
+         <image>
+            <Image url="@images/icons8-email.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="17.0" layoutX="286.0" layoutY="441.0" preserveRatio="true">
+         <image>
+            <Image url="@images/icons8-password.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="58.0" layoutY="391.0" prefHeight="3.0" prefWidth="245.0" />
+      <Separator layoutX="59.0" layoutY="462.0" prefHeight="3.0" prefWidth="245.0" />
    </children>
 </AnchorPane>

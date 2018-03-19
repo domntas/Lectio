@@ -29,7 +29,7 @@ import javafx.stage.Stage;
  * @author filippopiggici
  */
 public class FXMLDocumentController implements Initializable {
-    
+
     @FXML
     private Label label;
     @FXML
@@ -40,81 +40,99 @@ public class FXMLDocumentController implements Initializable {
     private TextField password_box;
     @FXML
     private Label invalid_label;
-    
+
+    private String name;
+
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
-    public void registrationClicked(MouseEvent event)  throws IOException {
+    }
+
+    public void registrationClicked(MouseEvent event) throws IOException {
         Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_Registration.fxml"));
         Scene homepage_scene = new Scene(homepage_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();       
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(homepage_scene);
         app_stage.show();
-      
+
     }
-    
-    public void loginClicked(MouseEvent event)  throws IOException {
-        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLStudentPage.fxml"));
-        Scene homepage_scene = new Scene(homepage_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        if(isValidCredentials())
-        {
-            app_stage.hide();
-            app_stage.setScene(homepage_scene);
-            app_stage.show();
+
+    public void loginClicked(MouseEvent event) throws IOException {
+
+        if (isValidCredentials()) {
+            try {
+                FXMLLoader loader;
+                loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+                Parent homepage_parent = (Parent) loader.load();
+                FXMLStudentPageController setController = loader.getController();
+                System.out.println("YOUR NAME IS" + name);
+                setController.myFunction(name);
+                Scene homepage_scene = new Scene(homepage_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                app_stage.hide();
+                app_stage.setScene(homepage_scene);
+                app_stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+
+            }
         }
-        else
+            else
         {
              username_box.clear();
              password_box.clear();
              invalid_label.setText("Wrong Username or Password");
         }
-    }
+        }
     
-    private boolean isValidCredentials(){
-        
+    
+
+    private boolean isValidCredentials() {
+
         boolean let_in = false;
         System.out.println("SELECT * FROM Users WHERE EMAIL= " + "'" + username_box.getText() + "'" + " AND PASSWORD= " + "'" + password_box.getText() + "'");
-        
+
         Connection c = null;
-        java.sql.Statement stmt= null;
-        
-        try{
+        java.sql.Statement stmt = null;
+
+        try {
             c = DriverManager.getConnection("jdbc:sqlite:users.db");
             c.setAutoCommit(false);
-            
+
             System.out.println("Opened database succesfully");
-            stmt =c.createStatement();
-            
+            stmt = c.createStatement();
+
             ResultSet rs = stmt.executeQuery("SELECT * FROM Users WHERE EMAIL= " + "'" + username_box.getText() + "'" + " AND PASSWORD= " + "'" + password_box.getText() + "'");
-            
-            while(rs.next() ){
-                if(rs.getString("EMAIL") != null && rs.getString("PASSWORD") != null) {
+          
+            while (rs.next()) {
+                if (rs.getString("EMAIL") != null && rs.getString("PASSWORD") != null) {
                     String username = rs.getString("EMAIL");
-                    System.out.println("EMAIL = " +username );
+                    System.out.println("EMAIL = " + username);
                     String password = rs.getString("PASSWORD");
-                    System.out.println("PASSWORD = " +password);
-                    let_in=true;
-                    
+                    System.out.println("PASSWORD = " + password);
+                    name=rs.getString("FULLNAME");
+                    let_in = true;
+
                 }
             }
             rs.close();
             stmt.close();
             c.close();
-        } 
-        
-        catch (Exception e) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         System.out.println("Operation done succesfully");
         return let_in;
+    }
+
+    public String getName() {
+        return name;
     }
 }
