@@ -67,18 +67,19 @@ public class FXML_tutorShowController implements Initializable {
 
     @FXML
     private Label invalid3_label;
+    
+    @FXML
+    private ComboBox<String> combobox;
 
-    private ComboBox combobox;
+    private String id="";
 
-    private int id;
-
-    ObservableList<String> list = FXCollections.observableArrayList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+    ObservableList<String> list3 = FXCollections.observableArrayList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
 
     private String[] allinformation = new String[5]; // store all the informations of the tutor
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        combobox.setItems(list);
+        combobox.setItems(list3);
         // TODO
     }
 
@@ -99,7 +100,7 @@ public class FXML_tutorShowController implements Initializable {
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT FULLNAME,BOROUGH,PRICE,SUBJECT, DETAILS FROM TUTOR inner join users on users.FULLNAME = '" + username + "' and tutor.subject= '" + subject + "' and users.email= '" + email + "'");
             rs.next();
-            id = rs.getInt("ID");
+            id = rs.getString("ID");
 
             for (int x = 0; x < allinformation.length; x++) {     // insert all the information in the array that iwill return at the end of the function
                 allinformation[x] = rs.getString(x + 1);
@@ -143,11 +144,12 @@ public class FXML_tutorShowController implements Initializable {
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
 
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00'");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + id +  " AND DAY = " + "'" + combobox.getValue() + "'" + " AND TIMESLOT = '09:00'");
             String avail = rs.getString("AVAILABILITY");
             rs.close();
 
             if (avail.equals("True")) {
+                
                 Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLPayment.fxml"));
                 Scene homepage_scene = new Scene(homepage_parent);
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -168,4 +170,191 @@ public class FXML_tutorShowController implements Initializable {
         System.out.println("Operation done succesfully");
 
     }
+    
+    public void slotClicked11(MouseEvent event) throws IOException {
+        Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+            c.setAutoCommit(false);
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00'");
+            String avail = rs.getString("AVAILABILITY");
+            rs.close();
+
+            if (avail.equals("True")) {
+                
+                Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLPayment.fxml"));
+                Scene homepage_scene = new Scene(homepage_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(homepage_scene);
+                app_stage.show();
+            } else {
+                slot1.setText("BOOKED");
+                invalid3_label.setText("This slot has already been booked");
+            }
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done succesfully");
+
+    }
+    
+    public void slotClicked13(MouseEvent event) throws IOException {
+        Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+            c.setAutoCommit(false);
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00'");
+            String avail = rs.getString("AVAILABILITY");
+            rs.close();
+
+            if (avail.equals("True")) {
+                
+                Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLPayment.fxml"));
+                Scene homepage_scene = new Scene(homepage_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(homepage_scene);
+                app_stage.show();
+            } else {
+                slot1.setText("BOOKED");
+                invalid3_label.setText("This slot has already been booked");
+            }
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done succesfully");
+
+    }
+    
+    public void slotClicked15(MouseEvent event) throws IOException {
+        Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+            c.setAutoCommit(false);
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00'");
+            String avail = rs.getString("AVAILABILITY");
+            rs.close();
+
+            if (avail.equals("True")) {
+                
+                Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLPayment.fxml"));
+                Scene homepage_scene = new Scene(homepage_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(homepage_scene);
+                app_stage.show();
+            } else {
+                slot1.setText("BOOKED");
+                invalid3_label.setText("This slot has already been booked");
+            }
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done succesfully");
+
+    }
+    
+    public void slotClicked17(MouseEvent event) throws IOException {
+        Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+            c.setAutoCommit(false);
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00'");
+            String avail = rs.getString("AVAILABILITY");
+            rs.close();
+
+            if (avail.equals("True")) {
+                
+                Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLPayment.fxml"));
+                Scene homepage_scene = new Scene(homepage_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(homepage_scene);
+                app_stage.show();
+            } else {
+                slot1.setText("BOOKED");
+                invalid3_label.setText("This slot has already been booked");
+            }
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done succesfully");
+
+    }
+    
+    public void slotClicked19(MouseEvent event) throws IOException {
+        Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+            c.setAutoCommit(false);
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00'");
+            String avail = rs.getString("AVAILABILITY");
+            rs.close();
+
+            if (avail.equals("True")) {
+                
+                Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLPayment.fxml"));
+                Scene homepage_scene = new Scene(homepage_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(homepage_scene);
+                app_stage.show();
+            } else {
+                slot1.setText("BOOKED");
+                invalid3_label.setText("This slot has already been booked");
+            }
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done succesfully");
+
+    }
+    
+    
 }
