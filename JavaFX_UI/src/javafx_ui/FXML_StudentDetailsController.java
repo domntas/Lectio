@@ -45,6 +45,8 @@ public class FXML_StudentDetailsController implements Initializable {
     
     private String name;
 
+    private String email;
+    
     ObservableList<String> list = FXCollections.observableArrayList("Camden", "Greenwich", "Hackney", "Hammersmith", "Islington", "Kensington and Chelsea", "Lambeth", "Lewisham", "Southwark", "Tower Hamlets", "Wandsworth", "Westminster", "Barking", "Barnet", "Bexley", "Brent", "Bromley", "Croydon", "Ealing", "Enfield", "Haringey", "Harrow", "Havering", "Hillingdon", "Hounslow", "Kingston upon Thames", "Merton", "Newham", "Redbridge", "Richmond upon Thames", "Sutton", "Waltham Forest");
 
     ;
@@ -72,7 +74,7 @@ public class FXML_StudentDetailsController implements Initializable {
                 Parent homepage_parent = (Parent) loader.load();
                 FXMLStudentPageController setController = loader.getController();
                 System.out.println("YOUR NAME IS" + name);
-                setController.myFunction(name);
+                setController.myFunction(name, email);
                 Scene homepage_scene = new Scene(homepage_parent);
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -102,9 +104,10 @@ public class FXML_StudentDetailsController implements Initializable {
 
                 System.out.println("Opened database succesfully");
                 stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT ID,FULLNAME FROM Users ORDER BY ID DESC LIMIT 1");
+                ResultSet rs = stmt.executeQuery("SELECT ID,FULLNAME, EMAIL FROM Users ORDER BY ID DESC LIMIT 1");
                 int id = rs.getInt(1);
                 name=rs.getString(2);
+                email = rs.getString(3);
                 String sql = "INSERT INTO student (ID, BOROUGH) VALUES (?,?)";
                   // rs.close();
                 
@@ -112,7 +115,7 @@ public class FXML_StudentDetailsController implements Initializable {
                         PreparedStatement pstmt = c.prepareStatement(sql)) {
                     System.out.println("inserting IN THE STUDENT");
                     pstmt.setInt(1, id);
-                    pstmt.setString(2, comboBox1.getValue());             
+                    pstmt.setString(2, comboBox1.getValue());     
                     pstmt.executeUpdate();
                      pstmt.close();
                 } catch (SQLException e) {

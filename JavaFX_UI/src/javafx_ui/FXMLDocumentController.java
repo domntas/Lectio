@@ -40,6 +40,8 @@ public class FXMLDocumentController implements Initializable {
     private TextField password_box;
     @FXML
     private Label invalid_label;
+    
+    private String username;
 
     private String name;
 
@@ -71,7 +73,7 @@ public class FXMLDocumentController implements Initializable {
                 Parent homepage_parent = (Parent) loader.load();
                 FXMLStudentPageController setController = loader.getController();
                 System.out.println("YOUR NAME IS" + name);
-                setController.myFunction(name);
+                setController.myFunction(name, username);
                 Scene homepage_scene = new Scene(homepage_parent);
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -112,7 +114,7 @@ public class FXMLDocumentController implements Initializable {
           
             while (rs.next()) {
                 if (rs.getString("EMAIL") != null && rs.getString("PASSWORD") != null) {
-                    String username = rs.getString("EMAIL");
+                    username = rs.getString("EMAIL");
                     System.out.println("EMAIL = " + username);
                     String password = rs.getString("PASSWORD");
                     System.out.println("PASSWORD = " + password);

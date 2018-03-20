@@ -95,6 +95,8 @@ public class FXMLStudentPageController implements Initializable {
     private AnchorPane tutorbox111;
 
     private String studentname;
+    
+    private String studentemail;
 
     private ArrayList<Double> order = new ArrayList<Double>();      //distances in miles
 
@@ -114,10 +116,12 @@ public class FXMLStudentPageController implements Initializable {
 
     }
 
-    public void myFunction(String text) {
+    public void myFunction(String text, String email) {
         System.out.println("hellooo");
-        welcome_label.setText("Hello, " + text);
+        String firstName[] = text.split(" ");
+        welcome_label.setText("Hello, " + firstName[0]);
         studentname = text;
+        studentemail = email;
         System.out.println(welcome_label.getText());
         Distance();
         setEverything();
@@ -285,7 +289,7 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            setController.myFunction(ordername.get(0), subject.get(0), email.get(0));
+            setController.myFunction(ordername.get(0), subject.get(0), email.get(0), studentemail);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -305,7 +309,7 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            setController.myFunction(ordername.get(1), subject.get(1),email.get(1));
+            setController.myFunction(ordername.get(1), subject.get(1),email.get(1), studentemail);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -325,7 +329,7 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            setController.myFunction(ordername.get(2), subject.get(2),email.get(2));
+            setController.myFunction(ordername.get(2), subject.get(2),email.get(2), studentemail);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 

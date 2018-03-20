@@ -42,9 +42,6 @@ INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Monday","19:00");
 
 
 
-
-
-
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (2,"Tuesday","09:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (2,"Tuesday","11:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (2,"Tuesday","13:00");
