@@ -66,7 +66,7 @@ public class FXML_HomepageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        welcome_label.setText("hello" + new FXMLDocumentController().getName());
+        //welcome_label.setText("hello" + new FXMLDocumentController().getName());
         Connection c = null;
         java.sql.Statement stmt = null;
         try {
@@ -76,7 +76,7 @@ public class FXML_HomepageController implements Initializable {
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
 
-            ResultSet rs = stmt.executeQuery("SELECT fullname, day, timeslot, details from users inner join requests on users.id = requests.id and where users.usertype ='student'");
+            ResultSet rs = stmt.executeQuery("SELECT fullname, day, timeslot, details from users inner join requests on users.id = requests.id  where users.usertype ='student'");
             rs.next();
                 nametutor11.setText(rs.getString(1));
                 day1.setText(rs.getString(2));

@@ -44,13 +44,13 @@ public class FXML_TutorDetailsController implements Initializable {
 
     @FXML
     private Button register;
-    
+
     @FXML
     private TextField textfield;
-    
+
     @FXML
     private TextArea textarea;
-    
+
     @FXML
     private Label invalid_label;
 
@@ -78,10 +78,11 @@ public class FXML_TutorDetailsController implements Initializable {
     }
 
     public void registrationClicked(MouseEvent event) throws IOException {
-        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_Homepage.fxml"));
-        Scene homepage_scene = new Scene(homepage_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         if (isValid()) {
+            Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXML_Homepage.fxml"));
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             app_stage.hide();
             app_stage.setScene(homepage_scene);
             app_stage.show();
@@ -107,36 +108,41 @@ public class FXML_TutorDetailsController implements Initializable {
                 stmt = c.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT ID FROM Users ORDER BY ID DESC LIMIT 1");
                 int id = rs.getInt(1);
-                String sql = "INSERT INTO TUTOR (ID, BOROUGH, SUBJECT, Price, description) VALUES (?,?,?,?,?)";
+                String sql = "INSERT INTO TUTOR (ID, BOROUGH, SUBJECT, Price, details) VALUES (?,?,?,?,?)";
                 try (
-                    PreparedStatement pstmt = c.prepareStatement(sql)) {
+                        PreparedStatement pstmt = c.prepareStatement(sql)) {
                     System.out.println("inserting");
                     pstmt.setInt(1, id);
+                     System.out.println("inserting1");
                     pstmt.setString(2, comboBox1.getValue());
+                    System.out.println("inserting2");
+                    
                     pstmt.setString(3, comboBox2.getValue());
+                    System.out.println("inserting3");
                     pstmt.setString(4, textfield.getText());
+                    System.out.println("inserting4");
                     pstmt.setString(5, textarea.getText());
+                    System.out.println("inserting5");
                     pstmt.executeUpdate();
                     pstmt.close();
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                 }
-                
-                 rs.close();
-            stmt.close();
-           
-            c.close();
+                System.out.println("data inside tutor inserted");
+
+                rs.close();
+                stmt.close();
+
+                c.close();
             } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
             }
-           
-            
 
             System.out.println("Operation done succesfully");
-            
+
         }
         return true;
     }
-    
+
 }

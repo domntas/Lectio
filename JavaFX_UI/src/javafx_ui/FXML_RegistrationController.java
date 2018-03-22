@@ -136,9 +136,10 @@ public class FXML_RegistrationController implements Initializable {
                         type = "Student";
                     }
                     if (tutor_radio.isSelected()) {
+                        System.out.println("tutor");
                         type = "Tutor";
                     }
-                    else{
+                    
                         if (!(password2_box.getText().equals(password3_box.getText()))) {
                             System.out.println(password2_box.getText());
                             System.out.println(password3_box.getText());
@@ -157,7 +158,7 @@ public class FXML_RegistrationController implements Initializable {
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
-                    }
+                    
                 }
 
                 

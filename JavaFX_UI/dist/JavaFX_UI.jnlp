@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="JavaFX_UI.jar" size="422303" download="eager" />
+    <jar href="JavaFX_UI.jar" size="422310" download="eager" />
     <jar href="lib/GMapsFX-2.10.0.jar" size="154471" download="eager" />
     <jar href="lib/GMapsFX-2.12.0.jar" size="207618" download="eager" />
     <jar href="lib/controlsfx-8.40.14.jar" size="1215643" download="eager" />
