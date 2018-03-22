@@ -21,10 +21,10 @@ import javafx.scene.layout.AnchorPane;
  * @author filippopiggici
  */
 public class FXML_HomepageController implements Initializable {
-    
+
     @FXML
     private Label welcome_label;
-    
+
     @FXML
     private Label nametutor111;
 
@@ -36,6 +36,12 @@ public class FXML_HomepageController implements Initializable {
 
     @FXML
     private Label subject11;
+
+    @FXML
+    private Label day1;
+
+    @FXML
+    private Label details1;
 
     @FXML
     private AnchorPane tutorbox111;
@@ -52,38 +58,45 @@ public class FXML_HomepageController implements Initializable {
     @FXML
     private AnchorPane tutorbox11;
 
+    @FXML
+    private Label timeslot1;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         welcome_label.setText("hello"+ new FXMLDocumentController().getName());
-          Connection c = null;
-            java.sql.Statement stmt = null;
-            try {
-                c = DriverManager.getConnection("jdbc:sqlite:users.db");
-                c.setAutoCommit(false);
+        welcome_label.setText("hello" + new FXMLDocumentController().getName());
+        Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+            c.setAutoCommit(false);
 
-                System.out.println("Opened database succesfully");
-                stmt = c.createStatement();
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
 
-                ResultSet rs = stmt.executeQuery("SELECT fullname, day, timeslot from users inner join requests on users.id = requests.id and where users.usertype ='student'");
-               while(rs.next()){
+            ResultSet rs = stmt.executeQuery("SELECT fullname, day, timeslot, details from users inner join requests on users.id = requests.id and where users.usertype ='student'");
+            rs.next();
                 nametutor11.setText(rs.getString(1));
-                
-                
-               }
+                day1.setText(rs.getString(2));
+                timeslot1.setText(rs.getString(3));
+                details1.setText(rs.getString(4));
+            rs.next();
+//                nametutor111.setText(rs.getString(1));
+//                day2.setText(rs.getString(2));
+//                timeslot2.setText(rs.getString(3));
+//                details2.setText(rs.getString(4));
+            
 
-                stmt.close();
-                c.close();
+            stmt.close();
+            c.close();
 
-            } catch (Exception e) {
-                System.err.println(e.getClass().getName() + ": " + e.getMessage());
-                System.exit(0);
-            }
-            System.out.println("Operation done succesfully");
-    } 
-    
-    
-    
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done succesfully");
+    }
+
 }

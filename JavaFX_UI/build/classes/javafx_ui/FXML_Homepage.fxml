@@ -22,7 +22,7 @@
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Label layoutX="33.0" layoutY="236.0" text="NEW REQUESTS">
+      <Label layoutX="33.0" layoutY="227.0" text="NEW REQUESTS">
          <font>
             <Font size="25.0" />
          </font>
@@ -36,12 +36,12 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="242.0" layoutY="236.0" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="242.0" layoutY="227.0" preserveRatio="true">
          <image>
             <Image url="@images/icons8-down_filled.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="tutorbox11" layoutX="33.0" layoutY="309.0" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="tutorbox11" layoutX="33.0" layoutY="309.0" opacity="0.94" prefHeight="175.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
          <children>
             <Label fx:id="nametutor11" layoutX="105.0" layoutY="15.0" text="Sofia" textFill="#fffefe">
                <font>
@@ -53,7 +53,7 @@
                   <Image url="@images/female1.png" />
                </image>
             </ImageView>
-            <Label fx:id="subject11" layoutX="105.0" layoutY="51.0" text="English" textFill="#fffdfd">
+            <Label fx:id="day1" layoutX="232.0" layoutY="52.0" text="Monday" textFill="#fffdfd">
                <font>
                   <Font size="14.0" />
                </font>
@@ -64,17 +64,27 @@
                   <Image url="@images/4%20stars.png" />
                </image>
             </ImageView>
-            <Label layoutX="239.0" layoutY="17.0" text="18:30" textFill="WHITE">
+            <Label fx:id="timeslot1" layoutX="239.0" layoutY="17.0" text="18:30" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="12.0" layoutY="107.0" prefHeight="37.0" prefWidth="272.0" text="I need to revise about the Victorian Letterature" textFill="WHITE" wrapText="true" />
-            <Label layoutX="228.0" layoutY="74.0" text="MY PLACE" textFill="WHITE">
+            <Label fx:id="details1" layoutX="13.0" layoutY="102.0" prefHeight="49.0" prefWidth="209.0" text="I need to revise about the Victorian Letterature" textFill="WHITE" wrapText="true" />
+            <Label layoutX="105.0" layoutY="53.0" text="MY PLACE" textFill="WHITE">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="208.0" layoutY="112.0" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../com.visualpharm.Icons8/ios/User%20Interface/100/efa0c7/icons8-checked.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="37.0" layoutX="252.0" layoutY="112.0" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../com.visualpharm.Icons8/ios/Popular%20Icons/100/efa0c7/icons8-cancel.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="tutorbox111" layoutX="33.0" layoutY="516.0" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">

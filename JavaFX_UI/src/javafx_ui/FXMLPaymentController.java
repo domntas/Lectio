@@ -20,6 +20,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -50,6 +51,9 @@ public class FXMLPaymentController implements Initializable {
     @FXML
     private Label emptyLabel;
 
+    @FXML
+    private TextArea requestdetails;
+
     private String studentemail;
 
     private int id;
@@ -73,22 +77,22 @@ public class FXMLPaymentController implements Initializable {
 
                 try {
                     c = DriverManager.getConnection("jdbc:sqlite:users.db");
-               
 
                     System.out.println("Opened database succesfully");
                     stmt = c.createStatement();
 
                     ResultSet rs = stmt.executeQuery("SELECT student.ID FROM STUDENT INNER JOIN USERS ON student.id=users.id where users.email= '" + studentemail + "'");
                     String studentid = rs.getString("ID");
-                    String sql = "INSERT INTO REQUESTS(STUDENTID, TUTORID, DAY, TIMESLOT)  VALUES (?,?,?,?)";
+                    String sql = "INSERT INTO REQUESTS(STUDENTID, TUTORID, DAY, TIMESLOT, DETAILS)  VALUES (?,?,?,?,?)";
 
                     try (PreparedStatement pstmt = c.prepareStatement(sql)) {
                         System.out.println("inserting");
-                        System.out.println(studentid +" " + String.valueOf(id) +" "+  day + timeslot );
+                        System.out.println(studentid + " " + String.valueOf(id) + " " + day + timeslot);
                         pstmt.setString(1, studentid);
                         pstmt.setString(2, String.valueOf(id));
                         pstmt.setString(3, day);
                         pstmt.setString(4, timeslot);
+                        pstmt.setString(5, requestdetails.getText());
                         pstmt.executeUpdate();
                     } catch (SQLException e) {
                         System.out.println(e.getMessage());
@@ -108,7 +112,11 @@ public class FXMLPaymentController implements Initializable {
                 System.out.println("Operation done succesfully");
 
             } else {
-                emptyLabel.setText("Please fill in all empty fields");
+                if (!email.getText().contains("@")) {
+                    emptyLabel.setText("This is not an email");
+                } else {
+                    emptyLabel.setText("Please fill in all empty fields");
+                }
             }
         }
     }
