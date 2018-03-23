@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_ConfirmationController">
+   <children>
+      <Label fx:id="invalid2_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
+      <Label fx:id="welcome_label" layoutX="75.0" layoutY="635.0" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="studentbox1" layoutX="21.0" layoutY="209.0" prefHeight="302.0" prefWidth="319.0" style="-fx-background-radius: 20; -fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);">
+         <children>
+            <Label fx:id="confirmation1" layoutX="213.0" layoutY="118.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.0625">
+                     <stops>
+                        <Stop color="#a3e9ff" />
+                        <Stop color="#a3e9ff" offset="0.007434944237918215" />
+                        <Stop color="#ffffffc4" offset="0.47157190635451507" />
+                        <Stop color="#edb9cb" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="19.0" layoutY="30.0" text="Name:" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="80.0" text="Location:" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="131.0" text="Subject:" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="237.0" text="Day:" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="185.0" text="Time:" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="name" layoutX="121.0" layoutY="30.0" text="Filippo" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="location" layoutX="121.0" layoutY="80.0" text="Hammersmith" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="subject" layoutX="121.0" layoutY="131.0" text="English" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="timeslot" layoutX="121.0" layoutY="185.0" text="15:00" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="day" layoutX="121.0" layoutY="237.0" text="Tuesday" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Text layoutX="86.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETAILS" wrappingWidth="187.0">
+         <fill>
+            <LinearGradient endX="0.6778846153846154" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#6daeff" />
+                  <Stop color="#efbad3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Avenir Roman" size="47.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="57.0" layoutY="631.0" strokeType="OUTSIDE" strokeWidth="0.0" text="READY TO TEACH ON TUESDAY??">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

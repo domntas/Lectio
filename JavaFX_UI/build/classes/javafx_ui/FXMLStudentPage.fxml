@@ -13,7 +13,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLStudentPageController">
    <children>
       <Label fx:id="invalid2_label" layoutX="106.0" layoutY="658.0" textFill="#ffc152" />
-      <TextField fx:id="tutorsearch" layoutX="33.0" layoutY="238.0" prefHeight="38.0" prefWidth="295.0" promptText="Look for Tutors..." style="-fx-background-color: #41588C; -fx-prompt-text-fill: #ffffff; -fx-background-radius: 10; -fx-border-radius: 10;">
+      <TextField fx:id="tutorsearch" layoutX="33.0" layoutY="238.0" onAction="#onEnter" prefHeight="38.0" prefWidth="295.0" promptText="Choose subject..." style="-fx-background-color: #41588C; -fx-prompt-text-fill: #ffffff; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-fill: #ffffff;">
          
          <effect>
             <Blend />

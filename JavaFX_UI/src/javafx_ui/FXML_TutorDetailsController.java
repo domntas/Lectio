@@ -111,18 +111,18 @@ public class FXML_TutorDetailsController implements Initializable {
                 String sql = "INSERT INTO TUTOR (ID, BOROUGH, SUBJECT, Price, details) VALUES (?,?,?,?,?)";
                 try (
                         PreparedStatement pstmt = c.prepareStatement(sql)) {
-                    System.out.println("inserting");
+                    //System.out.println("inserting");
                     pstmt.setInt(1, id);
-                     System.out.println("inserting1");
+                    // System.out.println("inserting1");
                     pstmt.setString(2, comboBox1.getValue());
-                    System.out.println("inserting2");
-                    
+                    //System.out.println("inserting2");
+
                     pstmt.setString(3, comboBox2.getValue());
-                    System.out.println("inserting3");
+                    //System.out.println("inserting3");
                     pstmt.setString(4, textfield.getText());
-                    System.out.println("inserting4");
+                    // System.out.println("inserting4");
                     pstmt.setString(5, textarea.getText());
-                    System.out.println("inserting5");
+                    //System.out.println("inserting5");
                     pstmt.executeUpdate();
                     pstmt.close();
                 } catch (SQLException e) {

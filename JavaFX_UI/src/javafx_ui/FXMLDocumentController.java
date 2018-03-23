@@ -40,10 +40,14 @@ public class FXMLDocumentController implements Initializable {
     private TextField password_box;
     @FXML
     private Label invalid_label;
-    
+
     private String username;
 
     private String name;
+
+    private String usertype;
+    
+    private int id;
 
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -69,31 +73,43 @@ public class FXMLDocumentController implements Initializable {
         if (isValidCredentials()) {
             try {
                 FXMLLoader loader;
-                loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
-                Parent homepage_parent = (Parent) loader.load();
-                FXMLStudentPageController setController = loader.getController();
-                System.out.println("YOUR NAME IS" + name);
-                setController.myFunction(name, username);
-                Scene homepage_scene = new Scene(homepage_parent);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                if (usertype.equals ("Student")) {
+                    loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+                    FXMLStudentPageController setController = loader.getController();
+                    System.out.println("YOUR NAME IS" + name);
+                    setController.myFunction(name, username);
+                    Scene homepage_scene = new Scene(homepage_parent);
+                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                app_stage.hide();
-                app_stage.setScene(homepage_scene);
-                app_stage.show();
+                    app_stage.hide();
+                    app_stage.setScene(homepage_scene);
+                    app_stage.show();
+                } else {
+                    loader = new FXMLLoader(getClass().getResource("FXML_Homepage.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+                    FXML_HomepageController setController = loader.getController();
+                    System.out.println("YOUR NAME IS" + name);
+                    System.out.println(id);
+                    setController.myFunction(name, id);
+                    Scene homepage_scene = new Scene(homepage_parent);
+                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                    app_stage.hide();
+                    app_stage.setScene(homepage_scene);
+                    app_stage.show();
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
 
             }
+        } else {
+            username_box.clear();
+            password_box.clear();
+            invalid_label.setText("Wrong Username or Password");
         }
-            else
-        {
-             username_box.clear();
-             password_box.clear();
-             invalid_label.setText("Wrong Username or Password");
-        }
-        }
-    
-    
+    }
 
     private boolean isValidCredentials() {
 
@@ -111,14 +127,17 @@ public class FXMLDocumentController implements Initializable {
             stmt = c.createStatement();
 
             ResultSet rs = stmt.executeQuery("SELECT * FROM Users WHERE EMAIL= " + "'" + username_box.getText() + "'" + " AND PASSWORD= " + "'" + password_box.getText() + "'");
-          
+
             while (rs.next()) {
                 if (rs.getString("EMAIL") != null && rs.getString("PASSWORD") != null) {
                     username = rs.getString("EMAIL");
                     System.out.println("EMAIL = " + username);
                     String password = rs.getString("PASSWORD");
                     System.out.println("PASSWORD = " + password);
-                    name=rs.getString("FULLNAME");
+                    name = rs.getString("FULLNAME");
+                    usertype = rs.getString("usertype");
+                    System.out.println(usertype);
+                    id = rs.getInt("ID");
                     let_in = true;
 
                 }

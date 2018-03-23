@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.paint.*?>
@@ -13,7 +14,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_HomepageController">
    <children>
       <Label fx:id="invalid2_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
-      <Label layoutX="33.0" layoutY="120.0" text="Hello, Filippo" textFill="WHITE">
+      <Label fx:id="welcome_label" layoutX="33.0" layoutY="120.0" text="Hello, Filippo" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
@@ -22,7 +23,7 @@
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Label layoutX="33.0" layoutY="227.0" text="NEW REQUESTS">
+      <Label fx:id="request_label" layoutX="33.0" layoutY="227.0" text="NEW REQUESTS">
          <font>
             <Font size="25.0" />
          </font>
@@ -36,14 +37,14 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="242.0" layoutY="227.0" preserveRatio="true">
+      <ImageView fx:id="arrow" fitHeight="30.0" fitWidth="29.0" layoutX="242.0" layoutY="227.0" preserveRatio="true">
          <image>
             <Image url="@images/icons8-down_filled.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="tutorbox11" layoutX="33.0" layoutY="309.0" opacity="0.94" prefHeight="175.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="studentbox1" layoutX="33.0" layoutY="309.0" opacity="0.94" prefHeight="175.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
          <children>
-            <Label fx:id="nametutor11" layoutX="105.0" layoutY="15.0" text="Sofia" textFill="#fffefe">
+            <Label fx:id="name1" layoutX="105.0" layoutY="15.0" text="Sofia" textFill="#fffefe">
                <font>
                   <Font size="17.0" />
                </font>
@@ -53,12 +54,12 @@
                   <Image url="@images/female1.png" />
                </image>
             </ImageView>
-            <Label fx:id="day1" layoutX="232.0" layoutY="52.0" text="Monday" textFill="#fffdfd">
+            <Label fx:id="day1" layoutX="218.0" layoutY="52.0" prefHeight="18.0" prefWidth="68.0" text="wednsday" textAlignment="RIGHT" textFill="#fffdfd">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="distance11" layoutX="105.0" layoutY="72.0" text="Hammersmith" textAlignment="RIGHT" textFill="#cccccc" />
+            <Label fx:id="borough1" layoutX="105.0" layoutY="72.0" text="Hammersmith" textAlignment="RIGHT" textFill="#cccccc" />
             <ImageView fitHeight="22.0" fitWidth="75.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/4%20stars.png" />
@@ -69,27 +70,40 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="details1" layoutX="13.0" layoutY="102.0" prefHeight="49.0" prefWidth="209.0" text="I need to revise about the Victorian Letterature" textFill="WHITE" wrapText="true" />
-            <Label layoutX="105.0" layoutY="53.0" text="MY PLACE" textFill="WHITE">
+            <Label fx:id="details1" layoutX="13.0" layoutY="103.0" prefHeight="49.0" prefWidth="190.0" style="-fx-border-color: #ffffff; -fx-border-radius: 20;" text="I need to revise about the Victorian Letterature" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="13.0">
+               <padding>
+                  <Insets left="15.0" />
+               </padding></Label>
+            <Label fx:id="confirmation1" layoutX="213.0" layoutY="118.0">
                <font>
-                  <Font size="12.0" />
+                  <Font size="15.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.0625">
+                     <stops>
+                        <Stop color="#a3e9ff" />
+                        <Stop color="#a3e9ff" offset="0.007434944237918215" />
+                        <Stop color="#ffffffc4" offset="0.47157190635451507" />
+                        <Stop color="#edb9cb" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Label>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="208.0" layoutY="112.0" preserveRatio="true">
+            <ImageView fx:id="accept1" fitHeight="32.0" fitWidth="32.0" layoutX="215.0" layoutY="113.0" onMouseClicked="#acceptedFirst" onMousePressed="#acceptedFirst" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../com.visualpharm.Icons8/ios/User%20Interface/100/efa0c7/icons8-checked.png" />
+                  <Image url="@images/icons8-checked.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="37.0" layoutX="252.0" layoutY="112.0" preserveRatio="true">
+            <ImageView fx:id="deny1" fitHeight="34.0" fitWidth="37.0" layoutX="254.0" layoutY="112.0" onMouseClicked="#deniedFirst" onMousePressed="#deniedFirst" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../com.visualpharm.Icons8/ios/Popular%20Icons/100/efa0c7/icons8-cancel.png" />
+                  <Image url="@images/icons8-cancel.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="tutorbox111" layoutX="33.0" layoutY="516.0" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="studentbox11" layoutX="33.0" layoutY="516.0" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
          <children>
-            <Label fx:id="nametutor111" layoutX="105.0" layoutY="15.0" text="Marco" textFill="#fffefe">
+            <Label fx:id="name11" layoutX="105.0" layoutY="15.0" text="Marco" textFill="#fffefe">
                <font>
                   <Font size="17.0" />
                </font>
@@ -99,28 +113,23 @@
                   <Image url="@images/face1.png" />
                </image>
             </ImageView>
-            <Label fx:id="subject111" layoutX="105.0" layoutY="51.0" text="English" textFill="#fffdfd">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="distance111" layoutX="105.0" layoutY="72.0" text="City of London" textAlignment="RIGHT" textFill="#cccccc" />
+            <Label fx:id="borough11" layoutX="105.0" layoutY="72.0" text="City of London" textAlignment="RIGHT" textFill="#cccccc" />
             <ImageView fitHeight="22.0" fitWidth="75.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/4%20stars.png" />
                </image>
             </ImageView>
-            <Label layoutX="243.0" layoutY="17.0" text="15:30" textFill="WHITE">
+            <Label fx:id="timeslot11" layoutX="243.0" layoutY="17.0" text="15:30" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="212.0" layoutY="73.0" text="YOUR PLACE" textFill="WHITE">
+            <Label fx:id="details11" layoutX="12.0" layoutY="105.0" prefHeight="37.0" prefWidth="272.0" text="I need to revise about the Victorian Letterature" textFill="WHITE" wrapText="true" />
+            <Label fx:id="day11" layoutX="228.0" layoutY="59.0" text="Monday" textFill="#fffdfd">
                <font>
-                  <Font size="12.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="12.0" layoutY="105.0" prefHeight="37.0" prefWidth="272.0" text="I need to revise about the Victorian Letterature" textFill="WHITE" wrapText="true" />
          </children>
       </AnchorPane>
    </children>

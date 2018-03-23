@@ -75,7 +75,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="description" layoutX="29.0" layoutY="120.0" prefHeight="218.0" prefWidth="237.0" text="Tutors work with individual students one-on-one, though we occasionally organize group activities for students who are studying the same material. Our team offers compassionate, motivating assistance to students, and we expect our new hires to do the same. If you have experience tutoring children, please submit an application. After Everything mlmlm dio santo dio cane" textFill="WHITE" wrapText="true" />
+            <Label fx:id="description" layoutX="29.0" layoutY="120.0" prefHeight="218.0" prefWidth="237.0" text="Tutors work with individual students one-on-one, though we occasionally organize group activities for students who are studying the same material. Our team offers compassionate, motivating assistance to students, and we expect our new hires to do the same. If you have experience tutoring children, please submit an application. After Everything mlmlm dio santo dio cane NADFJDGKADFJKZGJNADJKFNGJKNSDKFGNKADFGKJNSDFKJGNKAJDFZGKJADNFKJGBAKJFDGBKJADFBGJKBADJKFGF" textFill="WHITE" wrapText="true" />
             <ImageView fitHeight="37.0" fitWidth="75.0" layoutX="30.0" layoutY="564.0" onMouseClicked="#slotClicked17" preserveRatio="true">
                <image>
                   <Image url="@images/button%20(1).png" />
@@ -105,7 +105,7 @@
                   <Insets />
                </opaqueInsets>
             </ComboBox>
-            <Label fx:id="invalid3_label" layoutX="35.0" layoutY="610.0" text="This slot has already been booked" textAlignment="CENTER" textFill="#ffadad">
+            <Label fx:id="invalid3_label" layoutX="35.0" layoutY="610.0" textAlignment="CENTER" textFill="#ffadad">
                <font>
                   <Font size="14.0" />
                </font>

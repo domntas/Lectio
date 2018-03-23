@@ -19,11 +19,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -95,7 +97,7 @@ public class FXMLStudentPageController implements Initializable {
     private AnchorPane tutorbox111;
 
     private String studentname;
-    
+
     private String studentemail;
 
     private ArrayList<Double> order = new ArrayList<Double>();      //distances in miles
@@ -141,19 +143,21 @@ public class FXMLStudentPageController implements Initializable {
         subject1.setText((String) subject.get(0));
         subject11.setText((String) subject.get(1));
         subject111.setText((String) subject.get(2));
-        rate1.setText(String.valueOf(rate.get(0)) +"£/h");
-        rate11.setText(String.valueOf(rate.get(1))+"£/h");
-        rate111.setText(String.valueOf(rate.get(2))+"£/h");
+        rate1.setText(String.valueOf(rate.get(0)) + "£/h");
+        rate11.setText(String.valueOf(rate.get(1)) + "£/h");
+        rate111.setText(String.valueOf(rate.get(2)) + "£/h");
         ///we miis the rate here
     }
 
     public void sortAll() {
         System.out.println(order);
         int z = order.size();
-        while (z > 1) {
-            for (int x = 0; x < z - 2; x++) {
-                for (int y = 1; y < z - 1; y++) {
-                    if (order.get(x) > order.get(y)) {
+        int c=0;
+        while (c!= z) {
+            for (int x = 0 +c; x < z - 1; x++) {
+                for (int y = 1 +c; y < z ; y++) {
+                     System.out.println(order);
+                    if (order.get(x) >= order.get(y)) {
                         Collections.swap(order, x, y);
                         Collections.swap(ordername, x, y);
                         Collections.swap(subject, x, y);
@@ -163,7 +167,7 @@ public class FXMLStudentPageController implements Initializable {
 
                 }
             }
-            z--;
+            c++;
         }
         System.out.println(order);
     }
@@ -309,7 +313,7 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            setController.myFunction(ordername.get(1), subject.get(1),email.get(1), studentemail);
+            setController.myFunction(ordername.get(1), subject.get(1), email.get(1), studentemail);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -329,7 +333,7 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            setController.myFunction(ordername.get(2), subject.get(2),email.get(2), studentemail);
+            setController.myFunction(ordername.get(2), subject.get(2), email.get(2), studentemail);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -341,6 +345,27 @@ public class FXMLStudentPageController implements Initializable {
 
         }
 
+    }
+
+    public void onEnter(ActionEvent event) throws IOException {
+        try {
+            System.out.println(tutorsearch.getText());
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("FXML_subjectTutors.fxml"));
+            System.out.println(loader);
+            Parent homepage_parent = (Parent) loader.load();
+            FXML_subjectTutorsController setController = loader.getController();
+            setController.myFunction(studentname, studentemail, tutorsearch.getText());
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
     }
 
 }
