@@ -31,6 +31,7 @@
             <LinearGradient endX="1.0" endY="1.0" startX="0.0625">
                <stops>
                   <Stop color="#a3ccff" />
+                  <Stop color="#a3ccff" offset="0.007434944237918215" />
                   <Stop color="#ffffffc4" offset="0.47157190635451507" />
                   <Stop color="#efbad3" offset="1.0" />
                </stops>
@@ -54,7 +55,7 @@
                   <Image url="@images/female1.png" />
                </image>
             </ImageView>
-            <Label fx:id="day1" layoutX="218.0" layoutY="52.0" prefHeight="18.0" prefWidth="68.0" text="wednsday" textAlignment="RIGHT" textFill="#fffdfd">
+            <Label fx:id="day1" layoutX="220.0" layoutY="72.0" prefHeight="18.0" prefWidth="68.0" text="wednsday" textAlignment="RIGHT" textFill="#fffdfd">
                <font>
                   <Font size="14.0" />
                </font>
@@ -74,7 +75,7 @@
                <padding>
                   <Insets left="15.0" />
                </padding></Label>
-            <Label fx:id="confirmation1" layoutX="213.0" layoutY="118.0">
+            <Label fx:id="confirmation1" layoutX="217.0" layoutY="118.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -99,11 +100,13 @@
                   <Image url="@images/icons8-cancel.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="49.0" fitWidth="41.0" layoutX="207.0" layoutY="105.0" onMouseClicked="#acceptedFirst" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="49.0" fitWidth="41.0" layoutX="255.0" layoutY="105.0" onMouseClicked="#deniedFirst" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="studentbox11" layoutX="33.0" layoutY="516.0" opacity="0.94" prefHeight="165.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="studentbox2" layoutX="33.0" layoutY="516.0" opacity="0.94" prefHeight="175.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
          <children>
-            <Label fx:id="name11" layoutX="105.0" layoutY="15.0" text="Marco" textFill="#fffefe">
+            <Label fx:id="name2" layoutX="105.0" layoutY="15.0" text="Marco" textFill="#fffefe">
                <font>
                   <Font size="17.0" />
                </font>
@@ -113,23 +116,53 @@
                   <Image url="@images/face1.png" />
                </image>
             </ImageView>
-            <Label fx:id="borough11" layoutX="105.0" layoutY="72.0" text="City of London" textAlignment="RIGHT" textFill="#cccccc" />
+            <Label fx:id="borough2" layoutX="105.0" layoutY="72.0" text="City of London" textAlignment="RIGHT" textFill="#cccccc" />
             <ImageView fitHeight="22.0" fitWidth="75.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/4%20stars.png" />
                </image>
             </ImageView>
-            <Label fx:id="timeslot11" layoutX="243.0" layoutY="17.0" text="15:30" textFill="WHITE">
+            <Label fx:id="timeslot2" layoutX="239.0" layoutY="17.0" text="15:30" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="details11" layoutX="12.0" layoutY="105.0" prefHeight="37.0" prefWidth="272.0" text="I need to revise about the Victorian Letterature" textFill="WHITE" wrapText="true" />
-            <Label fx:id="day11" layoutX="228.0" layoutY="59.0" text="Monday" textFill="#fffdfd">
+            <Label fx:id="details2" layoutX="12.0" layoutY="105.0" prefHeight="49.0" prefWidth="190.0" style="-fx-border-color: #ffffff; -fx-border-radius: 20;" text="I need to revise about the Victorian Letterature" textFill="WHITE" wrapText="true">
+               <padding>
+                  <Insets left="15.0" />
+               </padding></Label>
+            <Label fx:id="day2" layoutX="228.0" layoutY="72.0" text="Monday" textFill="#fffdfd">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
+            <Label fx:id="confirmation2" layoutX="217.0" layoutY="118.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.0625">
+                     <stops>
+                        <Stop color="#a3e9ff" />
+                        <Stop color="#a3e9ff" offset="0.007434944237918215" />
+                        <Stop color="#ffffffc4" offset="0.47157190635451507" />
+                        <Stop color="#edb9cb" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ImageView fx:id="accept2" fitHeight="32.0" fitWidth="32.0" layoutX="214.0" layoutY="113.0" onMouseClicked="#acceptedFirst" onMousePressed="#acceptedFirst" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-checked.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="deny2" fitHeight="34.0" fitWidth="37.0" layoutX="254.0" layoutY="112.0" onMouseClicked="#deniedFirst" onMousePressed="#deniedFirst" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-cancel.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="49.0" fitWidth="41.0" layoutX="251.0" layoutY="105.0" onMouseClicked="#deniedSecond" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="49.0" fitWidth="41.0" layoutX="210.0" layoutY="105.0" onMouseClicked="#acceptedSecond" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>

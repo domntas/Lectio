@@ -10,6 +10,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import javafx.fxml.FXML;
@@ -41,37 +42,37 @@ public class FXML_HomepageController implements Initializable {
     private Label day1;
 
     @FXML
-    private Label day11;
+    private Label day2;
 
     @FXML
     private Label details1;
 
     @FXML
-    private Label details11;
+    private Label details2;
 
     @FXML
     private Label name1;
 
     @FXML
-    private Label name11;
+    private Label name2;
 
     @FXML
     private Label borough1;
 
     @FXML
-    private Label borough11;
+    private Label borough2;
 
     @FXML
     private AnchorPane studentbox1;
 
     @FXML
-    private AnchorPane studentbox11;
+    private AnchorPane studentbox2;
 
     @FXML
     private Label timeslot1;
 
     @FXML
-    private Label timeslot11;
+    private Label timeslot2;
 
     @FXML
     private Label request_label;
@@ -84,11 +85,22 @@ public class FXML_HomepageController implements Initializable {
 
     @FXML
     private ImageView deny1;
+    
+    @FXML
+    private ImageView accept2;
+
+    @FXML
+    private ImageView deny2;
 
     @FXML
     private Label confirmation1;
+    
+    @FXML
+    private Label confirmation2;
 
     private int id;
+
+    private ArrayList<Integer> studentids = new ArrayList<Integer>();
 
     /**
      * Initializes the controller class.
@@ -122,7 +134,7 @@ public class FXML_HomepageController implements Initializable {
             System.out.println("Opened database succesfully homepage fot tutor");
             stmt = c.createStatement();
 
-            ResultSet rs = stmt.executeQuery("SELECT fullname, day, timeslot, details from users inner join requests on users.id = requests.studentid  where requests.tutorid = " + id + " ");
+            ResultSet rs = stmt.executeQuery("SELECT fullname, day, timeslot, details from users inner join requests on users.id = requests.studentid  inner join student on users.id=student.id where requests.tutorid = " + id + " and requests.status= 'Pending'");
             System.out.println("executed");
             System.out.println(id);
             int size = 0;
@@ -130,7 +142,7 @@ public class FXML_HomepageController implements Initializable {
                 size++;
             }
             System.out.println(size);
-            rs = stmt.executeQuery("SELECT fullname, day, timeslot, details, borough from users inner join requests on users.id = requests.studentid  inner join student on users.id=student.id where requests.tutorid = " + id + " ");
+            rs = stmt.executeQuery("SELECT fullname, day, timeslot, details, borough, requests.studentid  from users inner join requests on users.id = requests.studentid  inner join student on users.id=student.id where requests.tutorid = " + id + " and requests.status= 'Pending'");
 
             if (size == 1) {
 
@@ -142,7 +154,8 @@ public class FXML_HomepageController implements Initializable {
                 details1.setText(rs.getString(4));
                 request_label.setText("NEW REQUEST");
                 borough1.setText(rs.getString(5));
-                studentbox11.setVisible(false);
+                studentids.add(rs.getInt(6));
+                studentbox2.setVisible(false);
             }
             if (size >= 2) {
                 rs.next();
@@ -152,19 +165,21 @@ public class FXML_HomepageController implements Initializable {
                 timeslot1.setText(rs.getString(3));
                 details1.setText(rs.getString(4));
                 borough1.setText(rs.getString(5));
+                studentids.add(rs.getInt(6));
                 rs.next();
-                name11.setText(rs.getString(1));
-                day11.setText(rs.getString(2));
-                timeslot11.setText(rs.getString(3));
-                details11.setText(rs.getString(4));
-                borough11.setText(rs.getString(5));
+                name2.setText(rs.getString(1));
+                day2.setText(rs.getString(2));
+                timeslot2.setText(rs.getString(3));
+                details2.setText(rs.getString(4));
+                borough2.setText(rs.getString(5));
+                studentids.add(rs.getInt(6));
             }
 
             if (size == 0) {
                 request_label.setText("NO REQUESTS YET");
                 arrow.setVisible(false);
                 studentbox1.setVisible(false);
-                studentbox11.setVisible(false);
+                studentbox2.setVisible(false);
             }
 
             stmt.close();
@@ -184,11 +199,11 @@ public class FXML_HomepageController implements Initializable {
         confirmation1.setText("Accepted");
         try {
             FXMLLoader loader;
-            loader = new FXMLLoader(getClass().getResource("FXML_ConfirmationController.fxml"));
+            loader = new FXMLLoader(getClass().getResource("FXML_Confirmation.fxml"));
             System.out.println(loader);
             Parent homepage_parent = (Parent) loader.load();
             FXML_ConfirmationController setController = loader.getController();
-            setController.myFunction(name1.getText(), day1.getText(), timeslot1.getText(), borough1.getText());
+            setController.myFunction(name1.getText(), day1.getText(), timeslot1.getText(), borough1.getText(), id, studentids.get(0));
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -206,8 +221,74 @@ public class FXML_HomepageController implements Initializable {
         accept1.setVisible(false);
         deny1.setVisible(false);
         confirmation1.setVisible(true);
-       confirmation1.setText("Denied");
+        confirmation1.setText("Denied");
+         Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
 
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot1.getText()+"'";
+            stmt.executeUpdate(sql);
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+
+    }
+    
+    public void acceptedSecond(MouseEvent event) throws IOException, InterruptedException {
+        accept2.setVisible(false);
+        deny2.setVisible(false);
+        confirmation2.setVisible(true);
+        confirmation2.setText("Accepted");
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("FXML_Confirmation.fxml"));
+            System.out.println(loader);
+            Parent homepage_parent = (Parent) loader.load();
+            FXML_ConfirmationController setController = loader.getController();
+            setController.myFunction(name2.getText(), day2.getText(), timeslot2.getText(), borough2.getText(), id, studentids.get(0));
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
+    }
+
+    public void deniedSecond(MouseEvent event) throws IOException, InterruptedException {
+        accept2.setVisible(false);
+        deny2.setVisible(false);
+        confirmation2.setVisible(true);
+        confirmation2.setText("Denied");
+         Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            stmt.executeUpdate(sql);
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
 
     }
 }

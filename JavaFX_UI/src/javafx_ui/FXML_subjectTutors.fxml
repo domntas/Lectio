@@ -95,7 +95,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="tutorbox4" layoutX="33.0" layoutY="470.0" onMouseClicked="#box3Clicked" opacity="0.93" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="tutorbox4" layoutX="33.0" layoutY="470.0" onMouseClicked="#box4Clicked" opacity="0.93" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
          <children>
             <Label fx:id="nametutor4" layoutX="105.0" layoutY="15.0" text="Lorenzo" textFill="WHITE">
                <font>
@@ -121,7 +121,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="tutorbox5" layoutX="33.0" layoutY="599.0" onMouseClicked="#box3Clicked" opacity="0.93" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="tutorbox5" layoutX="33.0" layoutY="599.0" onMouseClicked="#box5Clicked" opacity="0.93" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
          <children>
             <Label fx:id="nametutor5" layoutX="105.0" layoutY="15.0" text="Lorenzo" textFill="WHITE">
                <font>

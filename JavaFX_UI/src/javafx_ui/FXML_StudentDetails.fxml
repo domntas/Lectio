@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,24 +10,43 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_StudentDetailsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_StudentDetailsController">
    <children>
-      <ImageView fx:id="registration2_box" fitHeight="43.0" fitWidth="43.0" layoutX="159.0" layoutY="590.0" onMousePressed="#registrationClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="registration2_box" fitHeight="43.0" fitWidth="43.0" layoutX="158.0" layoutY="387.0" onMousePressed="#registrationClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/register.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="115.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complete Registration">
+      <Label fx:id="invalid_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
+      <ComboBox fx:id="comboBox1" layoutX="59.0" layoutY="206.0" opacity="0.93" prefWidth="242.0" promptText="Select Borough" style="-fx-background-color: transparent;" visibleRowCount="5" />
+      <Text layoutX="80.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT" wrappingWidth="201.35699462890625">
+         <fill>
+            <LinearGradient endX="0.591346153846154" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#6daeff" />
+                  <Stop color="#6daeff" offset="0.007434944237918215" />
+                  <Stop color="#efbad3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Avenir Roman" size="44.0" />
+         </font>
+      </Text>
+      <Text layoutX="114.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complete Registration" wrappingWidth="132.35699462890625">
+         <fill>
+            <LinearGradient endX="0.591346153846154" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#6daeff" />
+                  <Stop color="#6daeff" offset="0.007434944237918215" />
+                  <Stop color="#f2bad5" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Text>
-      <Label fx:id="invalid_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
-      <ComboBox fx:id="comboBox1" layoutX="59.0" layoutY="206.0" opacity="0.93" prefWidth="242.0" promptText="Select Borough" visibleRowCount="5" />
-      <Text fill="WHITE" layoutX="86.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT">
-         <font>
-            <Font size="40.0" />
-         </font>
-      </Text>
+      <Line endX="100.0" layoutX="190.0" layoutY="233.0" opacity="0.46" startX="-121.0" />
    </children>
 </AnchorPane>

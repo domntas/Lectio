@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLPaymentController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Paypal.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="email" layoutX="59.0" layoutY="250.0" prefHeight="27.0" prefWidth="245.0" promptText="email" />
+      <TextField fx:id="password" layoutX="59.0" layoutY="320.0" prefHeight="27.0" prefWidth="245.0" promptText="password" />
+      <Label fx:id="price" layoutX="132.0" layoutY="160.0" text="£14.50" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="228.0" layoutY="160.0" text="GBP" textFill="WHITE" />
+      <ImageView fx:id="confirm" fitHeight="55.0" fitWidth="51.0" layoutX="155.0" layoutY="571.0" onMouseClicked="#confirmClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/approve.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="emptyLabel" layoutX="89.0" layoutY="478.0" textFill="#ffadad">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="requestdetails" layoutX="59.0" layoutY="406.0" prefHeight="72.0" prefWidth="245.0" promptText="Type request" wrapText="true" />
+   </children>
+</AnchorPane>

@@ -456,5 +456,47 @@ public class FXML_subjectTutorsController implements Initializable {
         }
 
     }
+    
+    public void box4Clicked(MouseEvent event) throws IOException {
+        try {
+
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
+            Parent homepage_parent = (Parent) loader.load();
+            FXML_tutorShowController setController = loader.getController();
+            setController.myFunction(ordername.get(3), subject, email.get(3), studentemail);
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
+    }
+    
+    public void box5Clicked(MouseEvent event) throws IOException {
+        try {
+
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
+            Parent homepage_parent = (Parent) loader.load();
+            FXML_tutorShowController setController = loader.getController();
+            setController.myFunction(ordername.get(4), subject, email.get(4), studentemail);
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
+    }
 
 }

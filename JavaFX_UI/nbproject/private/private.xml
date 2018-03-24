@@ -5,13 +5,13 @@
         <group>
             <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXMLStudentPageController.java</file>
             <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_TutorDetailsController.java</file>
-            <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXMLPaymentController.java</file>
             <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_HomepageController.java</file>
             <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_tutorShowController.java</file>
             <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXMLDocumentController.java</file>
-            <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_subjectTutors.fxml</file>
             <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_StudentDetailsController.java</file>
             <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_RegistrationController.java</file>
+            <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_ConfirmationController.java</file>
+            <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_Confirmation.fxml</file>
             <file>file:/Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/FXML_subjectTutorsController.java</file>
         </group>
     </open-files>
