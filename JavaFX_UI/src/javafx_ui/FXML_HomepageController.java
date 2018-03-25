@@ -198,6 +198,23 @@ public class FXML_HomepageController implements Initializable {
         confirmation1.setVisible(true);
         confirmation1.setText("Accepted");
         try {
+             Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+            String sql = "UPDATE Requests SET Status='Confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            stmt.executeUpdate(sql);
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("FXML_Confirmation.fxml"));
             System.out.println(loader);
@@ -229,7 +246,7 @@ public class FXML_HomepageController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot1.getText()+"'";
+            String sql = "DELETE FROM Requests  WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot1.getText()+"'";
             stmt.executeUpdate(sql);
 
             stmt.close();
@@ -247,6 +264,23 @@ public class FXML_HomepageController implements Initializable {
         deny2.setVisible(false);
         confirmation2.setVisible(true);
         confirmation2.setText("Accepted");
+         Connection c = null;
+        java.sql.Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+            String sql = "UPDATE Requests SET Status='Confirmed' WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            stmt.executeUpdate(sql);
+
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
         try {
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("FXML_Confirmation.fxml"));
@@ -279,7 +313,7 @@ public class FXML_HomepageController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            String sql = "DELETE FROM REQUESTS  WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
             stmt.executeUpdate(sql);
 
             stmt.close();

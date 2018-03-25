@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
@@ -109,5 +110,30 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="notification" layoutX="33.0" layoutY="41.0" onMouseClicked="#box1Clicked" opacity="0.95" prefHeight="60.0" prefWidth="212.0" style="-fx-background-color: #6A5d9a; -fx-background-radius: 30; -fx-background-radius: 30;">
+         <children>
+            <Label fx:id="acceptance" layoutX="14.0" prefHeight="38.0" prefWidth="209.0" text="Filippo has accepted you!  " textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="acceptanceDate" layoutX="14.0" layoutY="21.0" prefHeight="38.0" prefWidth="225.0" text="See you on Tuesday" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="iconAccepted" fitHeight="49.0" fitWidth="41.0" layoutX="287.0" layoutY="51.0" preserveRatio="true">
+         <image>
+            <Image url="@images/icons8-training.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -19,7 +19,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="studentbox1" layoutX="21.0" layoutY="223.0" prefHeight="292.0" prefWidth="298.0" style="-fx-background-radius: 20; -fx-background-color: #646C9A;">
+      <AnchorPane fx:id="studentbox1" layoutX="21.0" layoutY="223.0" prefHeight="281.0" prefWidth="319.0" style="-fx-background-radius: 20; -fx-background-color: #646C9A;">
          <children>
             <Label fx:id="confirmation1" layoutX="213.0" layoutY="118.0">
                <font>

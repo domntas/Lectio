@@ -25,6 +25,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -83,6 +84,12 @@ public class FXMLStudentPageController implements Initializable {
 
     @FXML
     private Label rate11;
+    
+    @FXML
+    private Label acceptance;
+    
+    @FXML
+    private Label acceptanceDate;
 
     @FXML
     private TextField tutorsearch;
@@ -95,6 +102,12 @@ public class FXMLStudentPageController implements Initializable {
 
     @FXML
     private AnchorPane tutorbox111;
+    
+    @FXML
+    private AnchorPane notification;
+    
+    @FXML
+    private ImageView iconAccepted;
 
     private String studentname;
 
@@ -127,6 +140,56 @@ public class FXMLStudentPageController implements Initializable {
         System.out.println(welcome_label.getText());
         Distance();
         setEverything();
+        acceptance();
+    }
+    
+    public void acceptance() {
+        Connection c = null;
+        java.sql.Statement stmt = null;
+
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+
+            System.out.println("Opened database succesfully");
+            stmt = c.createStatement();
+         
+            System.out.println(studentemail);
+            int  tutorid=0;
+            ResultSet rs = stmt.executeQuery("SELECT * from Requests inner join users on users.id=requests.studentid WHERE users.EMAIL = '" + studentemail + "' and Status='confirmed'");
+            
+            int size = 0;
+            while (rs.next()) {
+                size++;
+            }
+            rs = stmt.executeQuery("SELECT * from Requests inner join users on users.id=requests.studentid WHERE users.EMAIL = '" + studentemail + "' and Status='confirmed'");
+
+            System.out.println(size);
+            if(size!=0){
+            tutorid=rs.getInt("TUTORID");
+            String day = rs.getString("DAY");
+            
+            System.out.println(tutorid);
+             System.out.println(day);
+            acceptanceDate.setText("See you on "+day);
+            
+            rs = stmt.executeQuery("SELECT FULLNAME from users where id = '"+tutorid+"'");
+             System.out.println(tutorid);
+            acceptance.setText(rs.getString("FULLNAME") + " has confirmed you");
+           
+            }
+            
+            else {
+                notification.setVisible(false);
+                iconAccepted.setVisible(false);
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+
     }
 
     public void setEverything() {

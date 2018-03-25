@@ -183,7 +183,7 @@ public class FXML_tutorShowController implements Initializable {
                 System.out.println("Opened database succesfully");
                 stmt = c.createStatement();
 
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + "'"+ id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00'");
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00'");
                 String avail = rs.getString("AVAILABILITY");
                 System.out.println(avail);
                 rs.close();
@@ -192,7 +192,7 @@ public class FXML_tutorShowController implements Initializable {
                     String sql = "UPDATE Slots SET Availability='false' WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '09:00' ";
                     // rs.close();
                     stmt.executeUpdate(sql);
-                    
+
                     nextPage(event, "09:00");
                 } else {
                     invalid3_label.setText("This slot has already been booked");
@@ -229,7 +229,7 @@ public class FXML_tutorShowController implements Initializable {
 
                 if (avail.equals("True")) {
                     String sql = "UPDATE Slots SET Availability='false' WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '11:00' ";
-                   stmt.executeUpdate(sql);
+                    stmt.executeUpdate(sql);
                     nextPage(event, "11:00");
                 } else {
                     invalid3_label.setText("This slot has already been booked");
@@ -265,7 +265,7 @@ public class FXML_tutorShowController implements Initializable {
 
                 if (avail.equals("True")) {
                     String sql = "UPDATE Slots SET Availability='false' WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '13:00' ";
-                   stmt.executeUpdate(sql);
+                    stmt.executeUpdate(sql);
                     nextPage(event, "13:00");
                 } else {
                     invalid3_label.setText("This slot has already been booked");
@@ -339,10 +339,9 @@ public class FXML_tutorShowController implements Initializable {
 
                 if (avail.equals("True")) {
                     String sql = "UPDATE Slots SET Availability='false' WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '17:00' ";
-                   stmt.executeUpdate(sql);
+                    stmt.executeUpdate(sql);
                     nextPage(event, "17:00");
-                } else 
-                {
+                } else {
                     invalid3_label.setText("This slot has already been booked");
                 }
 
@@ -377,7 +376,7 @@ public class FXML_tutorShowController implements Initializable {
 
                 if (avail.equals("True")) {
                     String sql = "UPDATE Slots SET Availability='false' WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "'" + "AND TIMESLOT = '19:00' ";
-                   stmt.executeUpdate(sql);
+                    stmt.executeUpdate(sql);
                     nextPage(event, "19:00");
                 } else {
                     invalid3_label.setText("This slot has already been booked");
@@ -406,29 +405,47 @@ public class FXML_tutorShowController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-
+            System.out.println(id);
             ResultSet rs = stmt.executeQuery("SELECT TIMESLOT FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "' and AVAILABILITY= 'True'");
+            int size = 0;
+            while (rs.next()) {
+                size++;
+            }
+            rs = stmt.executeQuery("SELECT TIMESLOT FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "' and AVAILABILITY= 'True'");
+
             rs.next();
             System.out.println(rs.getString("Timeslot"));
             if (rs.getString("Timeslot").equals("09:00")) {
                 slot1.setText(rs.getString("Timeslot"));
-                 rs.next();
+                size-- ;
+                if(size!=0){
+                    rs.next();
+
+                }
             } else {
                 slot1.setText("booked");
 
             }
-            
+
             if (rs.getString("Timeslot").equals("11:00")) {
 
                 slot2.setText(rs.getString("Timeslot"));
-                rs.next();
+                size-- ;
+                if(size!=0){
+                    rs.next();
+                     
+                }
             } else {
                 slot2.setText("booked");
             }
             if (rs.getString("Timeslot").equals("13:00")) {
 
                 slot3.setText(rs.getString("Timeslot"));
-                rs.next();
+                size-- ;
+                if(size!=0){
+                    rs.next();
+                  
+                }
             } else {
 
                 slot3.setText("booked");
@@ -437,7 +454,11 @@ public class FXML_tutorShowController implements Initializable {
             if (rs.getString("Timeslot").equals("15:00")) {
 
                 slot4.setText(rs.getString("Timeslot"));
-                rs.next();
+                 size-- ;
+                if(size!=0){
+                    rs.next();
+                    
+                }
             } else {
 
                 slot4.setText("booked");
@@ -446,7 +467,12 @@ public class FXML_tutorShowController implements Initializable {
             if (rs.getString("Timeslot").equals("17:00")) {
                 System.out.println(rs.getString("Timeslot"));
                 slot5.setText(rs.getString("Timeslot"));
-                rs.next();
+                size-- ;
+                if(size!=0){
+                    System.out.println(size);
+                    rs.next();
+                     
+                }
             } else {
                 System.out.println(rs.getString("Timeslot"));
                 slot5.setText("booked");
@@ -454,6 +480,7 @@ public class FXML_tutorShowController implements Initializable {
             }
 
             if (rs.getString("Timeslot").equals("19:00")) {
+                System.out.println(rs.getString("Timeslot"));
                 slot6.setText(rs.getString("Timeslot"));
             } else {
                 slot6.setText("booked");
