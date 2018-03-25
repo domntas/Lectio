@@ -19,15 +19,15 @@
             <Image url="@images/Paypal.png" />
          </image>
       </ImageView>
-      <TextField fx:id="email" layoutX="59.0" layoutY="250.0" prefHeight="27.0" prefWidth="245.0" promptText="email" />
-      <TextField fx:id="password" layoutX="59.0" layoutY="320.0" prefHeight="27.0" prefWidth="245.0" promptText="password" />
+      <TextField fx:id="email" layoutX="59.0" layoutY="250.0" prefHeight="27.0" prefWidth="245.0" promptText="EMAIL" />
+      <TextField fx:id="password" layoutX="59.0" layoutY="328.0" prefHeight="27.0" prefWidth="245.0" promptText="PASSWORD" />
       <Label fx:id="price" layoutX="132.0" layoutY="160.0" text="£14.50" textFill="WHITE">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
       <Label layoutX="228.0" layoutY="160.0" text="GBP" textFill="WHITE" />
-      <ImageView fx:id="confirm" fitHeight="55.0" fitWidth="51.0" layoutX="155.0" layoutY="571.0" onMouseClicked="#confirmClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="confirm" fitHeight="55.0" fitWidth="51.0" layoutX="155.0" layoutY="543.0" onMouseClicked="#confirmClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/approve.png" />
          </image>
@@ -37,6 +37,7 @@
             <Font name="System Italic" size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="requestdetails" layoutX="59.0" layoutY="406.0" prefHeight="72.0" prefWidth="245.0" promptText="Type request" wrapText="true" />
+      <TextArea fx:id="requestdetails" layoutX="59.0" layoutY="406.0" prefHeight="45.0" prefWidth="245.0" promptText="TYPE REQUEST" wrapText="true" />
+      <Label layoutX="167.0" layoutY="604.0" text="PAY" textFill="#fffefe" />
    </children>
 </AnchorPane>

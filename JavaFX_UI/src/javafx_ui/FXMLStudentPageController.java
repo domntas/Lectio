@@ -155,13 +155,13 @@ public class FXMLStudentPageController implements Initializable {
          
             System.out.println(studentemail);
             int  tutorid=0;
-            ResultSet rs = stmt.executeQuery("SELECT * from Requests inner join users on users.id=requests.studentid WHERE users.EMAIL = '" + studentemail + "' and Status='confirmed'");
+            ResultSet rs = stmt.executeQuery("SELECT * from Requests inner join users on users.id=requests.studentid WHERE users.EMAIL = '" + studentemail + "' and Status='confirmed' order by requestid desc limit 1");
             
             int size = 0;
             while (rs.next()) {
                 size++;
             }
-            rs = stmt.executeQuery("SELECT * from Requests inner join users on users.id=requests.studentid WHERE users.EMAIL = '" + studentemail + "' and Status='confirmed'");
+            rs = stmt.executeQuery("SELECT * from Requests inner join users on users.id=requests.studentid WHERE users.EMAIL = '" + studentemail + "' and Status='confirmed' order by requestid desc limit 1");
 
             System.out.println(size);
             if(size!=0){

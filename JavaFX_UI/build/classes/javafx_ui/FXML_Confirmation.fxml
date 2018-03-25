@@ -19,9 +19,9 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="studentbox1" layoutX="21.0" layoutY="223.0" prefHeight="292.0" prefWidth="298.0" style="-fx-background-radius: 20; -fx-background-color: #646C9A;">
+      <AnchorPane fx:id="studentbox1" layoutX="67.0" layoutY="213.0" minHeight="-Infinity" prefHeight="276.0" prefWidth="228.0" style="-fx-background-radius: 20; -fx-background-color: #646C9A;">
          <children>
-            <Label fx:id="confirmation1" layoutX="213.0" layoutY="118.0">
+            <Label fx:id="confirmation1" layoutX="208.0" layoutY="109.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -36,63 +36,59 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="19.0" layoutY="30.0" text="Name:" textFill="WHITE">
+            <Label fx:id="name" layoutX="86.0" layoutY="26.0" text="Filippo" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="19.0" layoutY="82.0" text="Location:" textFill="WHITE">
+            <Label fx:id="location" layoutX="86.0" layoutY="76.0" text="Hammersmith" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="19.0" layoutY="134.0" text="Subject:" textFill="WHITE">
+            <Label fx:id="subject" layoutX="86.0" layoutY="128.0" text="English" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="19.0" layoutY="238.0" text="Day:" textFill="WHITE">
+            <Label fx:id="timeslot" layoutX="87.0" layoutY="180.0" text="15:00" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="19.0" layoutY="186.0" text="Time:" textFill="WHITE">
+            <Label fx:id="day" layoutX="87.0" layoutY="232.0" text="Tuesday" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="name" layoutX="121.0" layoutY="32.0" text="Filippo" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="location" layoutX="121.0" layoutY="82.0" text="Hammersmith" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="subject" layoutX="121.0" layoutY="134.0" text="English" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="timeslot" layoutX="122.0" layoutY="186.0" text="15:00" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="day" layoutX="122.0" layoutY="238.0" text="Tuesday" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Separator layoutY="68.0" opacity="0.81" prefHeight="3.0" prefWidth="319.0" />
-            <Separator layoutY="119.0" opacity="0.8" prefHeight="3.0" prefWidth="319.0" />
-            <Separator layoutY="170.0" opacity="0.76" prefHeight="3.0" prefWidth="319.0" />
-            <Separator layoutY="223.0" opacity="0.83" prefHeight="3.0" prefWidth="319.0" />
+            <ImageView fitHeight="37.0" fitWidth="39.0" layoutX="24.0" layoutY="18.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-name.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="62.0" layoutX="24.0" layoutY="68.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-worldwide_location.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="24.0" layoutY="120.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-book.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="27.0" layoutY="175.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-clock.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="27.0" layoutY="227.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-crossed_out_date.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Text layoutX="87.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETAILS" wrappingWidth="187.0">
+      <Text layoutX="102.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETAILS" wrappingWidth="190.0">
          <fill>
             <LinearGradient endX="0.6778846153846154" endY="1.0" startY="1.0">
                <stops>
@@ -103,23 +99,13 @@
             </LinearGradient>
          </fill>
          <font>
-            <Font name="Avenir Roman" size="47.0" />
+            <Font name="Avenir Roman" size="40.0" />
          </font>
       </Text>
-      <Text fx:id="final_label" fill="WHITE" layoutX="63.0" layoutY="624.0" strokeType="OUTSIDE" strokeWidth="0.0" text="READY TO TEACH ON ">
+      <Text fx:id="final_label" fill="WHITE" layoutX="69.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="READY TO TEACH ON TUESDAY? " textAlignment="CENTER">
          <font>
-            <Font size="15.0" />
+            <Font size="14.0" />
          </font>
       </Text>
-      <Line endX="100.0" layoutX="176.0" layoutY="369.0" rotate="-90.0" startX="-193.0" strokeWidth="2.0">
-         <stroke>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#6daeff" />
-                  <Stop color="#efbad3" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </stroke>
-      </Line>
    </children>
 </AnchorPane>

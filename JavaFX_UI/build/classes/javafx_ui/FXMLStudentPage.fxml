@@ -93,7 +93,7 @@
             </Label>
             <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/female1.png" />
+                  <Image url="@images/face2.png" />
                </image>
             </ImageView>
             <Label fx:id="subject11" layoutX="105.0" layoutY="51.0" text="English" textFill="#fffdfd">
@@ -110,7 +110,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="notification" layoutX="33.0" layoutY="41.0" onMouseClicked="#box1Clicked" opacity="0.95" prefHeight="60.0" prefWidth="212.0" style="-fx-background-color: #6A5d9a; -fx-background-radius: 30; -fx-background-radius: 30;">
+      <AnchorPane fx:id="notification" layoutX="33.0" layoutY="41.0" opacity="0.95" prefHeight="60.0" prefWidth="212.0" style="-fx-background-color: #6b5d9a; -fx-background-radius: 30; -fx-background-radius: 30;">
          <children>
             <Label fx:id="acceptance" layoutX="14.0" prefHeight="38.0" prefWidth="209.0" text="Filippo has accepted you!  " textFill="WHITE" wrapText="true">
                <font>
@@ -130,7 +130,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <ImageView fx:id="iconAccepted" fitHeight="49.0" fitWidth="41.0" layoutX="287.0" layoutY="51.0" preserveRatio="true">
+      <ImageView fx:id="iconAccepted" fitHeight="38.0" fitWidth="36.0" layoutX="292.0" layoutY="53.0" opacity="0.95" preserveRatio="true">
          <image>
             <Image url="@images/icons8-training.png" />
          </image>

@@ -1,15 +1,15 @@
-INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Domantas', 'Domantas', '123', 'Student');
-INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Anthony', 'Anthony', '123', 'Tutor');
-INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Filippo', 'Filippo', '123', 'Tutor');
-INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Leonardo', 'Leonardo', '123', 'Tutor');
-INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Lucas', 'Lucas', '123', 'Tutor');
+INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Domantas', 'Domantas@', '123', 'Student');
+INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Anthony', 'Anthony@', '123', 'Tutor');
+INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Filippo', 'Filippo@', '123', 'Tutor');
+INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Leonardo', 'Leonardo@', '123', 'Tutor');
+INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Lucas', 'Lucas@', '123', 'Tutor');
 
-INSERT INTO Student(ID, BOROUGH) VALUES (1,"Tower of Hamlets");
+INSERT INTO Student(ID, BOROUGH) VALUES (1,"Barking");
 
-INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 2, 'Camden', 'Math', 18 , 'The AnchorPane layout pane enables you to anchor nodes to the top, bottom, left side, right side, or center of the pane. As the window is resized, the nodes maintain their position relative to their anchor point. Nodes can be anchored to more than one position and more than one node can be anchored to the same position.');
-INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 3, 'Hammersmith',  'Computer Science', 20 , 'The AnchorPane layout pane enables you to anchor nodes to the top, bottom, left side, right side, or center of the pane. As the window is resized, the nodes maintain their position relative to their anchor point. Nodes can be anchored to more than one position and more than one node can be anchored to the same position.');
-INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 4, 'City of London',  'History', 15 , 'The AnchorPane layout pane enables you to anchor nodes to the top, bottom, left side, right side, or center of the pane. As the window is resized, the nodes maintain their position relative to their anchor point. Nodes can be anchored to more than one position and more than one node can be anchored to the same position.');
-INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 5, 'City of London', 'English', 13 , 'The AnchorPane layout pane enables you to anchor nodes to the top, bottom, left side, right side, or center of the pane. As the window is resized, the nodes maintain their position relative to their anchor point. Nodes can be anchored to more than one position and more than one node can be anchored to the same position.');
+INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 2, 'Camden', 'Math', 18 , 'I am a recently graduated student training to become a teacher and feel like that makes me a great tutor! I specialise in mathematics, as this is what my degree was in, but am knowledgeable in a range of other subjects as well. I believe in a friendly approach and that the best way for you to learn is through problem solving so if that sounds good to you, book a session!');
+INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 3, 'Hammersmith',  'Computer Science', 20 , 'I am an ex-lecturer in Computer Science and gave it up to follow my passion of inspiring students in a more personal way through one-to-one tutoring. My specialism is in medieval history but my knowledge also covers a broad spectrum to a more shallow level. I am a huge believer that questions are important and aim to spark an interest and curiosity into the subject. If you want to learn more feel free to contact me.');
+INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 4, 'Chelsea',  'History', 15 , 'I am an ex-lecturer in history and gave it up to follow my passion of inspiring students in a more personal way through one-to-one tutoring. My specialism is in medieval history but my knowledge also covers a broad spectrum to a more shallow level. I am a huge believer that questions are important and aim to spark an interest and curiosity into the subject. If you want to learn more feel free to contact me.');
+INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 5, 'City of London', 'English', 13 , 'In my years of teaching I have encountered a large variety of different students. These differences come in all forms from age and culture, to social condition and learning ability. These experiences have been challenging but never lessened my enthusiasm and desire to teach. Instead I always feel a great sense of personal and professional pride and accomplishment from devoting my skills to such a worthwhile cause.');
 
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (2,"Monday","09:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (2,"Monday","11:00");

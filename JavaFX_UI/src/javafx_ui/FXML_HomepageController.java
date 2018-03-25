@@ -205,7 +205,7 @@ public class FXML_HomepageController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            String sql = "UPDATE Requests SET Status='Confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
             stmt.executeUpdate(sql);
 
             stmt.close();
@@ -248,6 +248,8 @@ public class FXML_HomepageController implements Initializable {
             stmt = c.createStatement();
             String sql = "DELETE FROM Requests  WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot1.getText()+"'";
             stmt.executeUpdate(sql);
+            sql = "UPDATE Slots SET Availability='True' WHERE ID = " + "'" + id + "' AND TIMESLOT = '"+timeslot1.getText()+"' and day='"+day1.getText()+"'";
+            stmt.executeUpdate(sql);
 
             stmt.close();
             c.close();
@@ -271,7 +273,7 @@ public class FXML_HomepageController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            String sql = "UPDATE Requests SET Status='Confirmed' WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
             stmt.executeUpdate(sql);
 
             stmt.close();
@@ -315,7 +317,8 @@ public class FXML_HomepageController implements Initializable {
             stmt = c.createStatement();
             String sql = "DELETE FROM REQUESTS  WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
             stmt.executeUpdate(sql);
-
+            sql = "UPDATE Slots SET Availability='True' WHERE ID = " + "'" + id + "' AND TIMESLOT = '"+timeslot2.getText()+"' and day='"+day2.getText()+"'";
+            stmt.executeUpdate(sql);
             stmt.close();
             c.close();
 

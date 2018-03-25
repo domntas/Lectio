@@ -13,9 +13,9 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_RegistrationController">
     
    <children>
-      <TextField fx:id="password3_box" layoutX="50.0" layoutY="396.0" prefHeight="27.0" prefWidth="258.0" promptText="CONFIRM PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
-      <TextField fx:id="username2_box" layoutX="51.0" layoutY="295.0" prefHeight="27.0" prefWidth="260.0" promptText="FULLNAME" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
-      <Text layoutX="56.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="202.35699462890625">
+      <TextField fx:id="password3_box" layoutX="46.0" layoutY="344.0" prefHeight="27.0" prefWidth="258.0" promptText="CONFIRM PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="username2_box" layoutX="47.0" layoutY="241.0" prefHeight="27.0" prefWidth="260.0" promptText="FULLNAME" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
+      <Text layoutX="55.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="202.35699462890625">
          <font>
             <Font name="Avenir Roman" size="44.0" />
          </font>
@@ -29,7 +29,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <TextField fx:id="email_box" layoutX="52.0" layoutY="452.0" prefHeight="27.0" prefWidth="260.0" promptText="EMAIL" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="email_box" layoutX="48.0" layoutY="397.0" prefHeight="27.0" prefWidth="260.0" promptText="EMAIL" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
      
       <RadioButton fx:id="student_radio" layoutX="60.0" layoutY="503.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="92.0" text="Student" textFill="WHITE">
          <toggleGroup>
@@ -37,12 +37,12 @@
          </toggleGroup></RadioButton>
       <RadioButton fx:id="tutor_radio" layoutX="59.0" layoutY="544.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="62.0" text="Tutor" textFill="WHITE" toggleGroup="$toggleGroup" />
       <Label fx:id="invalid2_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
-      <ImageView fitHeight="67.0" fitWidth="43.0" onMousePressed="#backClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="47.0" fitWidth="38.0" layoutX="14.0" layoutY="14.0" onMousePressed="#backClicked" opacity="0.85" pickOnBounds="true" preserveRatio="true" rotate="180.0" AnchorPane.leftAnchor="14.0">
          <image>
-            <Image url="@images/back.png" />
+            <Image url="@images/icons8-arrows_long_right.png" />
          </image>
       </ImageView>
-      <TextField fx:id="password2_box" layoutX="51.0" layoutY="347.0" prefHeight="27.0" prefWidth="260.0" promptText="PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="password2_box" layoutX="47.0" layoutY="293.0" prefHeight="27.0" prefWidth="260.0" promptText="PASSWORD" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
       <ImageView fx:id="registration2_box" fitHeight="47.0" fitWidth="129.0" layoutX="185.0" layoutY="608.0" onMouseClicked="#registratationClicked" opacity="0.69" pickOnBounds="true">
          <image>
             <Image url="@images/button.png" />
@@ -53,9 +53,11 @@
             <Font name="Avenir Roman" size="17.0" />
          </font>
       </Text>
-      <Separator layoutX="60.0" layoutY="321.0" prefHeight="4.0" prefWidth="258.0" />
-      <Separator layoutX="60.0" layoutY="372.0" prefHeight="4.0" prefWidth="258.0" />
-      <Separator layoutX="60.0" layoutY="421.0" prefHeight="4.0" prefWidth="258.0" />
-      <Separator layoutX="60.0" layoutY="477.0" prefHeight="4.0" prefWidth="258.0" />
+      <Separator layoutX="56.0" layoutY="267.0" prefHeight="4.0" prefWidth="258.0" />
+      <Separator layoutX="56.0" layoutY="318.0" prefHeight="4.0" prefWidth="258.0" />
+      <Separator layoutX="56.0" layoutY="369.0" prefHeight="4.0" prefWidth="258.0" />
+      <Separator layoutX="56.0" layoutY="422.0" prefHeight="4.0" prefWidth="258.0" />
+      <Separator layoutX="56.0" layoutY="474.0" prefHeight="4.0" prefWidth="258.0" />
+      <TextField layoutX="48.0" layoutY="449.0" prefHeight="27.0" prefWidth="260.0" promptText="PHONE NUMBER" style="-fx-text-box-border: transparent; -fx-background-color: transparent; -fx-prompt-text-fill: #ffffff; -fx-text-fill: #ffffff;" />
    </children>
 </AnchorPane>

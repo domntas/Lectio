@@ -69,7 +69,6 @@ public class FXML_TutorDetailsController implements Initializable {
     
     
     
-    
     /**
      * Initialises the controller class.
      */

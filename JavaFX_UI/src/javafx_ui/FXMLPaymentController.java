@@ -81,8 +81,10 @@ public class FXMLPaymentController implements Initializable {
                     System.out.println("Opened database succesfully");
                     stmt = c.createStatement();
 
-                    ResultSet rs = stmt.executeQuery("SELECT student.ID FROM STUDENT INNER JOIN USERS ON student.id=users.id where users.email= '" + studentemail + "'");
+                    ResultSet rs = stmt.executeQuery("SELECT student.ID, USERS.FULLNAME, USERS.EMAIL FROM STUDENT INNER JOIN USERS ON student.id=users.id where users.email= '" + studentemail + "'");
                     String studentid = rs.getString("ID");
+                    String name =  rs.getString(2);
+                    String email =  rs.getString(3);
                     String sql = "INSERT INTO REQUESTS(STUDENTID, TUTORID, DAY, TIMESLOT, DETAILS)  VALUES (?,?,?,?,?)";
 
                     try (PreparedStatement pstmt = c.prepareStatement(sql)) {
@@ -100,9 +102,14 @@ public class FXMLPaymentController implements Initializable {
                     rs.close();
                     stmt.close();
                     c.close();
-                    Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLStudentPage.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+                    FXMLStudentPageController setController = loader.getController();
+                    System.out.println("YOUR NAME IS" + name);
+                    setController.myFunction(name, email);
                     Scene homepage_scene = new Scene(homepage_parent);
                     Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
                     app_stage.setScene(homepage_scene);
                     app_stage.show();
                 } catch (Exception e) {
