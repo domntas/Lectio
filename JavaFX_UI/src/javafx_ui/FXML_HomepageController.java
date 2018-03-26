@@ -85,7 +85,7 @@ public class FXML_HomepageController implements Initializable {
 
     @FXML
     private ImageView deny1;
-    
+
     @FXML
     private ImageView accept2;
 
@@ -94,12 +94,12 @@ public class FXML_HomepageController implements Initializable {
 
     @FXML
     private Label confirmation1;
-    
+
     @FXML
     private Label confirmation2;
 
     private int id;
-    
+
     private String subject;
 
     private ArrayList<Integer> studentids = new ArrayList<Integer>();
@@ -200,25 +200,25 @@ public class FXML_HomepageController implements Initializable {
         confirmation1.setVisible(true);
         confirmation1.setText("Accepted");
         try {
-             Connection c = null;
-        java.sql.Statement stmt = null;
-        try {
-            c = DriverManager.getConnection("jdbc:sqlite:users.db");
+            Connection c = null;
+            java.sql.Statement stmt = null;
+            try {
+                c = DriverManager.getConnection("jdbc:sqlite:users.db");
 
-            System.out.println("Opened database succesfully");
-            stmt = c.createStatement();
-            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot1.getText()+"'";
-            stmt.executeUpdate(sql);
-            
-            ResultSet rs = stmt.executeQuery("SELECT subject from Tutor where ID = '" + id + "'");
-             subject = rs.getString("Subject");
-            stmt.close();
-            c.close();
+                System.out.println("Opened database succesfully");
+                stmt = c.createStatement();
+                String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '" + timeslot1.getText() + "'";
+                stmt.executeUpdate(sql);
 
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
-        }
+                ResultSet rs = stmt.executeQuery("SELECT subject from Tutor where ID = '" + id + "'");
+                subject = rs.getString("Subject");
+                stmt.close();
+                c.close();
+
+            } catch (Exception e) {
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                System.exit(0);
+            }
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("FXML_Confirmation.fxml"));
             System.out.println(loader);
@@ -243,16 +243,16 @@ public class FXML_HomepageController implements Initializable {
         deny1.setVisible(false);
         confirmation1.setVisible(true);
         confirmation1.setText("Denied");
-         Connection c = null;
+        Connection c = null;
         java.sql.Statement stmt = null;
         try {
             c = DriverManager.getConnection("jdbc:sqlite:users.db");
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            String sql = "DELETE FROM Requests  WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot1.getText()+"'";
+            String sql = "DELETE FROM Requests  WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '" + timeslot1.getText() + "'";
             stmt.executeUpdate(sql);
-            sql = "UPDATE Slots SET Availability='True' WHERE ID = " + "'" + id + "' AND TIMESLOT = '"+timeslot1.getText()+"' and day='"+day1.getText()+"'";
+            sql = "UPDATE Slots SET Availability='True' WHERE ID = " + "'" + id + "' AND TIMESLOT = '" + timeslot1.getText() + "' and day='" + day1.getText() + "'";
             stmt.executeUpdate(sql);
 
             stmt.close();
@@ -264,20 +264,20 @@ public class FXML_HomepageController implements Initializable {
         }
 
     }
-    
+
     public void acceptedSecond(MouseEvent event) throws IOException, InterruptedException {
         accept2.setVisible(false);
         deny2.setVisible(false);
         confirmation2.setVisible(true);
         confirmation2.setText("Accepted");
-         Connection c = null;
+        Connection c = null;
         java.sql.Statement stmt = null;
         try {
             c = DriverManager.getConnection("jdbc:sqlite:users.db");
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '" + timeslot2.getText() + "'";
             stmt.executeUpdate(sql);
 
             stmt.close();
@@ -293,7 +293,7 @@ public class FXML_HomepageController implements Initializable {
             System.out.println(loader);
             Parent homepage_parent = (Parent) loader.load();
             FXML_ConfirmationController setController = loader.getController();
-            setController.myFunction(name2.getText(),subject, day2.getText(), timeslot2.getText(), borough2.getText(), id, studentids.get(1));
+            setController.myFunction(name2.getText(), subject, day2.getText(), timeslot2.getText(), borough2.getText(), id, studentids.get(1));
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -312,16 +312,16 @@ public class FXML_HomepageController implements Initializable {
         deny2.setVisible(false);
         confirmation2.setVisible(true);
         confirmation2.setText("Denied");
-         Connection c = null;
+        Connection c = null;
         java.sql.Statement stmt = null;
         try {
             c = DriverManager.getConnection("jdbc:sqlite:users.db");
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            String sql = "DELETE FROM REQUESTS  WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            String sql = "DELETE FROM REQUESTS  WHERE STUDENTID = '" + studentids.get(1) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '" + timeslot2.getText() + "'";
             stmt.executeUpdate(sql);
-            sql = "UPDATE Slots SET Availability='True' WHERE ID = " + "'" + id + "' AND TIMESLOT = '"+timeslot2.getText()+"' and day='"+day2.getText()+"'";
+            sql = "UPDATE Slots SET Availability='True' WHERE ID = " + "'" + id + "' AND TIMESLOT = '" + timeslot2.getText() + "' and day='" + day2.getText() + "'";
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();
@@ -332,14 +332,14 @@ public class FXML_HomepageController implements Initializable {
         }
 
     }
-    
-     public void signout(MouseEvent event) throws IOException {
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
-                    Parent homepage_parent = (Parent) loader.load();
+
+    public void signout(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+        Parent homepage_parent = (Parent) loader.load();
         Scene login_scene = new Scene(homepage_parent);
         //FXMLDocumentController setController = loader.getController();
-                    //System.out.println("YOUR NAME IS" + studentname);
-                    //setController.myFunction(name.getText(), tutorid);
+        //System.out.println("YOUR NAME IS" + studentname);
+        //setController.myFunction(name.getText(), tutorid);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(login_scene);
         app_stage.show();

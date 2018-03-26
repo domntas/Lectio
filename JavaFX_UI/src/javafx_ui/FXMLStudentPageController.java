@@ -454,7 +454,7 @@ public class FXMLStudentPageController implements Initializable {
         app_stage.show();
     }
 
-    public void viewSchedule(MouseEvent event){
+    public void viewSchedule(MouseEvent event) {
         try {
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("FXMLTutorConfirmation.fxml"));
@@ -468,7 +468,7 @@ public class FXMLStudentPageController implements Initializable {
             app_stage.hide();
             app_stage.setScene(homepage_scene);
             app_stage.show();
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -128,10 +128,10 @@ public class FXML_RegistrationController implements Initializable {
             }
             rs.close();
             if (let_in) {
-                if((!student_radio.isSelected() && !tutor_radio.isSelected()) || username2_box.getText().isEmpty()  || password2_box.getText().isEmpty() || password3_box.getText().isEmpty() || email_box.getText().isEmpty()){
+                if ((!student_radio.isSelected() && !tutor_radio.isSelected()) || username2_box.getText().isEmpty() || password2_box.getText().isEmpty() || password3_box.getText().isEmpty() || email_box.getText().isEmpty()) {
                     message = "Please full missing fields";
                     return false;
-                }else{                  
+                } else {
                     if (student_radio.isSelected()) {
                         type = "Student";
                     }
@@ -139,29 +139,27 @@ public class FXML_RegistrationController implements Initializable {
                         System.out.println("tutor");
                         type = "Tutor";
                     }
-                    
-                        if (!(password2_box.getText().equals(password3_box.getText()))) {
-                            System.out.println(password2_box.getText());
-                            System.out.println(password3_box.getText());
-                            message = "Passwords do not match";
-                            return false;
-                        }
-                        String sql = "INSERT INTO Users (FULLNAME, EMAIL, PASSWORD,USERTYPE) VALUES (?,?,?,?)";
 
-                        try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-                            System.out.println("inserting");
-                            pstmt.setString(1, username2_box.getText());
-                            pstmt.setString(2, email_box.getText());
-                            pstmt.setString(3, password2_box.getText());
-                            pstmt.setString(4, type);
-                            pstmt.executeUpdate();
-                        } catch (SQLException e) {
-                            System.out.println(e.getMessage());
-                        }
-                    
+                    if (!(password2_box.getText().equals(password3_box.getText()))) {
+                        System.out.println(password2_box.getText());
+                        System.out.println(password3_box.getText());
+                        message = "Passwords do not match";
+                        return false;
+                    }
+                    String sql = "INSERT INTO Users (FULLNAME, EMAIL, PASSWORD,USERTYPE) VALUES (?,?,?,?)";
+
+                    try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+                        System.out.println("inserting");
+                        pstmt.setString(1, username2_box.getText());
+                        pstmt.setString(2, email_box.getText());
+                        pstmt.setString(3, password2_box.getText());
+                        pstmt.setString(4, type);
+                        pstmt.executeUpdate();
+                    } catch (SQLException e) {
+                        System.out.println(e.getMessage());
+                    }
+
                 }
-
-                
 
             }
             stmt.close();

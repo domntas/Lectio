@@ -16,13 +16,12 @@ import javafx.stage.Stage;
  * @author filippopiggici
  */
 public class JavaFX_UI extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
 
-        stage.setScene(new Scene(root, 360 , 720));
+        stage.setScene(new Scene(root, 360, 720));
         stage.show();
     }
 
@@ -32,6 +31,5 @@ public class JavaFX_UI extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
-}
 
+}

@@ -65,7 +65,7 @@ public class FXML_ConfirmationController implements Initializable {
     private int tutorid;
 
     private int studentid;
-    
+
     private String tutorname;
 
     /**
@@ -103,8 +103,8 @@ public class FXML_ConfirmationController implements Initializable {
             System.out.println(timeslot);
             String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentid + "'" + " AND TUTORID = " + "'" + tutorid + "'" + " AND TIMESLOT = '" + timeslot.getText() + "'";
             stmt.executeUpdate(sql);
-            
-            ResultSet rs = stmt.executeQuery("SELECT Users.FULLNAME FROM Users inner join Tutor on Tutor.ID = Users.id WHERE tutor.id = '" + tutorid+ "'");
+
+            ResultSet rs = stmt.executeQuery("SELECT Users.FULLNAME FROM Users inner join Tutor on Tutor.ID = Users.id WHERE tutor.id = '" + tutorid + "'");
             tutorname = rs.getString("FULLNAME");
             stmt.close();
             c.close();
@@ -117,7 +117,6 @@ public class FXML_ConfirmationController implements Initializable {
 
     public void backClicked(MouseEvent event) throws IOException {
 
-      
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML_Homepage.fxml"));
         Parent homepage_parent = (Parent) loader.load();
         Scene homepage_scene = new Scene(homepage_parent);

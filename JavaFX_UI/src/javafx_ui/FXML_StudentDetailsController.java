@@ -39,14 +39,14 @@ public class FXML_StudentDetailsController implements Initializable {
 
     @FXML
     private Button register;
-    
+
     @FXML
     private Label invalid_label;
-    
+
     private String name;
 
     private String email;
-    
+
     ObservableList<String> list = FXCollections.observableArrayList("Camden", "Greenwich", "Hackney", "Hammersmith", "Islington", "Kensington and Chelsea", "Lambeth", "Lewisham", "Southwark", "Tower Hamlets", "Wandsworth", "Westminster", "Barking", "Barnet", "Bexley", "Brent", "Bromley", "Croydon", "Ealing", "Enfield", "Haringey", "Harrow", "Havering", "Hillingdon", "Hounslow", "Kingston upon Thames", "Merton", "Newham", "Redbridge", "Richmond upon Thames", "Sutton", "Waltham Forest");
 
     ;
@@ -67,21 +67,21 @@ public class FXML_StudentDetailsController implements Initializable {
     }
 
     public void registrationClicked(MouseEvent event) throws IOException {
-       
+
         if (isValid2()) {
             FXMLLoader loader;
-                loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
-                Parent homepage_parent = (Parent) loader.load();
-                FXMLStudentPageController setController = loader.getController();
-                System.out.println("YOUR NAME IS" + name);
-                setController.myFunction(name, email);
-                Scene homepage_scene = new Scene(homepage_parent);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+            Parent homepage_parent = (Parent) loader.load();
+            FXMLStudentPageController setController = loader.getController();
+            System.out.println("YOUR NAME IS" + name);
+            setController.myFunction(name, email);
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                app_stage.hide();
-                app_stage.setScene(homepage_scene);
-                app_stage.show();
-            
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+
             app_stage.show();
         } else {
 
@@ -95,7 +95,7 @@ public class FXML_StudentDetailsController implements Initializable {
             System.out.println("heyyyyyyyyy1");
             return false;
         } else {
-               System.out.println("heyyyyyyyyy");
+            System.out.println("heyyyyyyyyy");
             Connection c = null;
             java.sql.Statement stmt = null;
 
@@ -106,32 +106,32 @@ public class FXML_StudentDetailsController implements Initializable {
                 stmt = c.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT ID,FULLNAME, EMAIL FROM Users ORDER BY ID DESC LIMIT 1");
                 int id = rs.getInt(1);
-                name=rs.getString(2);
+                name = rs.getString(2);
                 email = rs.getString(3);
                 String sql = "INSERT INTO student (ID, BOROUGH) VALUES (?,?)";
-                  // rs.close();
-                
+                // rs.close();
+
                 try (
                         PreparedStatement pstmt = c.prepareStatement(sql)) {
                     System.out.println("inserting IN THE STUDENT");
                     pstmt.setInt(1, id);
-                    pstmt.setString(2, comboBox1.getValue());     
+                    pstmt.setString(2, comboBox1.getValue());
                     pstmt.executeUpdate();
-                     pstmt.close();
+                    pstmt.close();
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                 }
-            stmt.close();
-            c.close();
+                stmt.close();
+                c.close();
             } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
             }
 
             System.out.println("Operation done succesfully");
-            
+
         }
         return true;
     }
-    
+
 }

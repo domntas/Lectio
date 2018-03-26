@@ -83,8 +83,8 @@ public class FXMLPaymentController implements Initializable {
 
                     ResultSet rs = stmt.executeQuery("SELECT student.ID, USERS.FULLNAME, USERS.EMAIL FROM STUDENT INNER JOIN USERS ON student.id=users.id where users.email= '" + studentemail + "'");
                     String studentid = rs.getString("ID");
-                    String name =  rs.getString(2);
-                    String email =  rs.getString(3);
+                    String name = rs.getString(2);
+                    String email = rs.getString(3);
                     String sql = "INSERT INTO REQUESTS(STUDENTID, TUTORID, DAY, TIMESLOT, DETAILS)  VALUES (?,?,?,?,?)";
 
                     try (PreparedStatement pstmt = c.prepareStatement(sql)) {

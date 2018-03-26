@@ -141,12 +141,12 @@ public class FXML_tutorShowController implements Initializable {
     }
 
     public void backClicked(MouseEvent event) throws IOException {
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
-                    Parent homepage_parent = (Parent) loader.load();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+        Parent homepage_parent = (Parent) loader.load();
         Scene homepage_scene = new Scene(homepage_parent);
         FXMLStudentPageController setController = loader.getController();
-                    //System.out.println("YOUR NAME IS" + studentname);
-                    setController.myFunction(studentname, studentemail);
+        //System.out.println("YOUR NAME IS" + studentname);
+        setController.myFunction(studentname, studentemail);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(homepage_scene);
         app_stage.show();
@@ -416,7 +416,7 @@ public class FXML_tutorShowController implements Initializable {
             ResultSet rs = stmt.executeQuery("SELECT TIMESLOT FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + day + "' and AVAILABILITY= 'True'");
             System.out.println(day);
             int size = 0;
-            
+
             while (rs.next()) {
                 size++;
             }
@@ -428,8 +428,8 @@ public class FXML_tutorShowController implements Initializable {
             System.out.println(rs.getString("Timeslot"));
             if (rs.getString("Timeslot").equals("09:00")) {
                 slot1.setText(rs.getString("Timeslot"));
-                size-- ;
-                if(size!=0){
+                size--;
+                if (size != 0) {
                     rs.next();
 
                 }
@@ -441,10 +441,10 @@ public class FXML_tutorShowController implements Initializable {
             if (rs.getString("Timeslot").equals("11:00")) {
 
                 slot2.setText(rs.getString("Timeslot"));
-                size-- ;
-                if(size!=0){
+                size--;
+                if (size != 0) {
                     rs.next();
-                     
+
                 }
             } else {
                 slot2.setText("booked");
@@ -452,10 +452,10 @@ public class FXML_tutorShowController implements Initializable {
             if (rs.getString("Timeslot").equals("13:00")) {
 
                 slot3.setText(rs.getString("Timeslot"));
-                size-- ;
-                if(size!=0){
+                size--;
+                if (size != 0) {
                     rs.next();
-                  
+
                 }
             } else {
 
@@ -465,10 +465,10 @@ public class FXML_tutorShowController implements Initializable {
             if (rs.getString("Timeslot").equals("15:00")) {
 
                 slot4.setText(rs.getString("Timeslot"));
-                 size-- ;
-                if(size!=0){
+                size--;
+                if (size != 0) {
                     rs.next();
-                    
+
                 }
             } else {
 
@@ -478,11 +478,11 @@ public class FXML_tutorShowController implements Initializable {
             if (rs.getString("Timeslot").equals("17:00")) {
                 System.out.println(rs.getString("Timeslot"));
                 slot5.setText(rs.getString("Timeslot"));
-                size-- ;
-                if(size!=0){
+                size--;
+                if (size != 0) {
                     System.out.println(size);
                     rs.next();
-                     
+
                 }
             } else {
                 System.out.println(rs.getString("Timeslot"));

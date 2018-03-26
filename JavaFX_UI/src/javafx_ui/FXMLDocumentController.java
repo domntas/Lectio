@@ -46,7 +46,7 @@ public class FXMLDocumentController implements Initializable {
     private String name;
 
     private String usertype;
-    
+
     private int id;
 
     private void handleButtonAction(ActionEvent event) {
@@ -73,7 +73,7 @@ public class FXMLDocumentController implements Initializable {
         if (isValidCredentials()) {
             try {
                 FXMLLoader loader;
-                if (usertype.equals ("Student")) {
+                if (usertype.equals("Student")) {
                     loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
                     Parent homepage_parent = (Parent) loader.load();
                     FXMLStudentPageController setController = loader.getController();
@@ -156,12 +156,12 @@ public class FXMLDocumentController implements Initializable {
     public String getName() {
         return name;
     }
-    
+
     public void onEnter(ActionEvent event) throws IOException {
         if (isValidCredentials()) {
             try {
                 FXMLLoader loader;
-                if (usertype.equals ("Student")) {
+                if (usertype.equals("Student")) {
                     loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
                     Parent homepage_parent = (Parent) loader.load();
                     FXMLStudentPageController setController = loader.getController();
@@ -197,6 +197,6 @@ public class FXMLDocumentController implements Initializable {
             password_box.clear();
             invalid_label.setText("Wrong Username or Password");
         }
-        
+
     }
 }

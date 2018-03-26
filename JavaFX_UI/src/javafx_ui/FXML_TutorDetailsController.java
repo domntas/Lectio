@@ -54,9 +54,9 @@ public class FXML_TutorDetailsController implements Initializable {
 
     @FXML
     private Label invalid_label;
-    
+
     String name;
-    
+
     int id;
 
     ObservableList<String> list = FXCollections.observableArrayList("Camden", "Greenwich", "Hackney", "Hammersmith", "Islington", "Kensington and Chelsea", "Lambeth", "Lewisham", "Southwark", "Tower Hamlets", "Wandsworth", "Westminster", "Barking", "Barnet", "Bexley", "Brent", "Bromley", "Croydon", "Ealing", "Enfield", "Haringey", "Harrow", "Havering", "Hillingdon", "Hounslow", "Kingston upon Thames", "Merton", "Newham", "Redbridge", "Richmond upon Thames", "Sutton", "Waltham Forest");
@@ -85,18 +85,18 @@ public class FXML_TutorDetailsController implements Initializable {
 
         if (isValid()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML_Homepage.fxml"));
-                    Parent homepage_parent = (Parent) loader.load();
-                    FXML_HomepageController setController = loader.getController();
-                    System.out.println("YOUR NAME IS" + name);
-                    System.out.println(id);
-                    setController.myFunction(name, id);
-                    Scene homepage_scene = new Scene(homepage_parent);
-                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Parent homepage_parent = (Parent) loader.load();
+            FXML_HomepageController setController = loader.getController();
+            System.out.println("YOUR NAME IS" + name);
+            System.out.println(id);
+            setController.myFunction(name, id);
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                    app_stage.hide();
-                    app_stage.setScene(homepage_scene);
-                    app_stage.show();
-         
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+
         } else {
 
             invalid_label.setText("Select every field please");
@@ -114,7 +114,7 @@ public class FXML_TutorDetailsController implements Initializable {
 
             try {
                 c = DriverManager.getConnection("jdbc:sqlite:users.db");
-                
+
                 System.out.println("Opened database succesfully");
                 stmt = c.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT ID,FULLNAME FROM Users ORDER BY ID DESC LIMIT 1");
@@ -161,7 +161,7 @@ public class FXML_TutorDetailsController implements Initializable {
                 while (count != 7) {//days
                     while (count2 != 6) {//times
                         try (
-                            PreparedStatement pstmt = c.prepareStatement(sql)) {
+                                PreparedStatement pstmt = c.prepareStatement(sql)) {
                             //System.out.println("inserting");
                             pstmt.setInt(1, id);
                             // System.out.println("inserting1");
@@ -179,19 +179,17 @@ public class FXML_TutorDetailsController implements Initializable {
                         //System.out.println("adding count2 " +(count2));
 
                     }
-                    count2=0;
+                    count2 = 0;
                     count++;
                 }
-                
+
                 stmt.close();
                 c.close();
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
             }
             System.out.println("Operation done succesfully");
-
 
         }
         return true;
