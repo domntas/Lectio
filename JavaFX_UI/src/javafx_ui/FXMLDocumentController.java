@@ -156,4 +156,47 @@ public class FXMLDocumentController implements Initializable {
     public String getName() {
         return name;
     }
+    
+    public void onEnter(ActionEvent event) throws IOException {
+        if (isValidCredentials()) {
+            try {
+                FXMLLoader loader;
+                if (usertype.equals ("Student")) {
+                    loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+                    FXMLStudentPageController setController = loader.getController();
+                    System.out.println("YOUR NAME IS" + name);
+                    setController.myFunction(name, username);
+                    Scene homepage_scene = new Scene(homepage_parent);
+                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                    app_stage.hide();
+                    app_stage.setScene(homepage_scene);
+                    app_stage.show();
+                } else {
+                    loader = new FXMLLoader(getClass().getResource("FXML_Homepage.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+                    FXML_HomepageController setController = loader.getController();
+                    System.out.println("YOUR NAME IS" + name);
+                    System.out.println(id);
+                    setController.myFunction(name, id);
+                    Scene homepage_scene = new Scene(homepage_parent);
+                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                    app_stage.hide();
+                    app_stage.setScene(homepage_scene);
+                    app_stage.show();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+
+            }
+        } else {
+            username_box.clear();
+            password_box.clear();
+            invalid_label.setText("Wrong Username or Password");
+        }
+        
+    }
 }
