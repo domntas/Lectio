@@ -250,7 +250,7 @@ public class FXMLStudentPageController implements Initializable {
             System.out.println(studentname);
             ResultSet rs = stmt.executeQuery("SELECT BOROUGH FROM STUDENT inner join users on users.id=student.id WHERE users.FULLNAME = '" + newname + "'");
             rs.next();
-            String name = rs.getString(1);
+            String name = rs.getString(1) + " London";
             System.out.println(name);
             rs.close();
 
@@ -264,7 +264,7 @@ public class FXMLStudentPageController implements Initializable {
             System.out.println("Hey Latitude: " + compareLongs[0] + " and Longitude: " + compareLongs[1]);
 
             while (rs.next()) {
-                check = rs.getString(1);
+                check = rs.getString(1) + " London";
                 String latLongs[] = getLatLongPositions(check);
                 System.out.println("Latitude: " + latLongs[0] + " and Longitude: " + latLongs[1]);
                 System.out.println(check);
@@ -277,6 +277,7 @@ public class FXMLStudentPageController implements Initializable {
 
                 double metres = calcDifference(lat1, lat2, lng1, lng2);
                 metres = metres * 0.000621371192;
+                System.out.println(metres);
                 if (metres > 1000) {
                     metres = metres / 1000 * 2;
                 }

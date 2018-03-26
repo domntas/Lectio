@@ -131,7 +131,7 @@
                <padding>
                   <Insets left="15.0" />
                </padding></Label>
-            <Label fx:id="day2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="199.0" layoutY="72.0" prefHeight="18.0" prefWidth="86.0" text="Monday" textAlignment="RIGHT" textFill="#fffdfd">
+            <Label fx:id="day2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="201.0" layoutY="72.0" prefHeight="18.0" prefWidth="86.0" text="Monday" textAlignment="RIGHT" textFill="#fffdfd">
                <font>
                   <Font size="14.0" />
                </font>

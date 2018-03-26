@@ -17,7 +17,7 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="tutorbox1" layoutX="33.0" layoutY="82.0" onMouseClicked="#box1Clicked" opacity="0.95" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10; -fx-background-radius: 10;">
+      <AnchorPane fx:id="tutorbox1" layoutX="33.0" layoutY="82.0" onMouseClicked="#box1Clicked" opacity="0.95" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #686C9A; -fx-background-radius: 10; -fx-background-radius: 10;">
          <children>
             <Label fx:id="nametutor1" layoutX="105.0" layoutY="15.0" text="Filippo" textFill="WHITE">
                <font>
@@ -69,7 +69,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="tutorbox2" layoutX="33.0" layoutY="212.0" onMouseClicked="#box2Clicked" opacity="0.94" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+      <AnchorPane fx:id="tutorbox2" layoutX="33.0" layoutY="212.0" onMouseClicked="#box2Clicked" opacity="0.94" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #676C9A; -fx-background-radius: 10;">
          <children>
             <Label fx:id="nametutor2" layoutX="105.0" layoutY="15.0" text="Sofia" textFill="#fffefe">
                <font>
@@ -78,7 +78,7 @@
             </Label>
             <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/female1.png" />
+                  <Image url="@images/face2.png" />
                </image>
             </ImageView>
             <Label fx:id="subject2" layoutX="105.0" layoutY="51.0" text="English" textFill="#fffdfd">
@@ -104,7 +104,7 @@
             </Label>
             <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/face3.png" />
+                  <Image url="@images/face1.png" />
                </image>
             </ImageView>
             <Label fx:id="subject4" layoutX="105.0" layoutY="51.0" text="History" textFill="WHITE">
@@ -147,5 +147,10 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <ImageView fitHeight="35.0" fitWidth="27.0" layoutX="13.0" layoutY="7.0" onMouseClicked="#backClicked" pickOnBounds="true" rotate="180.0">
+         <image>
+            <Image url="@images/icons8-arrows_long_right.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

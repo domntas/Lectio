@@ -291,7 +291,7 @@ public class FXML_subjectTutorsController implements Initializable {
             System.out.println(studentname);
             ResultSet rs = stmt.executeQuery("SELECT BOROUGH FROM STUDENT inner join users on users.id=student.id WHERE users.FULLNAME = '" + newname + "'");
             rs.next();
-            String name = rs.getString(1);
+            String name = rs.getString(1) + " London";
             System.out.println(name);
             rs.close();
 
@@ -311,7 +311,7 @@ public class FXML_subjectTutorsController implements Initializable {
             System.out.println("Hey Latitude: " + compareLongs[0] + " and Longitude: " + compareLongs[1]);
 
             while (rs.next()) {
-                check = rs.getString(1);
+                check = rs.getString(1) + " London";
                 String latLongs[] = getLatLongPositions(check);
                 System.out.println("Latitude: " + latLongs[0] + " and Longitude: " + latLongs[1]);
                 System.out.println(check);
@@ -499,6 +499,18 @@ public class FXML_subjectTutorsController implements Initializable {
 
         }
 
+    }
+    
+     public void backClicked(MouseEvent event) throws IOException {
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+        Scene homepage_scene = new Scene(homepage_parent);
+        FXMLStudentPageController setController = loader.getController();
+                    System.out.println("YOUR NAME IS" + studentname);
+                    setController.myFunction(studentname, studentemail);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(homepage_scene);
+        app_stage.show();
     }
 
 }
