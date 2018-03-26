@@ -205,7 +205,7 @@ public class FXML_HomepageController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot2.getText()+"'";
+            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot1.getText()+"'";
             stmt.executeUpdate(sql);
 
             stmt.close();
@@ -289,7 +289,7 @@ public class FXML_HomepageController implements Initializable {
             System.out.println(loader);
             Parent homepage_parent = (Parent) loader.load();
             FXML_ConfirmationController setController = loader.getController();
-            setController.myFunction(name2.getText(), day2.getText(), timeslot2.getText(), borough2.getText(), id, studentids.get(0));
+            setController.myFunction(name2.getText(), day2.getText(), timeslot2.getText(), borough2.getText(), id, studentids.get(1));
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -327,5 +327,17 @@ public class FXML_HomepageController implements Initializable {
             System.exit(0);
         }
 
+    }
+    
+     public void signout(MouseEvent event) throws IOException {
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+        Scene login_scene = new Scene(homepage_parent);
+        //FXMLDocumentController setController = loader.getController();
+                    //System.out.println("YOUR NAME IS" + studentname);
+                    //setController.myFunction(name.getText(), tutorid);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(login_scene);
+        app_stage.show();
     }
 }

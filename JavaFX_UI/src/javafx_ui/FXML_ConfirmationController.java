@@ -5,16 +5,23 @@
  */
 package javafx_ui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -101,6 +108,18 @@ public class FXML_ConfirmationController implements Initializable {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
+    }
+    
+     public void backClicked(MouseEvent event) throws IOException {
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML_Homepage.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+        Scene homepage_scene = new Scene(homepage_parent);
+        FXML_HomepageController setController = loader.getController();
+                    //System.out.println("YOUR NAME IS" + studentname);
+                    setController.myFunction(name.getText(), tutorid);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(homepage_scene);
+        app_stage.show();
     }
 
 }

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;)url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLTutorConfirmationController">
+   <children>
+      <Label fx:id="invalid2_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
+      <Label fx:id="welcome_label" layoutX="75.0" layoutY="635.0" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="studentbox1" layoutX="67.0" layoutY="213.0" minHeight="-Infinity" prefHeight="276.0" prefWidth="228.0" style="-fx-background-radius: 20; -fx-background-color: #646C9A;">
+         <children>
+            <Label fx:id="confirmation1" layoutX="208.0" layoutY="109.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.0625">
+                     <stops>
+                        <Stop color="#a3e9ff" />
+                        <Stop color="#a3e9ff" offset="0.007434944237918215" />
+                        <Stop color="#ffffffc4" offset="0.47157190635451507" />
+                        <Stop color="#edb9cb" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="name" layoutX="86.0" layoutY="26.0" text="Tutor name" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="location" layoutX="86.0" layoutY="76.0" text="Location" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="subject" layoutX="86.0" layoutY="128.0" text="Subject" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="timeslot" layoutX="87.0" layoutY="180.0" text="00:00" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="day" layoutX="87.0" layoutY="232.0" text="Day" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="37.0" fitWidth="39.0" layoutX="24.0" layoutY="18.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-name.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="62.0" layoutX="24.0" layoutY="68.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-worldwide_location.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="24.0" layoutY="120.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-book.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="27.0" layoutY="175.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-clock.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="27.0" layoutY="227.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-crossed_out_date.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text layoutX="102.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETAILS" wrappingWidth="190.0">
+         <fill>
+            <LinearGradient endX="0.6778846153846154" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#6daeff" />
+                  <Stop color="#6daeff" offset="0.007434944237918215" />
+                  <Stop color="#efbad3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Avenir Roman" size="40.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="35.0" fitWidth="27.0" layoutX="13.0" layoutY="7.0" onMouseClicked="#backClicked" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@images/icons8-arrows_long_right.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

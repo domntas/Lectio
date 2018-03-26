@@ -122,6 +122,12 @@ public class FXMLStudentPageController implements Initializable {
     private ArrayList<Integer> rate = new ArrayList<Integer>();    //rate
 
     private ArrayList<String> email = new ArrayList<String>();    //rate
+    
+    private String tutorName;
+    private String tutorLocation;
+    private String tutorSubject;
+    private String tutorTime;
+    private String tutorDay;
 
     /**
      * Initializes the controller class.
@@ -168,6 +174,13 @@ public class FXMLStudentPageController implements Initializable {
             tutorid=rs.getInt("TUTORID");
             String day = rs.getString("DAY");
             
+            tutorTime = rs.getString("TIMESLOT");
+            tutorDay = day;
+            
+            rs = stmt.executeQuery("SELECT * from Tutor WHERE ID = '" + tutorid + "'");
+            tutorSubject = rs.getString("SUBJECT");
+            tutorLocation = rs.getString("BOROUGH");
+            
             System.out.println(tutorid);
              System.out.println(day);
             acceptanceDate.setText("See you on "+day);
@@ -175,7 +188,7 @@ public class FXMLStudentPageController implements Initializable {
             rs = stmt.executeQuery("SELECT FULLNAME from users where id = '"+tutorid+"'");
              System.out.println(tutorid);
             acceptance.setText(rs.getString("FULLNAME") + " has confirmed you");
-           
+            tutorName = rs.getString("FULLNAME");
             }
             
             else {
@@ -431,5 +444,29 @@ public class FXMLStudentPageController implements Initializable {
 
         }
     }
+    
+     public void signout(MouseEvent event) throws IOException {
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
+        Scene login_scene = new Scene(homepage_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(login_scene);
+        app_stage.show();
+    }
+     
+     public void viewSchedule(MouseEvent event) throws IOException {
+        FXMLLoader loader;
+        loader = new FXMLLoader(getClass().getResource("FXMLTutorConfirmation.fxml"));
+        System.out.println(loader);
+        Parent homepage_parent = (Parent) loader.load();
+        FXMLTutorConfirmationController setController = loader.getController();
+        setController.myFunction(tutorName, tutorDay, tutorTime, tutorLocation, studentemail, studentname);
+        Scene homepage_scene = new Scene(homepage_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        app_stage.hide();
+        app_stage.setScene(homepage_scene);
+        app_stage.show();
+     }
 
 }
