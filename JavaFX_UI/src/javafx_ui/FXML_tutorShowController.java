@@ -413,12 +413,16 @@ public class FXML_tutorShowController implements Initializable {
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
             System.out.println(id);
-            ResultSet rs = stmt.executeQuery("SELECT TIMESLOT FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "' and AVAILABILITY= 'True'");
+            ResultSet rs = stmt.executeQuery("SELECT TIMESLOT FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + day + "' and AVAILABILITY= 'True'");
+            System.out.println(day);
             int size = 0;
+            
             while (rs.next()) {
                 size++;
             }
-            rs = stmt.executeQuery("SELECT TIMESLOT FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + combobox.getValue() + "' and AVAILABILITY= 'True'");
+
+            System.out.println(size);
+            rs = stmt.executeQuery("SELECT TIMESLOT FROM Slots WHERE ID = " + "'" + id + "'" + "AND DAY = " + "'" + day + "' and AVAILABILITY= 'True'");
 
             rs.next();
             System.out.println(rs.getString("Timeslot"));
@@ -497,6 +501,7 @@ public class FXML_tutorShowController implements Initializable {
             invalid3_label.setText("Day updated");
 
             stmt.close();
+
             c.close();
 
         } catch (Exception e) {

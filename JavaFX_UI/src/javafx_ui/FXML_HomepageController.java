@@ -99,6 +99,8 @@ public class FXML_HomepageController implements Initializable {
     private Label confirmation2;
 
     private int id;
+    
+    private String subject;
 
     private ArrayList<Integer> studentids = new ArrayList<Integer>();
 
@@ -207,7 +209,9 @@ public class FXML_HomepageController implements Initializable {
             stmt = c.createStatement();
             String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentids.get(0) + "'" + " AND TUTORID = " + "'" + id + "'" + " AND TIMESLOT = '"+timeslot1.getText()+"'";
             stmt.executeUpdate(sql);
-
+            
+            ResultSet rs = stmt.executeQuery("SELECT subject from Tutor where ID = '" + id + "'");
+             subject = rs.getString("Subject");
             stmt.close();
             c.close();
 
@@ -220,7 +224,7 @@ public class FXML_HomepageController implements Initializable {
             System.out.println(loader);
             Parent homepage_parent = (Parent) loader.load();
             FXML_ConfirmationController setController = loader.getController();
-            setController.myFunction(name1.getText(), day1.getText(), timeslot1.getText(), borough1.getText(), id, studentids.get(0));
+            setController.myFunction(name1.getText(), subject, day1.getText(), timeslot1.getText(), borough1.getText(), id, studentids.get(0));
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -289,7 +293,7 @@ public class FXML_HomepageController implements Initializable {
             System.out.println(loader);
             Parent homepage_parent = (Parent) loader.load();
             FXML_ConfirmationController setController = loader.getController();
-            setController.myFunction(name2.getText(), day2.getText(), timeslot2.getText(), borough2.getText(), id, studentids.get(1));
+            setController.myFunction(name2.getText(),subject, day2.getText(), timeslot2.getText(), borough2.getText(), id, studentids.get(1));
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 

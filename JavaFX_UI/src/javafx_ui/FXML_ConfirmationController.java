@@ -61,10 +61,13 @@ public class FXML_ConfirmationController implements Initializable {
     private Text final_label;
 
     private String studentemail;
-    
-     private int tutorid;
+
+    private int tutorid;
 
     private int studentid;
+    
+    private String tutorname;
+
     /**
      * Initializes the controller class.
      */
@@ -73,14 +76,14 @@ public class FXML_ConfirmationController implements Initializable {
         // TODO
     }
 
-    public void myFunction(String name, String day, String timeslot, String borough, int tutorid, int studentid) {
-        //subject.setText(text);
+    public void myFunction(String name, String subject, String day, String timeslot, String borough, int tutorid, int studentid) {
+        this.subject.setText(subject);
         this.name.setText(name);
         this.day.setText(day);
         this.timeslot.setText(timeslot);
         location.setText(borough);
-        this.tutorid=tutorid;
-        this.studentid=studentid;
+        this.tutorid = tutorid;
+        this.studentid = studentid;
         final_label.setText("READY TO TEACH ON " + this.day.getText().toUpperCase() + "?");
         update();
         //studentemail = email;
@@ -94,13 +97,15 @@ public class FXML_ConfirmationController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-            
+
             System.out.println(studentid);
             System.out.println(tutorid);
             System.out.println(timeslot);
-            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentid + "'" + " AND TUTORID = " + "'" + tutorid + "'" + " AND TIMESLOT = '"+timeslot.getText()+"'";
+            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentid + "'" + " AND TUTORID = " + "'" + tutorid + "'" + " AND TIMESLOT = '" + timeslot.getText() + "'";
             stmt.executeUpdate(sql);
-
+            
+            ResultSet rs = stmt.executeQuery("SELECT Users.FULLNAME FROM Users inner join Tutor on Tutor.ID = Users.id WHERE tutor.id = '" + tutorid+ "'");
+            tutorname = rs.getString("FULLNAME");
             stmt.close();
             c.close();
 
@@ -109,17 +114,20 @@ public class FXML_ConfirmationController implements Initializable {
             System.exit(0);
         }
     }
-    
-     public void backClicked(MouseEvent event) throws IOException {
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML_Homepage.fxml"));
-                    Parent homepage_parent = (Parent) loader.load();
+
+    public void backClicked(MouseEvent event) throws IOException {
+
+      
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML_Homepage.fxml"));
+        Parent homepage_parent = (Parent) loader.load();
         Scene homepage_scene = new Scene(homepage_parent);
         FXML_HomepageController setController = loader.getController();
-                    //System.out.println("YOUR NAME IS" + studentname);
-                    setController.myFunction(name.getText(), tutorid);
+
+        setController.myFunction(tutorname, tutorid);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(homepage_scene);
         app_stage.show();
+
     }
 
 }

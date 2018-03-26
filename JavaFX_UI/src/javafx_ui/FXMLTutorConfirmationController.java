@@ -32,21 +32,11 @@ public class FXMLTutorConfirmationController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
-    @FXML
-    private Label invalid2_label;
-
     @FXML
     private Label subject;
 
     @FXML
     private Label name;
-
-    @FXML
-    private Label welcome_label;
-
-    @FXML
-    private AnchorPane studentbox1;
 
     @FXML
     private Label location;
@@ -57,69 +47,37 @@ public class FXMLTutorConfirmationController implements Initializable {
     @FXML
     private Label day;
 
-    @FXML
-    private Label confirmation1;
-
-    @FXML
-    private Text final_label;
-    
     private String studentemail;
-    
-    private String studentemail2;
 
     private String studentname;
+
     /**
      * Initializes the controller class.
      */
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
 
-    public void myFunction(String name, String day, String timeslot, String borough, String studentemail, String studentname) {
-        //subject.setText(text);
+    public void myFunction(String name, String day, String timeslot, String borough, String studentemail, String studentname, String subject) {
+        this.subject.setText(subject);
         this.name.setText(name);
         this.day.setText(day);
         this.timeslot.setText(timeslot);
-        location.setText(borough);
-        this.studentemail2=studentemail;
-        this.studentname=studentname;
+        this.location.setText(borough);
+        this.studentemail = studentemail;
+        this.studentname = studentname;
         //update();
         //studentemail = email;
     }
 
-    /*public void update() {
-        Connection c = null;
-        java.sql.Statement stmt = null;
-        try {
-            c = DriverManager.getConnection("jdbc:sqlite:users.db");
-
-            System.out.println("Opened database succesfully");
-            stmt = c.createStatement();
-            
-            System.out.println(studentid);
-            System.out.println(tutorid);
-            System.out.println(timeslot);
-            String sql = "UPDATE Requests SET Status='confirmed' WHERE STUDENTID = '" + studentid + "'" + " AND TUTORID = " + "'" + tutorid + "'" + " AND TIMESLOT = '"+timeslot.getText()+"'";
-            stmt.executeUpdate(sql);
-
-            stmt.close();
-            c.close();
-
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
-        }
-    }*/
-    
-     public void backClicked(MouseEvent event) throws IOException {
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
-                    Parent homepage_parent = (Parent) loader.load();
+    public void backClicked(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+        Parent homepage_parent = (Parent) loader.load();
         Scene homepage_scene = new Scene(homepage_parent);
         FXMLStudentPageController setController = loader.getController();
-                    //System.out.println("YOUR NAME IS" + studentname);
-                    setController.myFunction(studentname, studentemail);
+        //System.out.println("YOUR NAME IS" + studentname);
+        setController.myFunction(studentname, studentemail);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(homepage_scene);
         app_stage.show();

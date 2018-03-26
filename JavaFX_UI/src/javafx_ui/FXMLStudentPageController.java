@@ -84,10 +84,10 @@ public class FXMLStudentPageController implements Initializable {
 
     @FXML
     private Label rate11;
-    
+
     @FXML
     private Label acceptance;
-    
+
     @FXML
     private Label acceptanceDate;
 
@@ -102,10 +102,10 @@ public class FXMLStudentPageController implements Initializable {
 
     @FXML
     private AnchorPane tutorbox111;
-    
+
     @FXML
     private AnchorPane notification;
-    
+
     @FXML
     private ImageView iconAccepted;
 
@@ -122,7 +122,7 @@ public class FXMLStudentPageController implements Initializable {
     private ArrayList<Integer> rate = new ArrayList<Integer>();    //rate
 
     private ArrayList<String> email = new ArrayList<String>();    //rate
-    
+
     private String tutorName;
     private String tutorLocation;
     private String tutorSubject;
@@ -149,7 +149,7 @@ public class FXMLStudentPageController implements Initializable {
         setEverything();
         acceptance();
     }
-    
+
     public void acceptance() {
         Connection c = null;
         java.sql.Statement stmt = null;
@@ -159,11 +159,11 @@ public class FXMLStudentPageController implements Initializable {
 
             System.out.println("Opened database succesfully");
             stmt = c.createStatement();
-         
+
             System.out.println(studentemail);
-            int  tutorid=0;
+            int tutorid = 0;
             ResultSet rs = stmt.executeQuery("SELECT * from Requests inner join users on users.id=requests.studentid WHERE users.EMAIL = '" + studentemail + "' and Status='confirmed' order by requestid desc limit 1");
-            
+
             int size = 0;
             while (rs.next()) {
                 size++;
@@ -171,28 +171,26 @@ public class FXMLStudentPageController implements Initializable {
             rs = stmt.executeQuery("SELECT * from Requests inner join users on users.id=requests.studentid WHERE users.EMAIL = '" + studentemail + "' and Status='confirmed' order by requestid desc limit 1");
 
             System.out.println(size);
-            if(size!=0){
-            tutorid=rs.getInt("TUTORID");
-            String day = rs.getString("DAY");
-            
-            tutorTime = rs.getString("TIMESLOT");
-            tutorDay = day;
-            
-            rs = stmt.executeQuery("SELECT * from Tutor WHERE ID = '" + tutorid + "'");
-            tutorSubject = rs.getString("SUBJECT");
-            tutorLocation = rs.getString("BOROUGH");
-            
-            System.out.println(tutorid);
-             System.out.println(day);
-            acceptanceDate.setText("See you on "+day);
-            
-            rs = stmt.executeQuery("SELECT FULLNAME from users where id = '"+tutorid+"'");
-             System.out.println(tutorid);
-            acceptance.setText(rs.getString("FULLNAME") + " has confirmed you");
-            tutorName = rs.getString("FULLNAME");
-            }
-            
-            else {
+            if (size != 0) {
+                tutorid = rs.getInt("TUTORID");
+                String day = rs.getString("DAY");
+
+                tutorTime = rs.getString("TIMESLOT");
+                tutorDay = day;
+
+                rs = stmt.executeQuery("SELECT * from Tutor WHERE ID = '" + tutorid + "'");
+                tutorSubject = rs.getString("SUBJECT");
+                tutorLocation = rs.getString("BOROUGH");
+
+                System.out.println(tutorid);
+                System.out.println(day);
+                acceptanceDate.setText("See you on " + day);
+
+                rs = stmt.executeQuery("SELECT FULLNAME from users where id = '" + tutorid + "'");
+                System.out.println(tutorid);
+                acceptance.setText(rs.getString("FULLNAME") + " has confirmed you");
+                tutorName = rs.getString("FULLNAME");
+            } else {
                 notification.setVisible(false);
                 iconAccepted.setVisible(false);
             }
@@ -229,11 +227,11 @@ public class FXMLStudentPageController implements Initializable {
     public void sortAll() {
         System.out.println(order);
         int z = order.size();
-        int c=0;
-        while (c!= z) {
-            for (int x = 0 +c; x < z - 1; x++) {
-                for (int y = 1 +c; y < z ; y++) {
-                     System.out.println(order);
+        int c = 0;
+        while (c != z) {
+            for (int x = 0 + c; x < z - 1; x++) {
+                for (int y = 1 + c; y < z; y++) {
+                    System.out.println(order);
                     if (order.get(x) >= order.get(y)) {
                         Collections.swap(order, x, y);
                         Collections.swap(ordername, x, y);
@@ -371,7 +369,7 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            System.out.println(studentname+"!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(studentname + "!!!!!!!!!!!!!!!!!!!!!!!");
             setController.myFunction(ordername.get(0), subject.get(0), email.get(0), studentemail, studentname);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -446,29 +444,33 @@ public class FXMLStudentPageController implements Initializable {
 
         }
     }
-    
-     public void signout(MouseEvent event) throws IOException {
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
-                    Parent homepage_parent = (Parent) loader.load();
+
+    public void signout(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+        Parent homepage_parent = (Parent) loader.load();
         Scene login_scene = new Scene(homepage_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(login_scene);
         app_stage.show();
     }
-     
-     public void viewSchedule(MouseEvent event) throws IOException {
-        FXMLLoader loader;
-        loader = new FXMLLoader(getClass().getResource("FXMLTutorConfirmation.fxml"));
-        System.out.println(loader);
-        Parent homepage_parent = (Parent) loader.load();
-        FXMLTutorConfirmationController setController = loader.getController();
-        setController.myFunction(tutorName, tutorDay, tutorTime, tutorLocation, studentemail, studentname);
-        Scene homepage_scene = new Scene(homepage_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        app_stage.hide();
-        app_stage.setScene(homepage_scene);
-        app_stage.show();
-     }
+    public void viewSchedule(MouseEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("FXMLTutorConfirmation.fxml"));
+            System.out.println(loader);
+            Parent homepage_parent = (Parent) loader.load();
+            FXMLTutorConfirmationController setController = loader.getController();
+            setController.myFunction(tutorName, tutorDay, tutorTime, tutorLocation, studentemail, studentname, tutorSubject);
+            Scene homepage_scene = new Scene(homepage_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            app_stage.hide();
+            app_stage.setScene(homepage_scene);
+            app_stage.show();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

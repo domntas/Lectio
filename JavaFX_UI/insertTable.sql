@@ -3,7 +3,6 @@ INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Anthony', 'Ant
 INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Filippo', 'Filippo@', '123', 'Tutor');
 INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Leonardo', 'Leonardo@', '123', 'Tutor');
 INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Lucas', 'Lucas@', '123', 'Tutor');
-INSERT INTO Users (FULLNAME, EMAIL, PASSWORD, USERTYPE) VALUES ( 'Mark', 'Mark@', '123', 'Tutor');
 
 INSERT INTO Student(ID, BOROUGH) VALUES (1,"Barking");
 
@@ -11,7 +10,6 @@ INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 2, 'Camden', '
 INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 3, 'Hammersmith',  'Computer Science', 20 , 'I am an ex-lecturer in Computer Science and gave it up to follow my passion of inspiring students in a more personal way through one-to-one tutoring. My specialism is in medieval history but my knowledge also covers a broad spectrum to a more shallow level. I am a huge believer that questions are important and aim to spark an interest and curiosity into the subject. If you want to learn more feel free to contact me.');
 INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 4, 'Croydon',  'History', 15 , 'I am an ex-lecturer in history and gave it up to follow my passion of inspiring students in a more personal way through one-to-one tutoring. My specialism is in medieval history but my knowledge also covers a broad spectrum to a more shallow level. I am a huge believer that questions are important and aim to spark an interest and curiosity into the subject. If you want to learn more feel free to contact me.');
 INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 5, 'Hackney', 'English', 13 , 'In my years of teaching I have encountered a large variety of different students. These differences come in all forms from age and culture, to social condition and learning ability. These experiences have been challenging but never lessened my enthusiasm and desire to teach. Instead I always feel a great sense of personal and professional pride and accomplishment from devoting my skills to such a worthwhile cause.');
-INSERT INTO Tutor (ID, BOROUGH, SUBJECT, PRICE, DETAILS) VALUES ( 6, 'Greenwich',  'History', 18 , 'I am an ex-lecturer in History and gave it up to follow my passion of inspiring students in a more personal way through one-to-one tutoring. My specialism is in medieval history but my knowledge also covers a broad spectrum to a more shallow level. I am a huge believer that questions are important and aim to spark an interest and curiosity into the subject.');
 
 
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (2,"Monday","09:00");
@@ -42,13 +40,6 @@ INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Monday","15:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Monday","17:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Monday","19:00");
 
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Monday","09:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Monday","11:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Monday","13:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Monday","15:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Monday","17:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Monday","19:00");
-
 
 
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (2,"Tuesday","09:00");
@@ -78,13 +69,6 @@ INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Tuesday","13:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Tuesday","15:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Tuesday","17:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Tuesday","19:00");
-
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Tuesday","09:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Tuesday","11:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Tuesday","13:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Tuesday","15:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Tuesday","17:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Tuesday","19:00");
 
 
 
@@ -118,17 +102,6 @@ INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Wednesday","15:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Wednesday","17:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Wednesday","19:00");
 
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Wednesday","09:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Wednesday","11:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Wednesday","13:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Wednesday","15:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Wednesday","17:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Wednesday","19:00");
-
-
-
-
-
 
 
 
@@ -159,14 +132,6 @@ INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Thursday","13:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Thursday","15:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Thursday","17:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Thursday","19:00");
-
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Thursday","09:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Thursday","11:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Thursday","13:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Thursday","15:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Thursday","17:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Thursday","19:00");
-
 
 
 
@@ -201,15 +166,6 @@ INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Friday","15:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Friday","17:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Friday","19:00");
 
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Friday","09:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Friday","11:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Friday","13:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Friday","15:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Friday","17:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Friday","19:00");
-
-
-
 
 
 
@@ -242,16 +198,6 @@ INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Saturday","15:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Saturday","17:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Saturday","19:00");
 
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Saturday","09:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Saturday","11:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Saturday","13:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Saturday","15:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Saturday","17:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Saturday","19:00");
-
-
-
-
 
 
 
@@ -282,10 +228,3 @@ INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Sunday","13:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Sunday","15:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Sunday","17:00");
 INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (5,"Sunday","19:00");
-
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Sunday","09:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Sunday","11:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Sunday","13:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Sunday","15:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Sunday","17:00");
-INSERT INTO Slots (ID, DAY, TIMESLOT) VALUES (6,"Sunday","19:00");
