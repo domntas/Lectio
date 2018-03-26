@@ -55,7 +55,7 @@
                   <Image url="@images/female1.png" />
                </image>
             </ImageView>
-            <Label fx:id="day1" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="199.0" layoutY="72.0" prefHeight="18.0" prefWidth="90.0" text="Monday" textAlignment="CENTER" textFill="#fffdfd">
+            <Label fx:id="day1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="199.0" layoutY="72.0" prefHeight="18.0" prefWidth="90.0" text="Monday" textAlignment="RIGHT" textFill="#fffdfd">
                <font>
                   <Font size="14.0" />
                </font>

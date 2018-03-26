@@ -19,14 +19,14 @@
             <Image url="@images/Paypal.png" />
          </image>
       </ImageView>
-      <TextField fx:id="email" layoutX="59.0" layoutY="250.0" prefHeight="27.0" prefWidth="245.0" promptText="EMAIL" />
-      <TextField fx:id="password" layoutX="59.0" layoutY="328.0" prefHeight="27.0" prefWidth="245.0" promptText="PASSWORD" />
-      <Label fx:id="price" layoutX="132.0" layoutY="160.0" text="£14.50" textFill="WHITE">
+      <TextField fx:id="email" layoutX="51.0" layoutY="253.0" prefHeight="27.0" prefWidth="245.0" promptText="EMAIL" style="-fx-background-color: transparent; -fx-prompt-text-fill: #ffffff;" />
+      <TextField fx:id="password" layoutX="51.0" layoutY="331.0" prefHeight="27.0" prefWidth="245.0" promptText="PASSWORD" style="-fx-background-color: transparent; -fx-prompt-text-fill: #ffffff;" />
+      <Label fx:id="price" layoutX="132.0" layoutY="160.0" text="£14.50" textFill="#d2c6ff">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="228.0" layoutY="160.0" text="GBP" textFill="WHITE" />
+      <Label layoutX="228.0" layoutY="160.0" text="GBP" textFill="#d2c6ff" />
       <ImageView fx:id="confirm" fitHeight="55.0" fitWidth="51.0" layoutX="155.0" layoutY="543.0" onMouseClicked="#confirmClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/approve.png" />
@@ -37,7 +37,9 @@
             <Font name="System Italic" size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="requestdetails" layoutX="59.0" layoutY="406.0" prefHeight="45.0" prefWidth="245.0" promptText="TYPE REQUEST" wrapText="true" />
-      <Label layoutX="167.0" layoutY="604.0" text="PAY" textFill="#fffefe" />
+      <TextArea fx:id="requestdetails" layoutX="59.0" layoutY="431.0" prefHeight="45.0" prefWidth="245.0" promptText="TYPE REQUEST" wrapText="true" />
+      <Label layoutX="167.0" layoutY="604.0" text="PAY" textFill="WHITE" />
+      <Separator layoutX="59.0" layoutY="279.0" prefHeight="3.0" prefWidth="245.0" />
+      <Separator layoutX="59.0" layoutY="357.0" prefHeight="3.0" prefWidth="245.0" />
    </children>
 </AnchorPane>

@@ -324,9 +324,11 @@ public class FXML_subjectTutorsController implements Initializable {
 
                 double metres = calcDifference(lat1, lat2, lng1, lng2);
                 metres = metres * 0.000621371192;
+                System.out.println(metres + " metres");
                 if (metres > 1000) {
                     metres = metres / 1000 * 2;
                 }
+                
                 metres = (Math.floor((metres) * 100) / 100);
                 System.out.println(metres + " metres");
                 order.add(metres);                  // adding all the values in the arraylist ready to be sorted by the distance
