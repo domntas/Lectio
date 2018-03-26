@@ -80,6 +80,7 @@ public class FXML_tutorShowController implements Initializable {
     private int id;
 
     private String studentemail;
+    private String studentname;
 
     ObservableList<String> list = FXCollections.observableArrayList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
 
@@ -92,10 +93,12 @@ public class FXML_tutorShowController implements Initializable {
         // TODO
     }
 
-    public void myFunction(String username, String subject, String email, String studentemail) {
+    public void myFunction(String username, String subject, String email, String studentemail, String studentname) {
+        System.out.println(studentname);
         findTutorDetails(username, subject, email);
         setTutorDetails();
         this.studentemail = studentemail;
+        this.studentname = studentname;
     }
 
     public String[] findTutorDetails(String username, String subject, String email) {
@@ -138,8 +141,12 @@ public class FXML_tutorShowController implements Initializable {
     }
 
     public void backClicked(MouseEvent event) throws IOException {
-        Parent homepage_parent = FXMLLoader.load(getClass().getResource("FXMLStudentPage.fxml"));
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLStudentPage.fxml"));
+                    Parent homepage_parent = (Parent) loader.load();
         Scene homepage_scene = new Scene(homepage_parent);
+        FXMLStudentPageController setController = loader.getController();
+                    //System.out.println("YOUR NAME IS" + studentname);
+                    setController.myFunction(studentname, studentemail);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(homepage_scene);
         app_stage.show();

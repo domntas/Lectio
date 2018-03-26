@@ -139,6 +139,7 @@ public class FXMLStudentPageController implements Initializable {
 
     public void myFunction(String text, String email) {
         System.out.println("hellooo");
+        System.out.println(text);
         String firstName[] = text.split(" ");
         welcome_label.setText("Hello, " + firstName[0]);
         studentname = text;
@@ -370,7 +371,8 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            setController.myFunction(ordername.get(0), subject.get(0), email.get(0), studentemail);
+            System.out.println(studentname+"!!!!!!!!!!!!!!!!!!!!!!!");
+            setController.myFunction(ordername.get(0), subject.get(0), email.get(0), studentemail, studentname);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -390,7 +392,7 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            setController.myFunction(ordername.get(1), subject.get(1), email.get(1), studentemail);
+            setController.myFunction(ordername.get(1), subject.get(1), email.get(1), studentemail, studentname);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -410,7 +412,7 @@ public class FXMLStudentPageController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("FXML_tutorShow.fxml"));
             Parent homepage_parent = (Parent) loader.load();
             FXML_tutorShowController setController = loader.getController();
-            setController.myFunction(ordername.get(2), subject.get(2), email.get(2), studentemail);
+            setController.myFunction(ordername.get(2), subject.get(2), email.get(2), studentemail, studentname);
             Scene homepage_scene = new Scene(homepage_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
