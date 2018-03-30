@@ -3,6 +3,7 @@ JAVAFX Application
 - Database System, sqlite3 (used to store all the needed information of the tutor, student, position, timeslot etc)
 - Google Maps Api (used to find the distance between the student and the tutor, allowing to show the results sorted by distance) 
 
+# Idea
 The problem we are trying to solve is the process of finding the ideal tutor. By providing a
 platform for private tutors to showcase their skills and expertise, individuals are able to find a
 tutor that matches their needs and expectations with ease.
