@@ -8,7 +8,7 @@ The problem we are trying to solve is the process of finding the ideal tutor. By
 platform for private tutors to showcase their skills and expertise, individuals are able to find a
 tutor that matches their needs and expectations with ease.
 
-The application is JavaFx protype with high level UX design and all the basics functionality included.
+The application is JavaFx prototype with high level UX design and all the basics functionality included.
 Developed by three students, in Queen Mary University, as a Software Engineering Project.
 
 SIGN UP: 
