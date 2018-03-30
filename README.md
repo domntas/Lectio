@@ -11,7 +11,7 @@ The application is JavaFx protype with high level UX design and all the basics f
 Developed by three students, in Queen Mary University, as a Software Engineering Project.
 
 SIGN UP: 
-<a href="https://ibb.co/mrMdN7"><img src="https://preview.ibb.co/dG6pUn/Screen_Shot_2018_03_30_at_13_17_13.png" alt="Screen_Shot_2018_03_30_at_13_17_13" border="0"></a>
+<a href="https://ibb.co/mrMdN7"><img src="https://preview.ibb.co/dG6pUn/Screen_Shot_2018_03_30_at_13_17_13.png" alt="Screen_Shot_2018_03_30_at_13_17_13"  width="320" hight="720" border="0"></a>
 
 LOGIN:
 <a href="https://ibb.co/mFVipn"><img src="https://preview.ibb.co/ddWCh7/Screen_Shot_2018_03_30_at_13_17_53.png" alt="Screen_Shot_2018_03_30_at_13_17_53" border="0"></a>
