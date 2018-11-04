@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_TutorDetailsController">
+   <children>
+      <ImageView fx:id="registration2_box" fitHeight="43.0" fitWidth="43.0" layoutX="158.0" layoutY="620.0" onMousePressed="#registrationClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/registration2.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="invalid_label" layoutX="105.0" layoutY="672.0" textFill="#ffc152" />
+      <ComboBox fx:id="comboBox1" layoutX="52.0" layoutY="151.0" opacity="0.93" prefWidth="250.0" promptText="Select Borough" style="-fx-prompt-text-inner-color: #ffffff; -fx-background-color: transparent;" visibleRowCount="5" />
+      <ComboBox fx:id="comboBox2" layoutX="52.0" layoutY="251.0" prefHeight="27.0" prefWidth="250.0" promptText="Select Subject" style="-fx-background-color: transparent;" visibleRowCount="5" />
+      <TextField fx:id="textfield" layoutX="52.0" layoutY="360.0" prefHeight="27.0" prefWidth="253.0" promptText="Price per hour" style="-fx-background-color: transparent; -fx-font-color: #000000; -fx-prompt-text-fill: #373737;" />
+      <TextArea fx:id="textarea" layoutX="61.0" layoutY="409.0" prefHeight="184.0" prefWidth="242.0" promptText="Tutor details" style="-fx-background-color: #5D5D5D; -fx-background-border-radius: 10;" wrapText="true" />
+      <Separator layoutX="62.0" layoutY="277.0" prefHeight="3.0" prefWidth="240.0" />
+      <Separator layoutX="62.0" layoutY="177.0" prefHeight="3.0" prefWidth="240.0" />
+      <Separator layoutX="62.0" layoutY="386.0" prefHeight="3.0" prefWidth="240.0" />
+      <AnchorPane prefHeight="79.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);">
+         <children>
+            <Text layoutX="102.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TUTOR" wrappingWidth="157.0">
+               <fill>
+                  <LinearGradient endX="0.6778846153846154" endY="1.0" startY="1.0">
+                     <stops>
+                        <Stop color="#6daeff" />
+                        <Stop color="#efbad3" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Avenir Roman" size="47.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text layoutX="113.0" layoutY="677.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complete Registration" wrappingWidth="135.0">
+         <fill>
+            <LinearGradient endX="0.6778846153846154" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#70aaff" />
+                  <Stop color="#70aaff" offset="0.007434944237918215" />
+                  <Stop color="#d79ab7" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Avenir Roman" size="13.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

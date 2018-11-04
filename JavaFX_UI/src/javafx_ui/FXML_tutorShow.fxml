@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -10,7 +17,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;)url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_tutorShowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_tutorShowController">
    <children>
       <ImageView fitHeight="35.0" fitWidth="27.0" layoutX="13.0" layoutY="7.0" onMouseClicked="#backClicked" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>

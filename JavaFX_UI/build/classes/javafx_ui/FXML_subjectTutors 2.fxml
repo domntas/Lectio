@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;)url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXML_subjectTutorsController">
+   <children>
+      <Label fx:id="invalid2_label" layoutX="106.0" layoutY="658.0" textFill="#ffc152" />
+      <Label fx:id="welcome_label" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="24.0" prefHeight="38.0" prefWidth="270.0" text="computer science" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="tutorbox1" layoutX="33.0" layoutY="82.0" onMouseClicked="#box1Clicked" opacity="0.95" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #686C9A; -fx-background-radius: 10; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="nametutor1" layoutX="105.0" layoutY="15.0" text="Filippo" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/face1.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="subject1" layoutX="105.0" layoutY="51.0" text="Computer Science" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="distance1" layoutX="105.0" layoutY="72.0" text="Hammersmith" textAlignment="RIGHT" textFill="#cccccc" />
+            <Label fx:id="rate1" layoutX="237.0" layoutY="18.0" opacity="0.98" text="16$/h" textAlignment="RIGHT" textFill="WHITE" />
+            <ImageView fitHeight="22.0" fitWidth="75.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/4%20stars.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorbox3" layoutX="33.0" layoutY="342.0" onMouseClicked="#box3Clicked" opacity="0.93" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="nametutor3" layoutX="105.0" layoutY="15.0" text="Lorenzo" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/face3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="subject3" layoutX="105.0" layoutY="51.0" text="History" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="distance3" layoutX="105.0" layoutY="72.0" text="Hammersmith" textAlignment="RIGHT" textFill="#cccccc" />
+            <Label fx:id="rate3" layoutX="237.0" layoutY="18.0" text="14$/h" textAlignment="RIGHT" textFill="WHITE" />
+            <ImageView fitHeight="22.0" fitWidth="75.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/4%20stars.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorbox2" layoutX="33.0" layoutY="212.0" onMouseClicked="#box2Clicked" opacity="0.94" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #676C9A; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="nametutor2" layoutX="105.0" layoutY="15.0" text="Sofia" textFill="#fffefe">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/face2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="subject2" layoutX="105.0" layoutY="51.0" text="English" textFill="#fffdfd">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="distance2" layoutX="105.0" layoutY="72.0" text="Hammersmith" textAlignment="RIGHT" textFill="#cccccc" />
+            <Label fx:id="rate2" layoutX="237.0" layoutY="18.0" text="15$/h" textAlignment="RIGHT" textFill="#fffdfd" />
+            <ImageView fitHeight="22.0" fitWidth="75.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/4%20stars.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorbox4" layoutX="33.0" layoutY="470.0" onMouseClicked="#box4Clicked" opacity="0.93" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="nametutor4" layoutX="105.0" layoutY="15.0" text="Lorenzo" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/face1.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="subject4" layoutX="105.0" layoutY="51.0" text="History" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="distance4" layoutX="105.0" layoutY="72.0" text="Hammersmith" textAlignment="RIGHT" textFill="#cccccc" />
+            <Label fx:id="rate4" layoutX="237.0" layoutY="18.0" text="14$/h" textAlignment="RIGHT" textFill="WHITE" />
+            <ImageView fitHeight="22.0" fitWidth="75.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/4%20stars.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorbox5" layoutX="33.0" layoutY="599.0" onMouseClicked="#box5Clicked" opacity="0.93" prefHeight="99.0" prefWidth="295.0" style="-fx-background-color: #646C9A; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="nametutor5" layoutX="105.0" layoutY="15.0" text="Lorenzo" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/face3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="subject5" layoutX="105.0" layoutY="51.0" text="History" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="distance5" layoutX="105.0" layoutY="72.0" text="Hammersmith" textAlignment="RIGHT" textFill="#cccccc" />
+            <Label fx:id="rate5" layoutX="237.0" layoutY="18.0" text="14$/h" textAlignment="RIGHT" textFill="WHITE" />
+            <ImageView fitHeight="22.0" fitWidth="75.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/4%20stars.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="35.0" fitWidth="27.0" layoutX="13.0" layoutY="7.0" onMouseClicked="#backClicked" pickOnBounds="true" rotate="180.0">
+         <image>
+            <Image url="@images/icons8-arrows_long_right.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

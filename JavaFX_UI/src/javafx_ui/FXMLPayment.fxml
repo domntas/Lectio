@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;)url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLPaymentController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLPaymentController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="21.0" opacity="0.94" pickOnBounds="true" preserveRatio="true">
          <image>

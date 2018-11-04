@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;)url(&quot;file:///Users/domantas/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLStudentPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="360.0" style="-fx-background-image: url(&quot;file:///Users/filippopiggici/Documents/GitHub/Lectio/JavaFX_UI/src/javafx_ui/images/background.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_ui.FXMLStudentPageController">
    <children>
       <Label fx:id="invalid2_label" layoutX="106.0" layoutY="658.0" textFill="#ffc152" />
       <TextField fx:id="tutorsearch" layoutX="33.0" layoutY="238.0" onAction="#onEnter" prefHeight="38.0" prefWidth="295.0" promptText="Choose subject..." style="-fx-background-color: #41588C; -fx-prompt-text-fill: #ffffff; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-fill: #ffffff;">
@@ -139,12 +146,12 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <ImageView fitHeight="15.0" fitWidth="20.0" layoutX="285.0" layoutY="12.0" onMouseClicked="#signout" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <ImageView fitHeight="15.0" fitWidth="20.0" layoutX="272.0" layoutY="16.0" onMouseClicked="#signout" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@images/signout.png" />
          </image>
       </ImageView>
-      <Label layoutX="307.0" layoutY="13.0" onMouseClicked="#signout" text="Sign out" textFill="WHITE">
+      <Label layoutX="290.0" layoutY="17.0" onMouseClicked="#signout" text="Sign out" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>

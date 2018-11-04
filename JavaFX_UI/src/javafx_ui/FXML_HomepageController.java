@@ -12,7 +12,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -102,7 +101,7 @@ public class FXML_HomepageController implements Initializable {
 
     private String subject;
 
-    private ArrayList<Integer> studentids = new ArrayList<Integer>();
+    private ArrayList<Integer> studentids = new ArrayList<>();
 
     /**
      * Initializes the controller class.
